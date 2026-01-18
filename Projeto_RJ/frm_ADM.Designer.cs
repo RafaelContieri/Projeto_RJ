@@ -74,9 +74,9 @@
             this.lbl_name_header.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_name_header.Location = new System.Drawing.Point(28, 27);
             this.lbl_name_header.Name = "lbl_name_header";
-            this.lbl_name_header.Size = new System.Drawing.Size(198, 29);
+            this.lbl_name_header.Size = new System.Drawing.Size(450, 29);
             this.lbl_name_header.TabIndex = 7;
-            this.lbl_name_header.Text = "PAINEL INICIAL";
+            this.lbl_name_header.Text = "PAINEL INICIAL > CONFIGURAÇÕES";
             // 
             // button1
             // 

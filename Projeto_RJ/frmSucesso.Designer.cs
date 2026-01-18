@@ -30,26 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modalSucess));
             this.eventLog1 = new System.Diagnostics.EventLog();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnIniciar = new System.Windows.Forms.Button();
+            this.lbl_senha_vinda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.SuspendLayout();
             // 
             // eventLog1
             // 
             this.eventLog1.SynchronizingObject = this;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(83, 81);
-            this.label1.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(671, 84);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SENHA GERADA COM SUCESSO !";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnIniciar
             // 
@@ -65,14 +53,24 @@
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
+            // lbl_senha_vinda
+            // 
+            this.lbl_senha_vinda.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lbl_senha_vinda.Location = new System.Drawing.Point(0, 110);
+            this.lbl_senha_vinda.Name = "lbl_senha_vinda";
+            this.lbl_senha_vinda.Size = new System.Drawing.Size(823, 50);
+            this.lbl_senha_vinda.TabIndex = 12;
+            this.lbl_senha_vinda.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_senha_vinda.Click += new System.EventHandler(this.lbl_senha_vinda_Click);
+            // 
             // modalSucess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(23F, 42F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 376);
+            this.Controls.Add(this.lbl_senha_vinda);
             this.Controls.Add(this.btnIniciar);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -92,7 +90,7 @@
         #endregion
 
         private System.Diagnostics.EventLog eventLog1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.Label lbl_senha_vinda;
     }
 }

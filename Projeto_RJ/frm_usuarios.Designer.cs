@@ -35,7 +35,6 @@
             this.lbl_pesquisa_nome = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
-            this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuário = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.excluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
@@ -126,18 +126,6 @@
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
             // 
-            // btn_cadastrar_usuario
-            // 
-            this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_cadastrar_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(1652, 175);
-            this.btn_cadastrar_usuario.Name = "btn_cadastrar_usuario";
-            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(195, 37);
-            this.btn_cadastrar_usuario.TabIndex = 16;
-            this.btn_cadastrar_usuario.Text = "CADASTRAR";
-            this.btn_cadastrar_usuario.UseVisualStyleBackColor = false;
-            this.btn_cadastrar_usuario.Click += new System.EventHandler(this.btn_cadastrar_usuario_Click);
-            // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -189,6 +177,18 @@
             this.excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.excluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.excluir.Width = 40;
+            // 
+            // btn_cadastrar_usuario
+            // 
+            this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_cadastrar_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(1652, 175);
+            this.btn_cadastrar_usuario.Name = "btn_cadastrar_usuario";
+            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(195, 37);
+            this.btn_cadastrar_usuario.TabIndex = 16;
+            this.btn_cadastrar_usuario.Text = "CADASTRAR";
+            this.btn_cadastrar_usuario.UseVisualStyleBackColor = false;
+            this.btn_cadastrar_usuario.Click += new System.EventHandler(this.btn_cadastrar_usuario_Click);
             // 
             // btn_pesquisar
             // 
