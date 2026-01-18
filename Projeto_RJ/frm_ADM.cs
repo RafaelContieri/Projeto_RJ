@@ -51,8 +51,8 @@ namespace Projeto_RJ
 
         private void btn_config_Click(object sender, EventArgs e)
         {
-            // frm_config configUSER = new frm_config();
-            //configUSER.Show();
+             frm_config configUSER = new frm_config();
+            configUSER.Show();
 
             
         }

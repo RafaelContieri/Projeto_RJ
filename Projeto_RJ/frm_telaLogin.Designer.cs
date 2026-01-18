@@ -124,7 +124,7 @@
             this.txt_usuario.Location = new System.Drawing.Point(419, 360);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(449, 29);
-            this.txt_usuario.TabIndex = 14;
+            this.txt_usuario.TabIndex = 1;
             this.txt_usuario.TextChanged += new System.EventHandler(this.txt_usuario_TextChanged);
             // 
             // txt_senha
@@ -134,7 +134,7 @@
             this.txt_senha.Location = new System.Drawing.Point(414, 443);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(454, 29);
-            this.txt_senha.TabIndex = 15;
+            this.txt_senha.TabIndex = 2;
             this.txt_senha.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnlogin
@@ -168,6 +168,7 @@
             this.Name = "frm_telaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";
+            this.Load += new System.EventHandler(this.frm_telaLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_body)).EndInit();

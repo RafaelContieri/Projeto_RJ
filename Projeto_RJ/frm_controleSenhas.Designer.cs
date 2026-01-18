@@ -36,6 +36,7 @@
             this.btn_refreshSenha = new System.Windows.Forms.Button();
             this.lbl_senhaChamada = new System.Windows.Forms.Label();
             this.panel_senhaChamada = new System.Windows.Forms.Panel();
+            this.lblSenhaAtual = new System.Windows.Forms.Label();
             this.comb_tipoGuiche = new System.Windows.Forms.ComboBox();
             this.lbl_selecionarServico = new System.Windows.Forms.Label();
             this.tbl_chamarSenha = new System.Windows.Forms.DataGridView();
@@ -47,7 +48,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_senhasChamadas = new System.Windows.Forms.Label();
-            this.lblSenhaAtual = new System.Windows.Forms.Label();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel_senhaChamada.SuspendLayout();
@@ -145,6 +145,18 @@
             this.panel_senhaChamada.TabIndex = 15;
             this.panel_senhaChamada.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_senhaChamada_Paint);
             // 
+            // lblSenhaAtual
+            // 
+            this.lblSenhaAtual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSenhaAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenhaAtual.Location = new System.Drawing.Point(0, 0);
+            this.lblSenhaAtual.Name = "lblSenhaAtual";
+            this.lblSenhaAtual.Size = new System.Drawing.Size(479, 315);
+            this.lblSenhaAtual.TabIndex = 0;
+            this.lblSenhaAtual.Text = "SenhaChamada";
+            this.lblSenhaAtual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSenhaAtual.Click += new System.EventHandler(this.lblSenhaAtual_Click);
+            // 
             // comb_tipoGuiche
             // 
             this.comb_tipoGuiche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -238,18 +250,6 @@
             this.lbl_senhasChamadas.Text = "Senhas chamadas";
             this.lbl_senhasChamadas.Click += new System.EventHandler(this.lbl_senhasChamadas_Click);
             // 
-            // lblSenhaAtual
-            // 
-            this.lblSenhaAtual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSenhaAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenhaAtual.Location = new System.Drawing.Point(0, 0);
-            this.lblSenhaAtual.Name = "lblSenhaAtual";
-            this.lblSenhaAtual.Size = new System.Drawing.Size(479, 315);
-            this.lblSenhaAtual.TabIndex = 0;
-            this.lblSenhaAtual.Text = "SenhaChamada";
-            this.lblSenhaAtual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSenhaAtual.Click += new System.EventHandler(this.lblSenhaAtual_Click);
-            // 
             // frm_controleSenhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +271,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_controleSenhas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_senhaChamada.ResumeLayout(false);

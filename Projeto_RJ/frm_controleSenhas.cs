@@ -16,6 +16,7 @@ namespace Projeto_RJ
         {
             InitializeComponent();
         }
+        
 
         private void lbl_name_header_Click(object sender, EventArgs e)
         {
@@ -27,8 +28,12 @@ namespace Projeto_RJ
 
         }
 
+        
+
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+           
+
 
         }
 
@@ -75,6 +80,11 @@ namespace Projeto_RJ
         private void lblSenhaAtual_Click(object sender, EventArgs e)
         {
             lblSenhaAtual.Text = "P005";
+        }
+
+        private void frm_controleSenhas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

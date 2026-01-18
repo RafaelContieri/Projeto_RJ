@@ -203,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="imagens\logoclinica.png" />
+    <None Include="Resources\Salvar 24-24.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Salvar.png" />
     <None Include="Resources\Cancelar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
