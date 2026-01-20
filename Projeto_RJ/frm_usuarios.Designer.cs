@@ -36,11 +36,6 @@
             this.lbl_pesquisa_nome = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
-            this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
-            this.btn_pesquisar = new System.Windows.Forms.Button();
-            this.projeto_rjDataSet = new Projeto_RJ.projeto_rjDataSet();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSetTableAdapters.usuariosTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,11 +43,16 @@
             this.acessoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.excluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet = new Projeto_RJ.projeto_rjDataSet();
+            this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
+            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSetTableAdapters.usuariosTableAdapter();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -107,10 +107,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 140);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(12, 143);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1835, 29);
+            this.textBox1.Size = new System.Drawing.Size(1835, 22);
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -133,46 +133,6 @@
             this.tbl_usuarios.Size = new System.Drawing.Size(1900, 548);
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
-            // 
-            // btn_cadastrar_usuario
-            // 
-            this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_cadastrar_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(1652, 175);
-            this.btn_cadastrar_usuario.Name = "btn_cadastrar_usuario";
-            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(195, 37);
-            this.btn_cadastrar_usuario.TabIndex = 16;
-            this.btn_cadastrar_usuario.Text = "CADASTRAR";
-            this.btn_cadastrar_usuario.UseVisualStyleBackColor = false;
-            this.btn_cadastrar_usuario.Click += new System.EventHandler(this.btn_cadastrar_usuario_Click);
-            // 
-            // btn_pesquisar
-            // 
-            this.btn_pesquisar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btn_pesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pesquisar.BackgroundImage")));
-            this.btn_pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pesquisar.Location = new System.Drawing.Point(1853, 135);
-            this.btn_pesquisar.Name = "btn_pesquisar";
-            this.btn_pesquisar.Size = new System.Drawing.Size(39, 34);
-            this.btn_pesquisar.TabIndex = 14;
-            this.btn_pesquisar.UseVisualStyleBackColor = false;
-            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
-            this.btn_pesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_pesquisar_KeyDown);
-            // 
-            // projeto_rjDataSet
-            // 
-            this.projeto_rjDataSet.DataSetName = "projeto_rjDataSet";
-            this.projeto_rjDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.projeto_rjDataSet;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -230,6 +190,46 @@
             this.excluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.excluir.Width = 40;
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.projeto_rjDataSet;
+            // 
+            // projeto_rjDataSet
+            // 
+            this.projeto_rjDataSet.DataSetName = "projeto_rjDataSet";
+            this.projeto_rjDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btn_cadastrar_usuario
+            // 
+            this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_cadastrar_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(1652, 175);
+            this.btn_cadastrar_usuario.Name = "btn_cadastrar_usuario";
+            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(195, 37);
+            this.btn_cadastrar_usuario.TabIndex = 16;
+            this.btn_cadastrar_usuario.Text = "CADASTRAR";
+            this.btn_cadastrar_usuario.UseVisualStyleBackColor = false;
+            this.btn_cadastrar_usuario.Click += new System.EventHandler(this.btn_cadastrar_usuario_Click);
+            // 
+            // btn_pesquisar
+            // 
+            this.btn_pesquisar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_pesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pesquisar.BackgroundImage")));
+            this.btn_pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pesquisar.Location = new System.Drawing.Point(1853, 135);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(39, 34);
+            this.btn_pesquisar.TabIndex = 14;
+            this.btn_pesquisar.UseVisualStyleBackColor = false;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
+            this.btn_pesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_pesquisar_KeyDown);
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
             // frm_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,8 +250,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
