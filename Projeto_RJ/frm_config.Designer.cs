@@ -80,7 +80,7 @@
             this.btn_users.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_users.Location = new System.Drawing.Point(35, 120);
             this.btn_users.Name = "btn_users";
-            this.btn_users.Size = new System.Drawing.Size(229, 51);
+            this.btn_users.Size = new System.Drawing.Size(101, 43);
             this.btn_users.TabIndex = 10;
             this.btn_users.Text = "Usuários";
             this.btn_users.UseVisualStyleBackColor = true;
@@ -94,6 +94,7 @@
             this.Controls.Add(this.btn_users);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "frm_config";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";

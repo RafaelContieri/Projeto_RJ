@@ -89,7 +89,7 @@ public string CriarSenha(string tipo, string servico)
             {
                 // Passamos a senha para dentro dos parênteses do modalSucess E AO CARREGAR O MODAL, ELE JÁ EXIBE A SENHA DEFINIDA COMO UM PARÂMETRO
                 modalSucess telaSucesso = new modalSucess(senhaGerada);
-                telaSucesso.Show();
+                telaSucesso.ShowDialog();
             }
             
         }
@@ -98,7 +98,7 @@ public string CriarSenha(string tipo, string servico)
         {
             Form1 tela = new Form1();
 
-            tela.Show();  
+            tela.ShowDialog();  
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ public string CriarSenha(string tipo, string servico)
             {
                 // Passamos a senha para dentro dos parênteses do modalSucess E AO CARREGAR O MODAL, ELE JÁ EXIBE A SENHA DEFINIDA COMO UM PARÂMETRO
                 modalSucess telaSucesso = new modalSucess(senhaGerada);
-                telaSucesso.Show();
+                telaSucesso.ShowDialog();
             }
 
             //GerarSenhaNoBanco("Normal", "Recepção"); // ==> definimos que o tipo de senha é Normal e o setor é Entrega de exames

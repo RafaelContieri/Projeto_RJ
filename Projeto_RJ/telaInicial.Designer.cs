@@ -168,6 +168,7 @@
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "telaInicial";
             this.Text = " Clínica Exames";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

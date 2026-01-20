@@ -22,7 +22,7 @@ namespace Projeto_RJ
         private void btn_gestaoSenhas_Click(object sender, EventArgs e)
         {
             frm_gestaoSenha telaabrir = new frm_gestaoSenha();
-            telaabrir.Show();
+            telaabrir.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,19 +40,19 @@ namespace Projeto_RJ
         private void btn_controleSenha_Click(object sender, EventArgs e)
         {
             frm_controleSenhas frm_ControleSenhas = new frm_controleSenhas();
-            frm_ControleSenhas.Show();
+            frm_ControleSenhas.ShowDialog();
         }
 
         private void button1_Click_1(object sender, EventArgs e) //botão para acessar a tela de senhas ==>  (TV)
         {
             frm_telaSenhas frm_TelaSenhas = new frm_telaSenhas();
-            frm_TelaSenhas.Show();
+            frm_TelaSenhas.ShowDialog();
         }
 
         private void btn_config_Click(object sender, EventArgs e)
         {
              frm_config configUSER = new frm_config();
-            configUSER.Show();
+            configUSER.ShowDialog();
 
             
         }

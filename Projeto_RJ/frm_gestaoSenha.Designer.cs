@@ -307,6 +307,7 @@
             this.Controls.Add(this.panel_atendimentoTotal);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "frm_gestaoSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliníca Exames";

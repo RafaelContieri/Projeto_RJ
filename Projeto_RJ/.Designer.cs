@@ -33,10 +33,10 @@
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnIniciar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnIniciar = new System.Windows.Forms.Button();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,6 +98,18 @@
             this.panel2.Size = new System.Drawing.Size(600, 432);
             this.panel2.TabIndex = 8;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(226, 287);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 37);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "PAINEL";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gold;
@@ -110,6 +122,17 @@
             this.button1.Text = "ADMINISTRATIVO";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(600, 200);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // btnIniciar
             // 
@@ -124,29 +147,6 @@
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(226, 287);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 37);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "PAINEL";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 200);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +156,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";
