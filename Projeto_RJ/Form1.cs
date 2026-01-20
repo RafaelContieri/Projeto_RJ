@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,21 +17,24 @@ namespace Projeto_RJ
         public string CriarSenha(string tipo, string servico)
         {
             // String de conexão (sem senha conforme seu ambiente)
-            string strCon = "Server=127.0.0.1;Database=projeto_rj;Uid=root;Pwd=;";
+            string strCon = "Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
             string senhaFinal = "";
 
-            using (MySqlConnection con = new MySqlConnection(strCon))
+            // 2. Trocado de MySqlConnection para SqlConnection
+            using (SqlConnection con = new SqlConnection(strCon))
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("sp_GerarSenhaTotem", con);
+                    // 3. Trocado de MySqlCommand para SqlCommand
+                    SqlCommand cmd = new SqlCommand("sp_GerarSenhaTotem", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parâmetros para SQL Server (geralmente usam @ sem o 'p_')
                     cmd.Parameters.AddWithValue("@p_tipo", tipo);
                     cmd.Parameters.AddWithValue("@p_servico", servico);
 
                     con.Open();
 
-                    // Log de Conexão no Console
                     Console.WriteLine($"[LOG {DateTime.Now}]: Tentando gerar senha para {tipo} - {servico}...");
 
                     var resultado = cmd.ExecuteScalar();
@@ -38,19 +42,14 @@ namespace Projeto_RJ
                     if (resultado != null)
                     {
                         senhaFinal = resultado.ToString();
-
-                        // 1. LOG NO CONSOLE (Aparece na aba 'Output' do Visual Studio)
                         Console.WriteLine($"[LOG SUCCESS]: Banco retornou a senha: {senhaFinal}");
-
-
                     }
-
                 }
-                catch (MySqlException myEx)
+                // 4. Trocado de MySqlException para SqlException
+                catch (SqlException sqlEx)
                 {
-                    // Log específico para erros de banco de dados
-                    Console.WriteLine($"[LOG MYSQL ERROR]: {myEx.Number} - {myEx.Message}");
-                    MessageBox.Show("Erro no MySQL: " + myEx.Message);
+                    Console.WriteLine($"[LOG SQL SERVER ERROR]: {sqlEx.Number} - {sqlEx.Message}");
+                    MessageBox.Show("Erro no SQL Server: " + sqlEx.Message);
                 }
                 catch (Exception ex)
                 {
@@ -87,7 +86,7 @@ namespace Projeto_RJ
 
         private void btnIniciar_Click(object sender, EventArgs e) // btn entrega de exames preferencial
         {
-            string senhaGerada = CriarSenha("Preferêncial", "Recepção");
+            string senhaGerada = CriarSenha("Preferencial", "Recepção");
 
             if (!string.IsNullOrEmpty(senhaGerada))
             {
@@ -99,7 +98,7 @@ namespace Projeto_RJ
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string senhaGerada = CriarSenha("Preferêncial", "Exames");
+            string senhaGerada = CriarSenha("Preferencial", "Exames");
 
             if (!string.IsNullOrEmpty(senhaGerada))
             {

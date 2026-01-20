@@ -152,6 +152,11 @@
     <Compile Include="frm_usuarios.Designer.cs">
       <DependentUpon>frm_usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="projeto_rjDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TOTEM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +243,17 @@
       <DependentUpon>TOTEM.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="projeto_rjDataSet.xsc">
+      <DependentUpon>projeto_rjDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjDataSet.xss">
+      <DependentUpon>projeto_rjDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

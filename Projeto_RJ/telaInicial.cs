@@ -1,71 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace Projeto_RJ
 {
     public partial class telaInicial : Form
     {
-        //método para criar a senha no banco de dados para cada tipo de serviço
-        // Mude de 'void' para 'string'
-        public string CriarSenha(string tipo, string servico)
+     
+
+public string CriarSenha(string tipo, string servico)
+    {
+        // Conexão SQL Server (Data Source utiliza vírgula para porta no SQL Server)
+        string strCon = "Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
+        string senhaFinal = "";
+
+        // 2. Trocado de MySqlConnection para SqlConnection
+        using (SqlConnection con = new SqlConnection(strCon))
         {
-            // String de conexão (sem senha conforme seu ambiente)
-            string strCon = "Server=127.0.0.1;Database=projeto_rj;Uid=root;Pwd=;";
-            string senhaFinal = "";
-
-            using (MySqlConnection con = new MySqlConnection(strCon))
+            try
             {
-                try
+                // 3. Trocado de MySqlCommand para SqlCommand
+                SqlCommand cmd = new SqlCommand("sp_GerarSenhaTotem", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Parâmetros para SQL Server (geralmente usam @ sem o 'p_')
+                cmd.Parameters.AddWithValue("@p_tipo", tipo);
+                cmd.Parameters.AddWithValue("@p_servico", servico);
+
+                con.Open();
+
+                Console.WriteLine($"[LOG {DateTime.Now}]: Tentando gerar senha para {tipo} - {servico}...");
+
+                var resultado = cmd.ExecuteScalar();
+
+                if (resultado != null)
                 {
-                    MySqlCommand cmd = new MySqlCommand("sp_GerarSenhaTotem", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@p_tipo", tipo);
-                    cmd.Parameters.AddWithValue("@p_servico", servico);
-
-                    con.Open();
-
-                    // Log de Conexão no Console
-                    Console.WriteLine($"[LOG {DateTime.Now}]: Tentando gerar senha para {tipo} - {servico}...");
-
-                    var resultado = cmd.ExecuteScalar();
-
-                    if (resultado != null)
-                    {
-                        senhaFinal = resultado.ToString();
-
-                        // 1. LOG NO CONSOLE (Aparece na aba 'Output' do Visual Studio)
-                        Console.WriteLine($"[LOG SUCCESS]: Banco retornou a senha: {senhaFinal}");
-
-                        
-                    }
-                   
-                }
-                catch (MySqlException myEx)
-                {
-                    // Log específico para erros de banco de dados
-                    Console.WriteLine($"[LOG MYSQL ERROR]: {myEx.Number} - {myEx.Message}");
-                    MessageBox.Show("Erro no MySQL: " + myEx.Message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"[LOG GENERAL ERROR]: {ex.Message}");
-                    MessageBox.Show("Erro Geral: " + ex.Message);
+                    senhaFinal = resultado.ToString();
+                    Console.WriteLine($"[LOG SUCCESS]: Banco retornou a senha: {senhaFinal}");
                 }
             }
-            return senhaFinal;
+            // 4. Trocado de MySqlException para SqlException
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine($"[LOG SQL SERVER ERROR]: {sqlEx.Number} - {sqlEx.Message}");
+                MessageBox.Show("Erro no SQL Server: " + sqlEx.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[LOG GENERAL ERROR]: {ex.Message}");
+                MessageBox.Show("Erro Geral: " + ex.Message);
+            }
         }
+        return senhaFinal;
+    }
 
 
-        public object frmInicial_Load { get; private set; }
+    public object frmInicial_Load { get; private set; }
 
         public telaInicial()
         {
