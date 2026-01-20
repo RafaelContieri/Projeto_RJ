@@ -127,7 +127,7 @@ namespace Projeto_RJ
             // Lógica para o botão EDITAR
             if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btnEditar")
             {
-               
+
                 // Exemplo:
                 // frmCadastro telaEdit = new frmCadastro(idSelecionado);
                 // telaEdit.ShowDialog();
@@ -143,7 +143,7 @@ namespace Projeto_RJ
             frm_modalCadastro frm_CadastroUsuario = new frm_modalCadastro();
             frm_CadastroUsuario.Show();
 
-            
+
         }
 
         private void frm_usuarios_Load(object sender, EventArgs e)
@@ -155,8 +155,10 @@ namespace Projeto_RJ
 
         private void btn_pesquisar_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
 
+            }
         }
     }
 }
