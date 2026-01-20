@@ -120,19 +120,19 @@ namespace Projeto_RJ
         private void button1_Click_1(object sender, EventArgs e)
         { 
             TOTEM telaabrir = new TOTEM();
-            telaabrir.Show();
+            telaabrir.ShowDialog();
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
             frm_ADM telaabrir = new frm_ADM();
-            telaabrir.Show();
+            telaabrir.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             frm_telaSenhas frm_TelaSenhas = new frm_telaSenhas();
-            frm_TelaSenhas.Show();
+            frm_TelaSenhas.ShowDialog();
         }
     }
 }

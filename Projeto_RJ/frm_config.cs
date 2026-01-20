@@ -20,7 +20,7 @@ namespace Projeto_RJ
         private void btn_users_Click(object sender, EventArgs e)
         {
             frm_usuarios telaUsers = new frm_usuarios();
-            telaUsers.Show();
+            telaUsers.ShowDialog();
         }
     }
 }

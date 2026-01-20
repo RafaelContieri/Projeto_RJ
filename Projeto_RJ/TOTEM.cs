@@ -21,7 +21,7 @@ namespace Projeto_RJ
         {
             //ABRIR TELA INCIAL DAS SENHAS
             telaInicial telaabrir = new telaInicial();
-            telaabrir.Show();
+            telaabrir.ShowDialog();
         }
 
         private void TOTEM_Load(object sender, EventArgs e)

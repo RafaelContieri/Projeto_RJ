@@ -92,7 +92,7 @@ namespace Projeto_RJ
             {
                 // Passamos a senha para dentro dos parênteses do modalSucess E AO CARREGAR O MODAL, ELE JÁ EXIBE A SENHA DEFINIDA COMO UM PARÂMETRO
                 modalSucess telaSucesso = new modalSucess(senhaGerada);
-                telaSucesso.Show();
+                telaSucesso.ShowDialog();
             }
         }
 
@@ -104,7 +104,7 @@ namespace Projeto_RJ
             {
                 // Passamos a senha para dentro dos parênteses do modalSucess E AO CARREGAR O MODAL, ELE JÁ EXIBE A SENHA DEFINIDA COMO UM PARÂMETRO
                 modalSucess telaSucesso = new modalSucess(senhaGerada);
-                telaSucesso.Show();
+                telaSucesso.ShowDialog();
             }
 
             // GerarSenhaNoBanco("Preferencial", "Entrega de exames"); // Chamar função para gerar senha no banco

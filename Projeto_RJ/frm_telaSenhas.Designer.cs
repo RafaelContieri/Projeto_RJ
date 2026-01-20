@@ -48,6 +48,23 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
+            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
+            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
+            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
+            dateTimePicker2.CustomFormat = "dd/MM/yyyy - HH:mm";
+            dateTimePicker2.Enabled = false;
+            dateTimePicker2.Font = new System.Drawing.Font("Microsoft YaHei", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new System.Drawing.Point(12, 553);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new System.Drawing.Size(673, 92);
+            dateTimePicker2.TabIndex = 6;
+            dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -69,23 +86,6 @@
             this.lbl_name_header.Size = new System.Drawing.Size(289, 29);
             this.lbl_name_header.TabIndex = 7;
             this.lbl_name_header.Text = "CHAMADA DE SENHAS";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
-            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CustomFormat = "dd/MM/yyyy - HH:mm";
-            dateTimePicker2.Enabled = false;
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft YaHei", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new System.Drawing.Point(12, 553);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(673, 92);
-            dateTimePicker2.TabIndex = 6;
-            dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // lbl_senha
             // 
@@ -232,6 +232,7 @@
             this.Controls.Add(this.lbl_senha);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "frm_telaSenhas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";
