@@ -109,11 +109,18 @@ namespace Projeto_RJ
 
             // Captura o ID da linha clicada
             // Certifique-se que o nome da coluna no Grid é "Id" ou use o índice (ex: Cells[0])
-            int idSelecionado = Convert.ToInt32(tbl_usuarios.Rows[e.RowIndex].Cells["Id"].Value);
-            string nomeUsuario = tbl_usuarios.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+            //AO CLICAR NO BOTÃO PARA EDITAR OU EXCLUIR, ELE CAPTURA TODOS OS DADOS DA LINHA SELECIONADA (NESSE CASO PARA IMPUTAR OS DADOS NA TELA DE EDIÇÃO)
+            int idSelecionado = Convert.ToInt32(tbl_usuarios.Rows[e.RowIndex].Cells["id"].Value);
+            string nomeSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            string usuarioSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["usuario"].Value.ToString();
+            string senhaSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+            string acessoSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["acesso"].Value.ToString();
+
+
+            string nomeUsuario = tbl_usuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
 
             // Lógica para o botão EXCLUIR
-            if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btnExcluir")
+            if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btn_excluir")
             {
                 var confirmacao = MessageBox.Show($"Tem certeza que deseja excluir o usuário {nomeUsuario}?",
                     "Confirmar Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -121,17 +128,19 @@ namespace Projeto_RJ
                 if (confirmacao == DialogResult.Yes)
                 {
                     DeletarUsuarioNoBanco(idSelecionado);
+                    CarregarDadosGrid(); // Atualiza o grid após a exclusão
                 }
             }
 
             // Lógica para o botão EDITAR
-            if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btnEditar")
+            if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btn_editar")
             {
 
-                // Exemplo:
-                // frmCadastro telaEdit = new frmCadastro(idSelecionado);
-                // telaEdit.ShowDialog();
-                // CarregarGrid(); // Para atualizar os dados após fechar a edição
+                
+                frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, usuarioSelecionado, senhaSelecionado, acessoSelecionado); //seleciona o id
+                telaEdit.ShowDialog();
+                MessageBox.Show("Id: " + idSelecionado +  nomeSelecionado + usuarioSelecionado + senhaSelecionado + acessoSelecionado);
+                CarregarDadosGrid(); // Para atualizar os dados após fechar a edição
             }
         }
 
@@ -148,6 +157,22 @@ namespace Projeto_RJ
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet1.usuarios'. Você pode movê-la ou removê-la conforme necessário.
+
+
+
+
+            //this.usuariosTableAdapter1.Fill(this.projeto_rjDataSet1.usuarios); ARRUMAR ISSO
+
+
+
+
+
+
+            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet.senhas'. Você pode movê-la ou removê-la conforme necessário.
+            this.senhasTableAdapter.Fill(this.projeto_rjDataSet.senhas);
+            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet.senhas'. Você pode movê-la ou removê-la conforme necessário.
+            this.senhasTableAdapter.Fill(this.projeto_rjDataSet.senhas);
             // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet.usuarios'. Você pode movê-la ou removê-la conforme necessário.
             this.usuariosTableAdapter.Fill(this.projeto_rjDataSet.usuarios);
 

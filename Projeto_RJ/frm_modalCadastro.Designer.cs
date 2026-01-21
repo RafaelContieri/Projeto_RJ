@@ -205,6 +205,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(424, 29);
             this.txtNome.TabIndex = 1;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtGrupoUsuario
             // 
@@ -288,15 +289,16 @@
             this.picture_imagemUsuario.Size = new System.Drawing.Size(200, 200);
             this.picture_imagemUsuario.TabIndex = 10;
             this.picture_imagemUsuario.TabStop = false;
+            this.picture_imagemUsuario.Click += new System.EventHandler(this.picture_imagemUsuario_Click);
             // 
             // grbOpcoes
             // 
             this.grbOpcoes.Controls.Add(this.btn_upload_picture);
             this.grbOpcoes.Controls.Add(this.btn_excluir_foto);
             this.grbOpcoes.Controls.Add(this.btnRefresh);
-            this.grbOpcoes.Location = new System.Drawing.Point(898, 324);
+            this.grbOpcoes.Location = new System.Drawing.Point(898, 321);
             this.grbOpcoes.Name = "grbOpcoes";
-            this.grbOpcoes.Size = new System.Drawing.Size(200, 54);
+            this.grbOpcoes.Size = new System.Drawing.Size(200, 64);
             this.grbOpcoes.TabIndex = 19;
             this.grbOpcoes.TabStop = false;
             // 

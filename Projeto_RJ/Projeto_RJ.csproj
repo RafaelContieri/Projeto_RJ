@@ -104,6 +104,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_editarCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_editarCadastro.Designer.cs">
+      <DependentUpon>frm_editarCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_modalCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>projeto_rjDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="projeto_rjDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projeto_rjSENHAS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjSENHAS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TOTEM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +208,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_editarCadastro.resx">
+      <DependentUpon>frm_editarCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_modalCadastro.resx">
       <DependentUpon>frm_modalCadastro.cs</DependentUpon>
@@ -253,6 +272,28 @@
     </None>
     <None Include="projeto_rjDataSet.xss">
       <DependentUpon>projeto_rjDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet1.xsc">
+      <DependentUpon>projeto_rjDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjDataSet1.xss">
+      <DependentUpon>projeto_rjDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjSENHAS.xsc">
+      <DependentUpon>projeto_rjSENHAS.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjSENHAS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjSENHAS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjSENHAS.xss">
+      <DependentUpon>projeto_rjSENHAS.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

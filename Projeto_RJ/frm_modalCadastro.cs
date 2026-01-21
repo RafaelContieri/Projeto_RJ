@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projeto_RJ
@@ -33,22 +27,33 @@ namespace Projeto_RJ
         {
             public static List<Usuario> ListaUsuarios = new List<Usuario>();
         }
-    
 
 
-    private void lbl_nome_usuario_Click(object sender, EventArgs e)
+        private void lbl_nome_usuario_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void frm_modalCadastro_Load(object sender, EventArgs e)
+        private void frm_modalCadastro_Load(object sender, EventArgs e) //aplicar lógica para que, quando a imagem nao estiver carregada, os botões de excluir e refresh fiquem desabilitados
         {
-            btn_excluir_foto.Enabled = false;
-            btnRefresh.Enabled = false;
-            btn_upload_picture.Enabled = true;
+
+            if(picture_imagemUsuario == null) //se a imagem estiver vazia
+            {
+                btn_excluir_foto.Enabled = false;
+                btnRefresh.Enabled = false;
+                btn_upload_picture.Enabled = true;
+            }
+            else //se a imagem estiver carregada
+            {
+                btn_excluir_foto.Enabled = true;
+                btnRefresh.Enabled = true;
+                btn_upload_picture.Enabled = false;
+            }
+            
+          
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e) // BOTÃO SALVAR USUÁRIO
         {
             if (txtNome.Text == "" || txtLogin.Text == "" || txtSenha.Text == "")
             {
@@ -94,6 +99,16 @@ namespace Projeto_RJ
             btn_excluir_foto.Enabled = true;
             btnRefresh.Enabled = true;
             btn_upload_picture.Enabled = false;
+        }
+
+        private void picture_imagemUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
