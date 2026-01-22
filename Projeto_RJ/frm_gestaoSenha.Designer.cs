@@ -107,6 +107,7 @@
             this.panel_atendimentoTotal.Name = "panel_atendimentoTotal";
             this.panel_atendimentoTotal.Size = new System.Drawing.Size(200, 200);
             this.panel_atendimentoTotal.TabIndex = 13;
+            this.panel_atendimentoTotal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_atendimentoTotal_Paint);
             // 
             // lblTotal
             // 

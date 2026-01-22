@@ -51,6 +51,7 @@
             this.btn_editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
+            this.usuariosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -230,12 +232,17 @@
             this.senhaDataGridViewTextBoxColumn,
             this.btn_excluir,
             this.btn_editar});
-            this.tbl_usuarios.DataSource = this.usuariosBindingSource1;
+            this.tbl_usuarios.DataSource = this.usuariosBindingSource3;
             this.tbl_usuarios.Location = new System.Drawing.Point(2, 229);
             this.tbl_usuarios.Name = "tbl_usuarios";
             this.tbl_usuarios.Size = new System.Drawing.Size(1900, 548);
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
+            // 
+            // usuariosBindingSource3
+            // 
+            this.usuariosBindingSource3.DataMember = "usuarios";
+            this.usuariosBindingSource3.DataSource = this.projetorjDataSetBindingSource;
             // 
             // frm_usuarios
             // 
@@ -265,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +300,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn btn_editar;
         private System.Windows.Forms.DataGridViewButtonColumn btn_excluir;
         private System.Windows.Forms.DataGridView tbl_usuarios;
+        private System.Windows.Forms.BindingSource usuariosBindingSource3;
     }
 }

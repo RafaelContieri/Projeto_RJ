@@ -168,6 +168,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>projeto_rjDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="projeto_rjDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="projeto_rjSENHAS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -283,6 +288,17 @@
     </None>
     <None Include="projeto_rjDataSet1.xss">
       <DependentUpon>projeto_rjDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet2.xsc">
+      <DependentUpon>projeto_rjDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjDataSet2.xss">
+      <DependentUpon>projeto_rjDataSet2.xsd</DependentUpon>
     </None>
     <None Include="projeto_rjSENHAS.xsc">
       <DependentUpon>projeto_rjSENHAS.xsd</DependentUpon>

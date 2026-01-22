@@ -213,5 +213,10 @@ namespace Projeto_RJ
         {
             this.Dispose();
         }
+
+        private void panel_atendimentoTotal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
