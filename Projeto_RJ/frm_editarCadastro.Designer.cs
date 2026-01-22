@@ -52,6 +52,7 @@
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_sigla = new System.Windows.Forms.Label();
             this.lbl_login = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.grbOpcoes.SuspendLayout();
@@ -221,7 +222,6 @@
             // 
             // foto_usuario_edicao
             // 
-            this.foto_usuario_edicao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("foto_usuario_edicao.BackgroundImage")));
             this.foto_usuario_edicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.foto_usuario_edicao.Location = new System.Drawing.Point(901, 129);
             this.foto_usuario_edicao.Name = "foto_usuario_edicao";
@@ -300,6 +300,10 @@
             this.lbl_login.TabIndex = 20;
             this.lbl_login.Text = "Login";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frm_editarCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,5 +364,6 @@
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Label lbl_sigla;
         private System.Windows.Forms.Label lbl_login;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
