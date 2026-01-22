@@ -35,34 +35,28 @@
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.lbl_pesquisa_nome = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projeto_rjDataSet = new Projeto_RJ.projeto_rjDataSet();
-            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSetTableAdapters.usuariosTableAdapter();
             this.btn_pesquisar = new System.Windows.Forms.Button();
-            this.projetorjDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.senhasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.senhasTableAdapter = new Projeto_RJ.projeto_rjDataSetTableAdapters.senhasTableAdapter();
-            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.projeto_rjDataSet1 = new Projeto_RJ.projeto_rjDataSet1();
             this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
-            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_excluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.projeto_rjDataSet = new Projeto_RJ.projeto_rjDataSet();
+            this.projeto_rjSENHAS = new Projeto_RJ.projeto_rjSENHAS();
+            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjSENHASTableAdapters.usuariosTableAdapter();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.acesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.senhasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjSENHAS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -124,20 +118,6 @@
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.projeto_rjDataSet;
-            // 
-            // projeto_rjDataSet
-            // 
-            this.projeto_rjDataSet.DataSetName = "projeto_rjDataSet";
-            this.projeto_rjDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
             // btn_pesquisar
             // 
             this.btn_pesquisar.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -152,35 +132,6 @@
             this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
             this.btn_pesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_pesquisar_KeyDown);
             // 
-            // projetorjDataSetBindingSource
-            // 
-            this.projetorjDataSetBindingSource.DataSource = this.projeto_rjDataSet;
-            this.projetorjDataSetBindingSource.Position = 0;
-            // 
-            // senhasBindingSource
-            // 
-            this.senhasBindingSource.DataMember = "senhas";
-            this.senhasBindingSource.DataSource = this.projetorjDataSetBindingSource;
-            // 
-            // senhasTableAdapter
-            // 
-            this.senhasTableAdapter.ClearBeforeFill = true;
-            // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataMember = "usuarios";
-            this.usuariosBindingSource1.DataSource = this.projetorjDataSetBindingSource;
-            // 
-            // usuariosBindingSource2
-            // 
-            this.usuariosBindingSource2.DataMember = "usuarios";
-            this.usuariosBindingSource2.DataSource = this.projetorjDataSetBindingSource;
-            // 
-            // projeto_rjDataSet1
-            // 
-            this.projeto_rjDataSet1.DataSetName = "projeto_rjDataSet1";
-            this.projeto_rjDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btn_cadastrar_usuario
             // 
             this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -193,25 +144,25 @@
             this.btn_cadastrar_usuario.UseVisualStyleBackColor = false;
             this.btn_cadastrar_usuario.Click += new System.EventHandler(this.btn_cadastrar_usuario_Click);
             // 
-            // senhaDataGridViewTextBoxColumn
+            // tbl_usuarios
             // 
-            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
-            this.senhaDataGridViewTextBoxColumn.HeaderText = "senha";
-            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.HeaderText = "";
-            this.btn_editar.MinimumWidth = 40;
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Width = 40;
+            this.tbl_usuarios.AllowUserToOrderColumns = true;
+            this.tbl_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbl_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nome,
+            this.sigla,
+            this.email,
+            this.usuario,
+            this.senha,
+            this.acesso,
+            this.btn_excluir,
+            this.btn_editar});
+            this.tbl_usuarios.Location = new System.Drawing.Point(2, 229);
+            this.tbl_usuarios.Name = "tbl_usuarios";
+            this.tbl_usuarios.Size = new System.Drawing.Size(1900, 548);
+            this.tbl_usuarios.TabIndex = 15;
+            this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
             // 
             // btn_excluir
             // 
@@ -222,27 +173,74 @@
             this.btn_excluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.btn_excluir.Width = 40;
             // 
-            // tbl_usuarios
+            // btn_editar
             // 
-            this.tbl_usuarios.AllowUserToOrderColumns = true;
-            this.tbl_usuarios.AutoGenerateColumns = false;
-            this.tbl_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.senhaDataGridViewTextBoxColumn,
-            this.btn_excluir,
-            this.btn_editar});
-            this.tbl_usuarios.DataSource = this.usuariosBindingSource3;
-            this.tbl_usuarios.Location = new System.Drawing.Point(2, 229);
-            this.tbl_usuarios.Name = "tbl_usuarios";
-            this.tbl_usuarios.Size = new System.Drawing.Size(1900, 548);
-            this.tbl_usuarios.TabIndex = 15;
-            this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
+            this.btn_editar.HeaderText = "";
+            this.btn_editar.MinimumWidth = 40;
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Width = 40;
             // 
-            // usuariosBindingSource3
+            // projeto_rjDataSet
             // 
-            this.usuariosBindingSource3.DataMember = "usuarios";
-            this.usuariosBindingSource3.DataSource = this.projetorjDataSetBindingSource;
+            this.projeto_rjDataSet.DataSetName = "projeto_rjDataSet";
+            this.projeto_rjDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // projeto_rjSENHAS
+            // 
+            this.projeto_rjSENHAS.DataSetName = "projeto_rjSENHAS";
+            this.projeto_rjSENHAS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.projeto_rjSENHAS;
+            // 
+            // acesso
+            // 
+            this.acesso.DataPropertyName = "acesso";
+            this.acesso.HeaderText = "acesso";
+            this.acesso.Name = "acesso";
+            // 
+            // senha
+            // 
+            this.senha.DataPropertyName = "senha";
+            this.senha.HeaderText = "senha";
+            this.senha.Name = "senha";
+            // 
+            // usuario
+            // 
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "usuario";
+            this.usuario.Name = "usuario";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "email";
+            this.email.Name = "email";
+            // 
+            // sigla
+            // 
+            this.sigla.DataPropertyName = "sigla";
+            this.sigla.HeaderText = "sigla";
+            this.sigla.Name = "sigla";
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "nome";
+            this.nome.Name = "nome";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // frm_usuarios
             // 
@@ -264,15 +262,10 @@
             this.Load += new System.EventHandler(this.frm_usuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.senhasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjSENHAS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,21 +278,20 @@
         private System.Windows.Forms.Label lbl_pesquisa_nome;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_pesquisar;
-        private projeto_rjDataSet projeto_rjDataSet;
-        private System.Windows.Forms.BindingSource usuariosBindingSource;
-        private projeto_rjDataSetTableAdapters.usuariosTableAdapter usuariosTableAdapter;
-        private System.Windows.Forms.BindingSource projetorjDataSetBindingSource;
-        private System.Windows.Forms.BindingSource senhasBindingSource;
-        private projeto_rjDataSetTableAdapters.senhasTableAdapter senhasTableAdapter;
-        private System.Windows.Forms.BindingSource usuariosBindingSource1;
-        private System.Windows.Forms.BindingSource usuariosBindingSource2;
-        private projeto_rjDataSet1 projeto_rjDataSet1;
         private System.Windows.Forms.Button btn_cadastrar_usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_editar;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_excluir;
         private System.Windows.Forms.DataGridView tbl_usuarios;
-        private System.Windows.Forms.BindingSource usuariosBindingSource3;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_excluir;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sigla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn acesso;
+        private projeto_rjDataSet projeto_rjDataSet;
+        private projeto_rjSENHAS projeto_rjSENHAS;
+        private projeto_rjSENHASTableAdapters.usuariosTableAdapter usuariosTableAdapter;
+        private System.Windows.Forms.BindingSource usuariosBindingSource;
     }
 }

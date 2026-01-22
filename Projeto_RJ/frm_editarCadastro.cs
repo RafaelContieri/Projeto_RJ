@@ -16,7 +16,7 @@ namespace Projeto_RJ
         private int? idUsuarioEdicao = null;
 
         // O Construtor recebe os dados do formulário principal
-        public frm_editarCadastro(int idSelecionado, string nomeSelecionado, string usuarioSelecionado, string senhaSelecionada, string acessoSelecionado)
+        public frm_editarCadastro(int idSelecionado, string nomeSelecionado, string emailSelecionado, string siglaSelecionado , string usuarioSelecionado, string senhaSelecionada, string acessoSelecionado)
         {
             // 1. Inicializa os componentes visuais (botões, campos, etc)
             InitializeComponent();
@@ -26,7 +26,9 @@ namespace Projeto_RJ
 
             // 3. Preenche os campos de texto com os valores recebidos
             txtNome_editar.Text = nomeSelecionado;
-            txtLogin_editar.Text = usuarioSelecionado;
+            txtSigla_editar.Text = usuarioSelecionado;     // Adicionado conforme a imagem
+            txtEmail_editar.Text = emailSelecionado;
+            txtLogin_editar.Text = siglaSelecionado;
             txtSenha_editar.Text = senhaSelecionada;
             txtGrupoUsuario_editar.Text = acessoSelecionado;
 
@@ -39,7 +41,10 @@ namespace Projeto_RJ
 
         private void txtLogin_editar_TextChanged(object sender, EventArgs e) { }
 
-        private void txtSenha_editar_TextChanged(object sender, EventArgs e) { }
+        private void txtSenha_editar_TextChanged(object sender, EventArgs e) 
+        {
+          
+        }
 
         private void txtGrupoUsuario_editar_TextChanged(object sender, EventArgs e) { }
 

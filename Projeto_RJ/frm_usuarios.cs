@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Projeto_RJ
 {
@@ -40,7 +34,7 @@ namespace Projeto_RJ
             try
             {
                 // Esta linha faz o TableAdapter buscar os dados novos no SQL Server e atualizar o Grid
-                this.usuariosTableAdapter.Fill(this.projeto_rjDataSet.usuarios);
+                this.usuariosTableAdapter.Fill(this.projeto_rjSENHAS.usuarios);
             }
             catch (Exception ex)
             {
@@ -110,11 +104,16 @@ namespace Projeto_RJ
             // Captura o ID da linha clicada
             // Certifique-se que o nome da coluna no Grid é "Id" ou use o índice (ex: Cells[0])
             //AO CLICAR NO BOTÃO PARA EDITAR OU EXCLUIR, ELE CAPTURA TODOS OS DADOS DA LINHA SELECIONADA (NESSE CASO PARA IMPUTAR OS DADOS NA TELA DE EDIÇÃO)
+
+
             int idSelecionado = Convert.ToInt32(tbl_usuarios.Rows[e.RowIndex].Cells["id"].Value);
             string nomeSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            string emailSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
             string usuarioSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["usuario"].Value.ToString();
-            string senhaSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+            string siglaSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["sigla"].Value.ToString();
+            string senhaSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
             string acessoSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["acesso"].Value.ToString();
+
 
 
             string nomeUsuario = tbl_usuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
@@ -137,9 +136,9 @@ namespace Projeto_RJ
             {
 
                 
-                frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, usuarioSelecionado, senhaSelecionado, acessoSelecionado); //seleciona o id
+                frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, emailSelecionado, usuarioSelecionado, siglaSelecionado, senhaSelecionada, acessoSelecionado); //seleciona o id
                 telaEdit.ShowDialog();
-                MessageBox.Show("Id: " + idSelecionado +  nomeSelecionado + usuarioSelecionado + senhaSelecionado + acessoSelecionado);
+               // MessageBox.Show("Id: " + idSelecionado + " " + nomeSelecionado + "" + emailSelecionado + "" + usuarioSelecionado + siglaSelecionado + "" + senhaSelecionado + "" + acessoSelecionado);
                 CarregarDadosGrid(); // Para atualizar os dados após fechar a edição
             }
         }
@@ -157,24 +156,11 @@ namespace Projeto_RJ
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet1.usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            // TODO: esta linha de código carrega dados na tabela 'projeto_rjSENHAS.usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter.Fill(this.projeto_rjSENHAS.usuarios);
+            
+            
 
-
-
-
-            //this.usuariosTableAdapter1.Fill(this.projeto_rjDataSet1.usuarios); ARRUMAR ISSO
-
-
-
-
-
-
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet.senhas'. Você pode movê-la ou removê-la conforme necessário.
-            this.senhasTableAdapter.Fill(this.projeto_rjDataSet.senhas);
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet.senhas'. Você pode movê-la ou removê-la conforme necessário.
-            this.senhasTableAdapter.Fill(this.projeto_rjDataSet.senhas);
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet.usuarios);
 
         }
 
@@ -185,5 +171,8 @@ namespace Projeto_RJ
 
             }
         }
+
+        //private void projetorjDataSet3BindingSource_CurrentChanged(object sender, EventArgs e)
+        
     }
 }

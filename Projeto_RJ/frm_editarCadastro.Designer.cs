@@ -58,6 +58,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
             this.SuspendLayout();
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
+            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
+            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
+            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
+            dateTimePicker2.Enabled = false;
+            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new System.Drawing.Point(1028, 27);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new System.Drawing.Size(222, 32);
+            dateTimePicker2.TabIndex = 6;
+            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -80,23 +97,6 @@
             this.lbl_name_header.Size = new System.Drawing.Size(227, 29);
             this.lbl_name_header.TabIndex = 5;
             this.lbl_name_header.Text = "EDITAR USUÁRIO";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
-            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.Enabled = false;
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1028, 27);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(222, 32);
-            dateTimePicker2.TabIndex = 6;
             // 
             // grbOpcoes
             // 
@@ -167,55 +167,55 @@
             // 
             // txtNome_editar
             // 
-            this.txtNome_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome_editar.Location = new System.Drawing.Point(48, 161);
             this.txtNome_editar.Name = "txtNome_editar";
-            this.txtNome_editar.Size = new System.Drawing.Size(424, 29);
+            this.txtNome_editar.Size = new System.Drawing.Size(424, 22);
             this.txtNome_editar.TabIndex = 21;
             this.txtNome_editar.TextChanged += new System.EventHandler(this.txtNome_editar_TextChanged);
             // 
             // txtSenha_editar
             // 
-            this.txtSenha_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha_editar.Location = new System.Drawing.Point(564, 367);
             this.txtSenha_editar.Name = "txtSenha_editar";
-            this.txtSenha_editar.Size = new System.Drawing.Size(256, 29);
+            this.txtSenha_editar.Size = new System.Drawing.Size(256, 22);
             this.txtSenha_editar.TabIndex = 31;
             this.txtSenha_editar.TextChanged += new System.EventHandler(this.txtSenha_editar_TextChanged);
             // 
             // txtGrupoUsuario_editar
             // 
-            this.txtGrupoUsuario_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGrupoUsuario_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGrupoUsuario_editar.Location = new System.Drawing.Point(564, 260);
             this.txtGrupoUsuario_editar.Name = "txtGrupoUsuario_editar";
-            this.txtGrupoUsuario_editar.Size = new System.Drawing.Size(256, 29);
+            this.txtGrupoUsuario_editar.Size = new System.Drawing.Size(256, 22);
             this.txtGrupoUsuario_editar.TabIndex = 30;
             this.txtGrupoUsuario_editar.TextChanged += new System.EventHandler(this.txtGrupoUsuario_editar_TextChanged);
             // 
             // txtEmail_editar
             // 
-            this.txtEmail_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail_editar.Location = new System.Drawing.Point(48, 260);
             this.txtEmail_editar.Name = "txtEmail_editar";
-            this.txtEmail_editar.Size = new System.Drawing.Size(424, 29);
+            this.txtEmail_editar.Size = new System.Drawing.Size(424, 22);
             this.txtEmail_editar.TabIndex = 24;
             this.txtEmail_editar.TextChanged += new System.EventHandler(this.txtEmail_editar_TextChanged);
             // 
             // txtSigla_editar
             // 
-            this.txtSigla_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSigla_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSigla_editar.Location = new System.Drawing.Point(564, 161);
             this.txtSigla_editar.Name = "txtSigla_editar";
-            this.txtSigla_editar.Size = new System.Drawing.Size(248, 29);
+            this.txtSigla_editar.Size = new System.Drawing.Size(248, 22);
             this.txtSigla_editar.TabIndex = 27;
             this.txtSigla_editar.TextChanged += new System.EventHandler(this.txtSigla_editar_TextChanged);
             // 
             // txtLogin_editar
             // 
-            this.txtLogin_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin_editar.Location = new System.Drawing.Point(49, 367);
             this.txtLogin_editar.Name = "txtLogin_editar";
-            this.txtLogin_editar.Size = new System.Drawing.Size(424, 29);
+            this.txtLogin_editar.Size = new System.Drawing.Size(424, 22);
             this.txtLogin_editar.TabIndex = 26;
             this.txtLogin_editar.TextChanged += new System.EventHandler(this.txtLogin_editar_TextChanged);
             // 
