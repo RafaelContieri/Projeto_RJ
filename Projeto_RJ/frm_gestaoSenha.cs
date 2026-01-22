@@ -166,10 +166,37 @@ namespace Projeto_RJ
                     {
                         lbl_qtdPessoas.Text = "PESSOAS";
                     }
+                    if (recepcao == 1)
+                    {
+                        lbl_pessoas.Text = "PESSOA";
+                    }
+                    else
+                    {
+                        lbl_pessoas.Text = "PESSOAS";
+                    }
+                    if (retirada == 1)
+                    {
+                        label5.Text = "PESSOA";
+                    }
+                    else
+                    {
+                        label5.Text = "PESSOAS";
+                    }
+                    if (preferencial == 1)
+                    {
+                        label8.Text = "PESSOA";
+                    }
+                    else
+                    {
+                        label8.Text = "PESSOAS";
+                    }
 
                     // Centraliza o texto 
                     lbl_qtdPessoas.TextAlign = ContentAlignment.MiddleCenter;
-                    
+                    lbl_pessoas.TextAlign = ContentAlignment.MiddleCenter;
+                    label5.TextAlign = ContentAlignment.MiddleCenter;
+                    label8.TextAlign = ContentAlignment.MiddleCenter;
+
                 }
             }
             catch (Exception ex)
