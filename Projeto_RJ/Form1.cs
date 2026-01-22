@@ -86,28 +86,29 @@ namespace Projeto_RJ
 
         private void btnIniciar_Click(object sender, EventArgs e) // btn entrega de exames preferencial
         {
-            string senhaGerada = CriarSenha("Preferencial", "Recepção");
+           
+
+            string senhaGerada = CriarSenha("Preferencial", "Recepção Preferencial");
 
             if (!string.IsNullOrEmpty(senhaGerada))
             {
-                // Passamos a senha para dentro dos parênteses do modalSucess E AO CARREGAR O MODAL, ELE JÁ EXIBE A SENHA DEFINIDA COMO UM PARÂMETRO
                 modalSucess telaSucesso = new modalSucess(senhaGerada);
-                telaSucesso.ShowDialog();
+                telaSucesso.ShowDialog(); 
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string senhaGerada = CriarSenha("Preferencial", "Exames");
+            
+            string senhaGerada = CriarSenha("Preferencial", "Exames Preferencial");
 
             if (!string.IsNullOrEmpty(senhaGerada))
             {
-                // Passamos a senha para dentro dos parênteses do modalSucess E AO CARREGAR O MODAL, ELE JÁ EXIBE A SENHA DEFINIDA COMO UM PARÂMETRO
                 modalSucess telaSucesso = new modalSucess(senhaGerada);
                 telaSucesso.ShowDialog();
             }
 
-            // GerarSenhaNoBanco("Preferencial", "Entrega de exames"); // Chamar função para gerar senha no banco
+           
         }
     }
 }

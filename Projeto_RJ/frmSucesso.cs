@@ -53,5 +53,10 @@ namespace Projeto_RJ
         {
             
         }
+
+        private void btnIniciar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

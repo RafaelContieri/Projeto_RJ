@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Projeto_RJ
 {
@@ -120,51 +121,65 @@ namespace Projeto_RJ
         private void CarregarDadosDoBanco()
         {
             // LÓGICA PARA CARREGAR OS DADOS DO BANCO DE DADOS E ATUALIZAR AS LABELS NA TELA
-            // Simulação
-            int total = 45;
-            int recepcao = 20;
-            int retirada = 10;
-            int preferencial = 1;
+            
+            string stringConexao = @"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$)";
 
-            lblTotal.Text = total.ToString();
-            lblRecepcao.Text = recepcao.ToString();
-            lblRetiradaExames.Text = retirada.ToString();
-            lblPreferencial.Text = preferencial.ToString();
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(stringConexao))
+                {
+                    conexao.Open(); // Abre a porta do banco                  
+
+                    // Total Geral
+                    string sqlTotal = "SELECT COUNT(*) FROM Senhas";
+                    SqlCommand cmdTotal = new SqlCommand(sqlTotal, conexao);
+                    int total = (int)cmdTotal.ExecuteScalar();
+
+                    // Total Recepção
+                    string sqlRecepcao = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Recepção'";
+                    SqlCommand cmdRecepcao = new SqlCommand(sqlRecepcao, conexao);
+                    int recepcao = (int)cmdRecepcao.ExecuteScalar();
+
+                    // Total Retirada
+                    string sqlRetirada = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Exames'";
+                    SqlCommand cmdRetirada = new SqlCommand(sqlRetirada, conexao);
+                    int retirada = (int)cmdRetirada.ExecuteScalar();
+
+                    // Total Preferencial
+                    string sqlPref = "SELECT COUNT(*) FROM Senhas WHERE Servico LIKE '%Preferencial'";
+                    SqlCommand cmdPref = new SqlCommand(sqlPref, conexao);
+                    int preferencial = (int)cmdPref.ExecuteScalar();
+
+
+
+                    lblTotal.Text = total.ToString();
+                    lblRecepcao.Text = recepcao.ToString();
+                    lblRetiradaExames.Text = retirada.ToString();
+                    lblPreferencial.Text = preferencial.ToString();
+
+                    // Lógica do Plural/Singular 
+                    if (total == 1)
+                    {
+                        lbl_qtdPessoas.Text = "PESSOA";
+                    }
+                    else
+                    {
+                        lbl_qtdPessoas.Text = "PESSOAS";
+                    }
+
+                    // Centraliza o texto 
+                    lbl_qtdPessoas.TextAlign = ContentAlignment.MiddleCenter;
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar no banco: " + ex.Message);
+            }
 
             MessageBox.Show("Dados atualizados com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            if (total == 1)
-            {
-                lbl_qtdPessoas.Text = "PESSOA" + ContentAlignment.MiddleCenter;
-            }
-            else
-            {
-                lbl_qtdPessoas.Text = "PESSOAS";
-            }
-            if (recepcao == 1)
-            {
-                lbl_pessoas.Text = "PESSOA";
-            }
-            else
-            {
-                lbl_pessoas.Text = "PESSOAS";
-            }
-            if (retirada == 1)
-            {
-                label5.Text = "PESSOA";
-            }
-            else
-            {
-                label5.Text = "PESSOAS";
-            }
-            if (preferencial == 1)
-            {
-                label8.Text = "PESSOA";
-            }
-            else
-            {
-                label8.Text = "PESSOAS";
-            }
+           
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

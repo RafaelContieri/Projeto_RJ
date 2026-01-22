@@ -61,6 +61,7 @@
             this.btnIniciar.TabIndex = 12;
             this.btnIniciar.Text = "FECHAR";
             this.btnIniciar.UseVisualStyleBackColor = false;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click_1);
             // 
             // modalSucess
             // 

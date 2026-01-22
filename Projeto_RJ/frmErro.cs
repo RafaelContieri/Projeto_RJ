@@ -29,7 +29,7 @@ namespace Projeto_RJ
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void modalError_Load(object sender, EventArgs e)
