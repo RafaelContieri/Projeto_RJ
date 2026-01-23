@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_usuarios));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.lbl_pesquisa_nome = new System.Windows.Forms.Label();
@@ -38,9 +39,9 @@
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
-            this.projeto_rjDataSet4 = new Projeto_RJ.projeto_rjDataSet4();
+            this.projeto_rjDataSet5 = new Projeto_RJ.projeto_rjDataSet5();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet4TableAdapters.usuariosTableAdapter();
+            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet5TableAdapters.usuariosTableAdapter();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,12 +50,12 @@
             this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.base64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_excluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_editar = new System.Windows.Forms.DataGridViewImageColumn();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,15 +167,15 @@
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
             // 
-            // projeto_rjDataSet4
+            // projeto_rjDataSet5
             // 
-            this.projeto_rjDataSet4.DataSetName = "projeto_rjDataSet4";
-            this.projeto_rjDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.projeto_rjDataSet5.DataSetName = "projeto_rjDataSet5";
+            this.projeto_rjDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.projeto_rjDataSet4;
+            this.usuariosBindingSource.DataSource = this.projeto_rjDataSet5;
             // 
             // usuariosTableAdapter
             // 
@@ -228,11 +229,16 @@
             this.base64.DataPropertyName = "imgbase64";
             this.base64.HeaderText = "imgbase64";
             this.base64.Name = "base64";
-            this.base64.Visible = false;
             // 
             // btn_excluir
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_excluir.DefaultCellStyle = dataGridViewCellStyle1;
             this.btn_excluir.HeaderText = "";
+            this.btn_excluir.Image = ((System.Drawing.Image)(resources.GetObject("btn_excluir.Image")));
             this.btn_excluir.MinimumWidth = 40;
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -242,8 +248,10 @@
             // btn_editar
             // 
             this.btn_editar.HeaderText = "";
+            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
             this.btn_editar.MinimumWidth = 40;
             this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btn_editar.Width = 40;
             // 
             // frm_usuarios
@@ -267,7 +275,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,9 +291,9 @@
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.Button btn_cadastrar_usuario;
         private System.Windows.Forms.DataGridView tbl_usuarios;
-        private projeto_rjDataSet4 projeto_rjDataSet4;
+        private projeto_rjDataSet5 projeto_rjDataSet5;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
-        private projeto_rjDataSet4TableAdapters.usuariosTableAdapter usuariosTableAdapter;
+        private projeto_rjDataSet5TableAdapters.usuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn sigla;
@@ -294,7 +302,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
         private System.Windows.Forms.DataGridViewTextBoxColumn acesso;
         private System.Windows.Forms.DataGridViewTextBoxColumn base64;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_excluir;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_editar;
+        private System.Windows.Forms.DataGridViewImageColumn btn_excluir;
+        private System.Windows.Forms.DataGridViewImageColumn btn_editar;
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Projeto_RJ
+﻿using System;
+using System.Windows.Forms;
+
+namespace Projeto_RJ
 {
     partial class frm_editarCadastro
     {
@@ -32,10 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_editarCadastro));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_name_header = new System.Windows.Forms.Label();
-            this.grbOpcoes = new System.Windows.Forms.GroupBox();
-            this.btn_upload_picture = new System.Windows.Forms.Button();
-            this.btn_excluir_foto = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtNome_editar = new System.Windows.Forms.TextBox();
@@ -52,10 +51,11 @@
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_sigla = new System.Windows.Forms.Label();
             this.lbl_login = new System.Windows.Forms.Label();
+            this.btn_excluir_foto = new System.Windows.Forms.Button();
+            this.btn_upload_picture = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
-            this.grbOpcoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,71 +99,36 @@
             this.lbl_name_header.TabIndex = 5;
             this.lbl_name_header.Text = "EDITAR USUÁRIO";
             // 
-            // grbOpcoes
-            // 
-            this.grbOpcoes.Controls.Add(this.btn_upload_picture);
-            this.grbOpcoes.Controls.Add(this.btn_excluir_foto);
-            this.grbOpcoes.Controls.Add(this.btnRefresh);
-            this.grbOpcoes.Location = new System.Drawing.Point(901, 332);
-            this.grbOpcoes.Name = "grbOpcoes";
-            this.grbOpcoes.Size = new System.Drawing.Size(200, 64);
-            this.grbOpcoes.TabIndex = 36;
-            this.grbOpcoes.TabStop = false;
-            // 
-            // btn_upload_picture
-            // 
-            this.btn_upload_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_upload_picture.BackgroundImage")));
-            this.btn_upload_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_upload_picture.Location = new System.Drawing.Point(26, 17);
-            this.btn_upload_picture.Name = "btn_upload_picture";
-            this.btn_upload_picture.Size = new System.Drawing.Size(30, 32);
-            this.btn_upload_picture.TabIndex = 7;
-            this.btn_upload_picture.UseVisualStyleBackColor = true;
-            // 
-            // btn_excluir_foto
-            // 
-            this.btn_excluir_foto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_excluir_foto.BackgroundImage")));
-            this.btn_excluir_foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_excluir_foto.Location = new System.Drawing.Point(151, 16);
-            this.btn_excluir_foto.Name = "btn_excluir_foto";
-            this.btn_excluir_foto.Size = new System.Drawing.Size(29, 32);
-            this.btn_excluir_foto.TabIndex = 9;
-            this.btn_excluir_foto.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefresh.Location = new System.Drawing.Point(89, 16);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(29, 32);
-            this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
-            this.btnCancelar.Image = global::Projeto_RJ.Properties.Resources.Close;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(564, 478);
+            this.btnCancelar.Location = new System.Drawing.Point(635, 468);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 53);
+            this.btnCancelar.Padding = new System.Windows.Forms.Padding(5);
+            this.btnCancelar.Size = new System.Drawing.Size(118, 53);
             this.btnCancelar.TabIndex = 35;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Image = global::Projeto_RJ.Properties.Resources.Salvar_24_24;
+            this.btnSalvar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(382, 478);
+            this.btnSalvar.Location = new System.Drawing.Point(442, 468);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 53);
+            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5);
+            this.btnSalvar.Size = new System.Drawing.Size(118, 53);
             this.btnSalvar.TabIndex = 34;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtNome_editar
@@ -223,6 +188,7 @@
             // foto_usuario_edicao
             // 
             this.foto_usuario_edicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.foto_usuario_edicao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.foto_usuario_edicao.Location = new System.Drawing.Point(901, 129);
             this.foto_usuario_edicao.Name = "foto_usuario_edicao";
             this.foto_usuario_edicao.Size = new System.Drawing.Size(200, 200);
@@ -300,6 +266,30 @@
             this.lbl_login.TabIndex = 20;
             this.lbl_login.Text = "Login";
             // 
+            // btn_excluir_foto
+            // 
+            this.btn_excluir_foto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_excluir_foto.BackgroundImage")));
+            this.btn_excluir_foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_excluir_foto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_excluir_foto.Location = new System.Drawing.Point(1014, 335);
+            this.btn_excluir_foto.Name = "btn_excluir_foto";
+            this.btn_excluir_foto.Size = new System.Drawing.Size(29, 32);
+            this.btn_excluir_foto.TabIndex = 9;
+            this.btn_excluir_foto.UseVisualStyleBackColor = true;
+            this.btn_excluir_foto.Click += new System.EventHandler(this.btn_excluir_foto_Click);
+            // 
+            // btn_upload_picture
+            // 
+            this.btn_upload_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_upload_picture.BackgroundImage")));
+            this.btn_upload_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_upload_picture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_upload_picture.Location = new System.Drawing.Point(951, 335);
+            this.btn_upload_picture.Name = "btn_upload_picture";
+            this.btn_upload_picture.Size = new System.Drawing.Size(30, 32);
+            this.btn_upload_picture.TabIndex = 7;
+            this.btn_upload_picture.UseVisualStyleBackColor = true;
+            this.btn_upload_picture.Click += new System.EventHandler(this.btn_upload_picture_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -309,7 +299,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 641);
-            this.Controls.Add(this.grbOpcoes);
+            this.Controls.Add(this.btn_upload_picture);
+            this.Controls.Add(this.btn_excluir_foto);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNome_editar);
@@ -331,9 +322,9 @@
             this.Name = "frm_editarCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";
+            this.Load += new System.EventHandler(this.frm_editarCadastro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.grbOpcoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,10 +335,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_name_header;
-        private System.Windows.Forms.GroupBox grbOpcoes;
-        private System.Windows.Forms.Button btn_upload_picture;
-        private System.Windows.Forms.Button btn_excluir_foto;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtNome_editar;
@@ -364,6 +351,26 @@
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Label lbl_sigla;
         private System.Windows.Forms.Label lbl_login;
+        private System.Windows.Forms.Button btn_excluir_foto;
+        private System.Windows.Forms.Button btn_upload_picture;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private void frm_editarCadastro_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Esta linha é a "chave" para resolver o erro de ConstraintException
+                // Ela diz ao DataSet para não travar se encontrar dados nulos ou grandes demais
+                
+
+                // O Visual Studio costuma colocar a linha de Fill aqui embaixo:
+                // this.usuariosTableAdapter.Fill(this.projeto_rjDataSet4.usuarios);
+            }
+            catch (Exception ex)
+            {
+                // Se houver qualquer erro ao carregar, ele te avisa sem travar o programa
+                MessageBox.Show("Aviso ao carregar dados: " + ex.Message);
+            }
+        }
+
     }
 }

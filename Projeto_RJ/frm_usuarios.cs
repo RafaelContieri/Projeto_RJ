@@ -36,7 +36,7 @@ namespace Projeto_RJ
                 // Esta linha faz o TableAdapter buscar os dados novos no SQL Server e atualizar o Grid
 
 
-                this.usuariosTableAdapter.Fill(this.projeto_rjDataSet4.usuarios); // AO ALTERAR O NOME DO DATASET, ATUALIZE AQUI TAMBÉM
+                this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios); // AO ALTERAR O NOME DO DATASET, ATUALIZE AQUI TAMBÉM
             }
             catch (Exception ex)
             {
@@ -159,13 +159,15 @@ namespace Projeto_RJ
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet5.usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios);
             // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet4.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet4.usuarios);
+            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios);
             // TODO: esta linha de código carrega dados na tabela 'projeto_rjSENHAS.usuarios'. Você pode movê-la ou removê-la conforme necessário.
 
 
 
-            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet4.usuarios); // AO ALTERAR O NOME DO DATASET, ATUALIZE AQUI TAMBÉM
+            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios); // AO ALTERAR O NOME DO DATASET, ATUALIZE AQUI TAMBÉM
 
 
 

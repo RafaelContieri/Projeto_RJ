@@ -183,6 +183,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>projeto_rjDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="projeto_rjDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="projeto_rjSENHAS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -331,6 +336,17 @@
     </None>
     <None Include="projeto_rjDataSet4.xss">
       <DependentUpon>projeto_rjDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet5.xsc">
+      <DependentUpon>projeto_rjDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjDataSet5.xss">
+      <DependentUpon>projeto_rjDataSet5.xsd</DependentUpon>
     </None>
     <None Include="projeto_rjSENHAS.xsc">
       <DependentUpon>projeto_rjSENHAS.xsd</DependentUpon>

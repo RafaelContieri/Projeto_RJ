@@ -20,9 +20,9 @@ namespace Projeto_RJ {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("projeto_rjDataSet4")]
+    [global::System.Xml.Serialization.XmlRootAttribute("projeto_rjDataSet5")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class projeto_rjDataSet4 : global::System.Data.DataSet {
+    public partial class projeto_rjDataSet5 : global::System.Data.DataSet {
         
         private usuariosDataTable tableusuarios;
         
@@ -30,7 +30,7 @@ namespace Projeto_RJ {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        public projeto_rjDataSet4() {
+        public projeto_rjDataSet5() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Projeto_RJ {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        protected projeto_rjDataSet4(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected projeto_rjDataSet5(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Projeto_RJ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            projeto_rjDataSet4 cln = ((projeto_rjDataSet4)(base.Clone()));
+            projeto_rjDataSet5 cln = ((projeto_rjDataSet5)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace Projeto_RJ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "projeto_rjDataSet4";
+            this.DataSetName = "projeto_rjDataSet5";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/projeto_rjDataSet4.xsd";
+            this.Namespace = "http://tempuri.org/projeto_rjDataSet5.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableusuarios = new usuariosDataTable();
@@ -225,7 +225,7 @@ namespace Projeto_RJ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            projeto_rjDataSet4 ds = new projeto_rjDataSet4();
+            projeto_rjDataSet5 ds = new projeto_rjDataSet5();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -585,7 +585,7 @@ namespace Projeto_RJ {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                projeto_rjDataSet4 ds = new projeto_rjDataSet4();
+                projeto_rjDataSet5 ds = new projeto_rjDataSet5();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -739,11 +739,11 @@ namespace Projeto_RJ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string imgbase64 {
                 get {
-                    if (this.Isimgbase64Null()) {
-                        return string.Empty;
-                    }
-                    else {
+                    try {
                         return ((string)(this[this.tableusuarios.imgbase64Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'imgbase64\' na tabela \'usuarios\' é DBNull.", e);
                     }
                 }
                 set {
@@ -799,7 +799,7 @@ namespace Projeto_RJ {
         }
     }
 }
-namespace Projeto_RJ.projeto_rjDataSet4TableAdapters {
+namespace Projeto_RJ.projeto_rjDataSet5TableAdapters {
     
     
     /// <summary>
@@ -934,7 +934,10 @@ namespace Projeto_RJ.projeto_rjDataSet4TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[usuarios] WHERE (([id] = @Original_id) AND ([nome] = @Original_nome) AND ([sigla] = @Original_sigla) AND ([email] = @Original_email) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([acesso] = @Original_acesso) AND ([imgbase64] = @Original_imgbase64))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[usuarios] WHERE (([id] = @Original_id) AND ([nome] = @Original" +
+                "_nome) AND ([sigla] = @Original_sigla) AND ([email] = @Original_email) AND ([usu" +
+                "ario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([acesso] = @Orig" +
+                "inal_acesso))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -943,7 +946,6 @@ namespace Projeto_RJ.projeto_rjDataSet4TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_acesso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acesso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imgbase64", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imgbase64", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[usuarios] ([nome], [sigla], [email], [usuario], [senha], [acesso], [imgbase64]) VALUES (@nome, @sigla, @email, @usuario, @senha, @acesso, @imgbase64);
@@ -958,7 +960,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imgbase64", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imgbase64", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[usuarios] SET [nome] = @nome, [sigla] = @sigla, [email] = @email, [usuario] = @usuario, [senha] = @senha, [acesso] = @acesso, [imgbase64] = @imgbase64 WHERE (([id] = @Original_id) AND ([nome] = @Original_nome) AND ([sigla] = @Original_sigla) AND ([email] = @Original_email) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([acesso] = @Original_acesso) AND ([imgbase64] = @Original_imgbase64));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[usuarios] SET [nome] = @nome, [sigla] = @sigla, [email] = @email, [usuario] = @usuario, [senha] = @senha, [acesso] = @acesso, [imgbase64] = @imgbase64 WHERE (([id] = @Original_id) AND ([nome] = @Original_nome) AND ([sigla] = @Original_sigla) AND ([email] = @Original_email) AND ([usuario] = @Original_usuario) AND ([senha] = @Original_senha) AND ([acesso] = @Original_acesso));
 SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -975,7 +977,6 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_acesso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acesso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imgbase64", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imgbase64", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1001,7 +1002,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(projeto_rjDataSet4.usuariosDataTable dataTable) {
+        public virtual int Fill(projeto_rjDataSet5.usuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1014,9 +1015,9 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual projeto_rjDataSet4.usuariosDataTable GetData() {
+        public virtual projeto_rjDataSet5.usuariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            projeto_rjDataSet4.usuariosDataTable dataTable = new projeto_rjDataSet4.usuariosDataTable();
+            projeto_rjDataSet5.usuariosDataTable dataTable = new projeto_rjDataSet5.usuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1024,14 +1025,14 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(projeto_rjDataSet4.usuariosDataTable dataTable) {
+        public virtual int Update(projeto_rjDataSet5.usuariosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(projeto_rjDataSet4 dataSet) {
+        public virtual int Update(projeto_rjDataSet5 dataSet) {
             return this.Adapter.Update(dataSet, "usuarios");
         }
         
@@ -1054,7 +1055,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_nome, string Original_sigla, string Original_email, string Original_usuario, string Original_senha, string Original_acesso, string Original_imgbase64) {
+        public virtual int Delete(int Original_id, string Original_nome, string Original_sigla, string Original_email, string Original_usuario, string Original_senha, string Original_acesso) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_nome == null)) {
                 throw new global::System.ArgumentNullException("Original_nome");
@@ -1091,12 +1092,6 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_acesso));
-            }
-            if ((Original_imgbase64 == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_imgbase64));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1181,23 +1176,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string nome, 
-                    string sigla, 
-                    string email, 
-                    string usuario, 
-                    string senha, 
-                    string acesso, 
-                    string imgbase64, 
-                    int Original_id, 
-                    string Original_nome, 
-                    string Original_sigla, 
-                    string Original_email, 
-                    string Original_usuario, 
-                    string Original_senha, 
-                    string Original_acesso, 
-                    string Original_imgbase64, 
-                    int id) {
+        public virtual int Update(string nome, string sigla, string email, string usuario, string senha, string acesso, string imgbase64, int Original_id, string Original_nome, string Original_sigla, string Original_email, string Original_usuario, string Original_senha, string Original_acesso, int id) {
             if ((nome == null)) {
                 throw new global::System.ArgumentNullException("nome");
             }
@@ -1277,13 +1256,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_acesso));
             }
-            if ((Original_imgbase64 == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_imgbase64));
-            }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1304,8 +1277,8 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nome, string sigla, string email, string usuario, string senha, string acesso, string imgbase64, int Original_id, string Original_nome, string Original_sigla, string Original_email, string Original_usuario, string Original_senha, string Original_acesso, string Original_imgbase64) {
-            return this.Update(nome, sigla, email, usuario, senha, acesso, imgbase64, Original_id, Original_nome, Original_sigla, Original_email, Original_usuario, Original_senha, Original_acesso, Original_imgbase64, Original_id);
+        public virtual int Update(string nome, string sigla, string email, string usuario, string senha, string acesso, string imgbase64, int Original_id, string Original_nome, string Original_sigla, string Original_email, string Original_usuario, string Original_senha, string Original_acesso) {
+            return this.Update(nome, sigla, email, usuario, senha, acesso, imgbase64, Original_id, Original_nome, Original_sigla, Original_email, Original_usuario, Original_senha, Original_acesso, Original_id);
         }
     }
     
@@ -1400,7 +1373,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        private int UpdateUpdatedRows(projeto_rjDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(projeto_rjDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1419,7 +1392,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        private int UpdateInsertedRows(projeto_rjDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(projeto_rjDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1437,7 +1410,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        private int UpdateDeletedRows(projeto_rjDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(projeto_rjDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1479,7 +1452,7 @@ SELECT id, nome, sigla, email, usuario, senha, acesso, imgbase64 FROM usuarios W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        public virtual int UpdateAll(projeto_rjDataSet4 dataSet) {
+        public virtual int UpdateAll(projeto_rjDataSet5 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
