@@ -173,9 +173,9 @@ namespace Projeto_RJ
                    SET nome = @nome, 
                        email = @email, 
                        sigla = @sigla, 
-                       login = @login, 
+                       usuario = @usuario, 
                        senha = @senha, 
-                       grupo = @grupo 
+                       acesso = @acesso 
                    WHERE id = @id";
 
             using (SqlConnection con = new SqlConnection(strCon))
@@ -188,9 +188,9 @@ namespace Projeto_RJ
                         cmd.Parameters.AddWithValue("@nome", txtNome_editar.Text);
                         cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text);
                         cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text);
-                        cmd.Parameters.AddWithValue("@login", txtLogin_editar.Text);
+                        cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text);
                         cmd.Parameters.AddWithValue("@senha", txtSenha_editar.Text);
-                        cmd.Parameters.AddWithValue("@grupo", cmb_Grupo_usuario.Text);
+                        cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
                         cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
 
                         cmd.ExecuteNonQuery();

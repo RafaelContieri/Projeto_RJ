@@ -37,22 +37,16 @@
             this.lbl_senhaChamada = new System.Windows.Forms.Label();
             this.panel_senhaChamada = new System.Windows.Forms.Panel();
             this.lblSenhaAtual = new System.Windows.Forms.Label();
-            this.comb_tipoGuiche = new System.Windows.Forms.ComboBox();
-            this.lbl_selecionarServico = new System.Windows.Forms.Label();
-            this.tbl_chamarSenha = new System.Windows.Forms.DataGridView();
-            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Guichê = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbl_historicoSenhas = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_senhasChamadas = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel_senhaChamada.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_chamarSenha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_historicoSenhas)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -65,7 +59,7 @@
             dateTimePicker2.Enabled = false;
             dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1655, 25);
+            dateTimePicker2.Location = new System.Drawing.Point(1502, 27);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new System.Drawing.Size(222, 32);
             dateTimePicker2.TabIndex = 6;
@@ -157,98 +151,63 @@
             this.lblSenhaAtual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSenhaAtual.Click += new System.EventHandler(this.lblSenhaAtual_Click);
             // 
-            // comb_tipoGuiche
+            // panel6
             // 
-            this.comb_tipoGuiche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comb_tipoGuiche.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comb_tipoGuiche.FormattingEnabled = true;
-            this.comb_tipoGuiche.Location = new System.Drawing.Point(1047, 167);
-            this.comb_tipoGuiche.Name = "comb_tipoGuiche";
-            this.comb_tipoGuiche.Size = new System.Drawing.Size(244, 32);
-            this.comb_tipoGuiche.TabIndex = 16;
-            this.comb_tipoGuiche.SelectedIndexChanged += new System.EventHandler(this.comb_tipoGuiche_SelectedIndexChanged);
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Location = new System.Drawing.Point(1580, 466);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(280, 164);
+            this.panel6.TabIndex = 28;
             // 
-            // lbl_selecionarServico
+            // panel5
             // 
-            this.lbl_selecionarServico.AutoSize = true;
-            this.lbl_selecionarServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_selecionarServico.Location = new System.Drawing.Point(1043, 140);
-            this.lbl_selecionarServico.Name = "lbl_selecionarServico";
-            this.lbl_selecionarServico.Size = new System.Drawing.Size(262, 24);
-            this.lbl_selecionarServico.TabIndex = 17;
-            this.lbl_selecionarServico.Text = "Selecione o tipo de guichê";
-            this.lbl_selecionarServico.Click += new System.EventHandler(this.lbl_selecionarServico_Click);
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Location = new System.Drawing.Point(1137, 832);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(280, 164);
+            this.panel5.TabIndex = 27;
             // 
-            // tbl_chamarSenha
+            // panel4
             // 
-            this.tbl_chamarSenha.AllowUserToOrderColumns = true;
-            this.tbl_chamarSenha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_chamarSenha.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Senha,
-            this.Mesa,
-            this.Guichê});
-            this.tbl_chamarSenha.Location = new System.Drawing.Point(1047, 228);
-            this.tbl_chamarSenha.Name = "tbl_chamarSenha";
-            this.tbl_chamarSenha.Size = new System.Drawing.Size(782, 280);
-            this.tbl_chamarSenha.TabIndex = 18;
-            this.tbl_chamarSenha.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_chamarSenha_CellContentClick);
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(778, 832);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(280, 164);
+            this.panel4.TabIndex = 26;
             // 
-            // Senha
+            // panel3
             // 
-            this.Senha.FillWeight = 500F;
-            this.Senha.HeaderText = "Senha";
-            this.Senha.Name = "Senha";
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(419, 832);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(280, 164);
+            this.panel3.TabIndex = 25;
             // 
-            // Mesa
+            // panel2
             // 
-            this.Mesa.HeaderText = "Mesa";
-            this.Mesa.Name = "Mesa";
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(60, 832);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(280, 164);
+            this.panel2.TabIndex = 24;
             // 
-            // Guichê
+            // label3
             // 
-            this.Guichê.HeaderText = "Guichê";
-            this.Guichê.Name = "Guichê";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(55, 763);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(279, 29);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Histórico de chamadas";
             // 
-            // tbl_historicoSenhas
+            // panel7
             // 
-            this.tbl_historicoSenhas.AllowUserToOrderColumns = true;
-            this.tbl_historicoSenhas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_historicoSenhas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.tbl_historicoSenhas.Location = new System.Drawing.Point(1047, 696);
-            this.tbl_historicoSenhas.Name = "tbl_historicoSenhas";
-            this.tbl_historicoSenhas.Size = new System.Drawing.Size(782, 280);
-            this.tbl_historicoSenhas.TabIndex = 19;
-            this.tbl_historicoSenhas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_historicoSenhas_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 500F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Senha";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mesa";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Guichê";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // lbl_senhasChamadas
-            // 
-            this.lbl_senhasChamadas.AutoSize = true;
-            this.lbl_senhasChamadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_senhasChamadas.Location = new System.Drawing.Point(1043, 660);
-            this.lbl_senhasChamadas.Name = "lbl_senhasChamadas";
-            this.lbl_senhasChamadas.Size = new System.Drawing.Size(181, 24);
-            this.lbl_senhasChamadas.TabIndex = 20;
-            this.lbl_senhasChamadas.Text = "Senhas chamadas";
-            this.lbl_senhasChamadas.Click += new System.EventHandler(this.lbl_senhasChamadas_Click);
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(1493, 832);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(280, 164);
+            this.panel7.TabIndex = 28;
             // 
             // frm_controleSenhas
             // 
@@ -256,11 +215,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.lbl_senhasChamadas);
-            this.Controls.Add(this.tbl_historicoSenhas);
-            this.Controls.Add(this.tbl_chamarSenha);
-            this.Controls.Add(this.lbl_selecionarServico);
-            this.Controls.Add(this.comb_tipoGuiche);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel_senhaChamada);
             this.Controls.Add(this.lbl_senhaChamada);
             this.Controls.Add(this.btnChamarSenha);
@@ -276,8 +237,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_senhaChamada.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_chamarSenha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_historicoSenhas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,17 +250,13 @@
         private System.Windows.Forms.Button btn_refreshSenha;
         private System.Windows.Forms.Label lbl_senhaChamada;
         private System.Windows.Forms.Panel panel_senhaChamada;
-        private System.Windows.Forms.ComboBox comb_tipoGuiche;
-        private System.Windows.Forms.Label lbl_selecionarServico;
-        private System.Windows.Forms.DataGridView tbl_chamarSenha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Senha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mesa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Guichê;
-        private System.Windows.Forms.DataGridView tbl_historicoSenhas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Label lbl_senhasChamadas;
         private System.Windows.Forms.Label lblSenhaAtual;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel7;
     }
 }

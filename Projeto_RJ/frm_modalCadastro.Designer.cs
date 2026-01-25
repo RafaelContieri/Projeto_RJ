@@ -48,23 +48,20 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btn_excluir_foto = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btn_upload_picture = new System.Windows.Forms.Button();
             this.picture_imagemUsuario = new System.Windows.Forms.PictureBox();
-            this.grbOpcoes = new System.Windows.Forms.GroupBox();
             this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
-            this.projetorjDataSet61BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projeto_rjDataSet7 = new Projeto_RJ.projeto_rjDataSet7();
             this.acessosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet7 = new Projeto_RJ.projeto_rjDataSet7();
+            this.projetorjDataSet61BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet7TableAdapters.acessosTableAdapter();
+            this.btn_upload_picture = new System.Windows.Forms.Button();
+            this.btn_excluir_foto = new System.Windows.Forms.Button();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).BeginInit();
-            this.grbOpcoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -250,37 +247,6 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // btn_excluir_foto
-            // 
-            this.btn_excluir_foto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_excluir_foto.BackgroundImage")));
-            this.btn_excluir_foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_excluir_foto.Location = new System.Drawing.Point(151, 16);
-            this.btn_excluir_foto.Name = "btn_excluir_foto";
-            this.btn_excluir_foto.Size = new System.Drawing.Size(29, 32);
-            this.btn_excluir_foto.TabIndex = 9;
-            this.btn_excluir_foto.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefresh.Location = new System.Drawing.Point(89, 16);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(29, 32);
-            this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btn_upload_picture
-            // 
-            this.btn_upload_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_upload_picture.BackgroundImage")));
-            this.btn_upload_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_upload_picture.Location = new System.Drawing.Point(26, 17);
-            this.btn_upload_picture.Name = "btn_upload_picture";
-            this.btn_upload_picture.Size = new System.Drawing.Size(30, 32);
-            this.btn_upload_picture.TabIndex = 7;
-            this.btn_upload_picture.UseVisualStyleBackColor = true;
-            this.btn_upload_picture.Click += new System.EventHandler(this.btn_upload_picture_Click);
-            // 
             // picture_imagemUsuario
             // 
             this.picture_imagemUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picture_imagemUsuario.BackgroundImage")));
@@ -291,17 +257,6 @@
             this.picture_imagemUsuario.TabIndex = 10;
             this.picture_imagemUsuario.TabStop = false;
             this.picture_imagemUsuario.Click += new System.EventHandler(this.picture_imagemUsuario_Click);
-            // 
-            // grbOpcoes
-            // 
-            this.grbOpcoes.Controls.Add(this.btn_upload_picture);
-            this.grbOpcoes.Controls.Add(this.btn_excluir_foto);
-            this.grbOpcoes.Controls.Add(this.btnRefresh);
-            this.grbOpcoes.Location = new System.Drawing.Point(898, 321);
-            this.grbOpcoes.Name = "grbOpcoes";
-            this.grbOpcoes.Size = new System.Drawing.Size(200, 64);
-            this.grbOpcoes.TabIndex = 19;
-            this.grbOpcoes.TabStop = false;
             // 
             // cmb_Grupo_usuario
             // 
@@ -315,27 +270,52 @@
             this.cmb_Grupo_usuario.TabIndex = 37;
             this.cmb_Grupo_usuario.ValueMember = "ID";
             // 
-            // projeto_rjDataSet7
-            // 
-            this.projeto_rjDataSet7.DataSetName = "projeto_rjDataSet7";
-            this.projeto_rjDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // acessosBindingSource
             // 
             this.acessosBindingSource.DataMember = "acessos";
             this.acessosBindingSource.DataSource = this.projeto_rjDataSet7;
             // 
+            // projeto_rjDataSet7
+            // 
+            this.projeto_rjDataSet7.DataSetName = "projeto_rjDataSet7";
+            this.projeto_rjDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // acessosTableAdapter
             // 
             this.acessosTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_upload_picture
+            // 
+            this.btn_upload_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_upload_picture.BackgroundImage")));
+            this.btn_upload_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_upload_picture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_upload_picture.Location = new System.Drawing.Point(953, 324);
+            this.btn_upload_picture.Name = "btn_upload_picture";
+            this.btn_upload_picture.Size = new System.Drawing.Size(30, 32);
+            this.btn_upload_picture.TabIndex = 38;
+            this.btn_upload_picture.UseVisualStyleBackColor = true;
+            this.btn_upload_picture.Click += new System.EventHandler(this.btn_upload_picture_Click_1);
+            // 
+            // btn_excluir_foto
+            // 
+            this.btn_excluir_foto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_excluir_foto.BackgroundImage")));
+            this.btn_excluir_foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_excluir_foto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_excluir_foto.Location = new System.Drawing.Point(1016, 324);
+            this.btn_excluir_foto.Name = "btn_excluir_foto";
+            this.btn_excluir_foto.Size = new System.Drawing.Size(29, 32);
+            this.btn_excluir_foto.TabIndex = 39;
+            this.btn_excluir_foto.UseVisualStyleBackColor = true;
+            this.btn_excluir_foto.Click += new System.EventHandler(this.btn_excluir_foto_Click);
             // 
             // frm_modalCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 641);
+            this.Controls.Add(this.btn_upload_picture);
+            this.Controls.Add(this.btn_excluir_foto);
             this.Controls.Add(this.cmb_Grupo_usuario);
-            this.Controls.Add(this.grbOpcoes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNome);
@@ -362,10 +342,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).EndInit();
-            this.grbOpcoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,9 +363,6 @@
         private System.Windows.Forms.Label lbl_name_header;
         private System.Windows.Forms.PictureBox picture_imagemUsuario;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btn_upload_picture;
-        private System.Windows.Forms.Button btn_excluir_foto;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtSigla;
         private System.Windows.Forms.TextBox txtEmail;
@@ -394,11 +370,12 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.GroupBox grbOpcoes;
         public System.Windows.Forms.ComboBox cmb_Grupo_usuario;
         private System.Windows.Forms.BindingSource projetorjDataSet61BindingSource;
         private projeto_rjDataSet7 projeto_rjDataSet7;
         private System.Windows.Forms.BindingSource acessosBindingSource;
         private projeto_rjDataSet7TableAdapters.acessosTableAdapter acessosTableAdapter;
+        private System.Windows.Forms.Button btn_upload_picture;
+        private System.Windows.Forms.Button btn_excluir_foto;
     }
 }

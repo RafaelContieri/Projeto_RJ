@@ -124,7 +124,7 @@
   <data name="btn_refreshSenha.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAtNJREFUWEfFlzmLFUEUhY8zgmMyBm6MIILiCv4DMdERzTURAzF1wX/gAvoXRNxC
+        DAAACwwBP0AiyAAAAtNJREFUWEfFlzmLFUEUhY8zgmMyBm6MIILiCv4DMdERzTURAzF1wX/gAvoXRNxC
         wcQBNdBEXDIVccNMf4IiuK98zT2P++p1P9s3Le9A0dXdVadO3bp165b0d0zEc5GkXZIuSXol6Z2kX1He
         S3op6aKkWUkLi76tsSDVTbJK0n1Jv6MwoOtlyf8eSlpdcNXitaS3ko7HOyKs/GaQ/UjkHyU9knRB0ilJ
         ZyRdlvRM0vdo8zP6UL8VXJPxHIAVn4x3Bl8RZJBAxv+raUbDsFnS7STcHEubRFjAiXjfFO+f43lP0lT8
@@ -140,24 +140,6 @@
 </value>
   </data>
   <metadata name="panel_senhaChamada.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Senha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Mesa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Guichê.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

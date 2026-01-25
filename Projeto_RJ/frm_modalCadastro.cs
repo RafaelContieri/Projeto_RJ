@@ -42,18 +42,13 @@ namespace Projeto_RJ
             if (picture_imagemUsuario == null) //se a imagem estiver vazia
             {
                 btn_excluir_foto.Enabled = false;
-                btnRefresh.Enabled = false;
                 btn_upload_picture.Enabled = true;
             }
             else //se a imagem estiver carregada
             {
                 btn_excluir_foto.Enabled = true;
-                btnRefresh.Enabled = true;
                 btn_upload_picture.Enabled = false;
             }
-            
-
-
 
         }
 
@@ -95,14 +90,12 @@ namespace Projeto_RJ
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void btn_upload_picture_Click(object sender, EventArgs e)
         {
-            btn_excluir_foto.Enabled = true;
-            btnRefresh.Enabled = true;
-            btn_upload_picture.Enabled = false;
+            
         }
 
         private void picture_imagemUsuario_Click(object sender, EventArgs e)
@@ -119,5 +112,17 @@ namespace Projeto_RJ
         {
 
         }
+
+        private void btn_upload_picture_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_excluir_foto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
