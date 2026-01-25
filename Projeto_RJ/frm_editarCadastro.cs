@@ -158,10 +158,54 @@ namespace Projeto_RJ
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)         
         {
-            // Aqui você faz o UPDATE dos campos de texto (Nome, Email, etc)
+            if (idUsuarioEdicao == null)
+            {
+                MessageBox.Show("Erro: Nenhum usuário identificado para edição.");
+                return;
+            }
+
+            string strCon = "Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
+
+            // (A foto já atualiza sozinha nos outros botões, então não precisa por aqui, mas se quiser garantir, pode deixar)
+            string sql = @"UPDATE usuarios 
+                   SET nome = @nome, 
+                       email = @email, 
+                       sigla = @sigla, 
+                       login = @login, 
+                       senha = @senha, 
+                       grupo = @grupo 
+                   WHERE id = @id";
+
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                try
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@nome", txtNome_editar.Text);
+                        cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text);
+                        cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text);
+                        cmd.Parameters.AddWithValue("@login", txtLogin_editar.Text);
+                        cmd.Parameters.AddWithValue("@senha", txtSenha_editar.Text);
+                        cmd.Parameters.AddWithValue("@grupo", txtGrupoUsuario_editar.Text);
+                        cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Dados do usuário atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Fecha a tela e volta pra lista
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao salvar alterações: " + ex.Message);
+                }
+            }
         }
+        
 
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
