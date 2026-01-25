@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projeto_RJ
 {
     public partial class frm_editarCadastro : Form
     {
+        // Variáveis globais da tela
         private int? idUsuarioEdicao = null;
         public string fotoBase64 = "";
 
-        public frm_editarCadastro(int idSelecionado, string nomeSelecionado, string emailSelecionado, string siglaSelecionado, string usuarioSelecionado, string senhaSelecionada, string acessoSelecionado, string fotoSelecionada)
+        // String de conexão (Centralizada para não errar)
+        string stringConexao = @"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
+
+        // CONSTRUTOR: Arrumei a ordem dos parâmetros para bater com a tela anterior
+        public frm_editarCadastro(int idSelecionado, string nomeSelecionado, string emailSelecionado, string usuarioSelecionado, string siglaSelecionado, string senhaSelecionada, string acessoSelecionado, string fotoSelecionada)
         {
             InitializeComponent();
 
@@ -25,28 +24,37 @@ namespace Projeto_RJ
             this.idUsuarioEdicao = idSelecionado;
             this.fotoBase64 = fotoSelecionada;
 
-            // 2. Preenche os campos de texto
+            // 2. Preenche os campos de texto (Agora na ordem certa!)
             txtNome_editar.Text = nomeSelecionado;
-            txtSigla_editar.Text = usuarioSelecionado;
             txtEmail_editar.Text = emailSelecionado;
-            txtLogin_editar.Text = siglaSelecionado;
+
+            // AQUI ESTAVA A CONFUSÃO: Agora Login vai pro Login e Sigla vai pra Sigla
+            txtLogin_editar.Text = usuarioSelecionado;
+            txtSigla_editar.Text = siglaSelecionado;
+
             txtSenha_editar.Text = senhaSelecionada;
             cmb_Grupo_usuario.Text = acessoSelecionado;
 
-            // --- LOGICA PARA TRAZER A FOTO ---
-            if (!string.IsNullOrEmpty(fotoSelecionada))
+            // 3. LOGICA PARA TRAZER A FOTO
+            CarregarFotoNaTela(fotoSelecionada);
+        }
+
+        // Método separado para carregar a foto (fica mais organizado)
+        private void CarregarFotoNaTela(string base64String)
+        {
+            if (!string.IsNullOrEmpty(base64String))
             {
                 try
                 {
-                    byte[] imageBytes = Convert.FromBase64String(fotoSelecionada);
+                    byte[] imageBytes = Convert.FromBase64String(base64String);
                     using (MemoryStream ms = new MemoryStream(imageBytes))
                     {
                         foto_usuario_edicao.Image = Image.FromStream(ms);
-                        foto_usuario_edicao.SizeMode = PictureBoxSizeMode.Normal;
-                        btn_excluir_foto.Enabled = true; // Ativa se houver foto
+                        foto_usuario_edicao.SizeMode = PictureBoxSizeMode.StretchImage; // Mudei para Stretch ou Zoom para caber melhor
+                        btn_excluir_foto.Enabled = true;
                     }
                 }
-                catch (Exception)
+                catch
                 {
                     foto_usuario_edicao.Image = null;
                     btn_excluir_foto.Enabled = false;
@@ -58,47 +66,127 @@ namespace Projeto_RJ
             }
         }
 
+        // BOTÃO SALVAR (O VERDE) - CORRIGIDO E ROBUSTO
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            // Segurança: Verifica se temos o ID para editar
+            if (idUsuarioEdicao == null || idUsuarioEdicao == 0)
+            {
+                MessageBox.Show("Erro: Usuário não identificado para edição.");
+                return;
+            }
+
+            // O comando SQL UPDATE
+            string sql = @"UPDATE usuarios 
+                           SET nome = @nome, 
+                               email = @email, 
+                               sigla = @sigla, 
+                               usuario = @usuario, 
+                               senha = @senha, 
+                               acesso = @acesso 
+                           WHERE id = @id";
+
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                try
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        // Passando os valores corretos das caixas de texto
+                        cmd.Parameters.AddWithValue("@nome", txtNome_editar.Text);
+                        cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text);
+                        cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text);
+                        cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text); // Login
+                        cmd.Parameters.AddWithValue("@senha", txtSenha_editar.Text);
+                        cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
+                        cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Usuário atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Fecha a tela para atualizar o Grid lá atrás
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao salvar: " + ex.Message);
+                }
+            }
+        }
+
+        // BOTÃO UPLOAD DE FOTO
         private void btn_upload_picture_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Imagens (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                using (Image imgOriginal = Image.FromFile(openFileDialog1.FileName))
+                try
                 {
-                    foto_usuario_edicao.Image = EnquadrarPerfil(imgOriginal, 200, 200);
-                    btn_excluir_foto.Enabled = true;
-
-                    using (MemoryStream ms = new MemoryStream())
+                    using (Image imgOriginal = Image.FromFile(openFileDialog1.FileName))
                     {
-                        foto_usuario_edicao.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        fotoBase64 = Convert.ToBase64String(ms.ToArray());
+                        // Redimensiona para não pesar no banco
+                        Image imgRedimensionada = EnquadrarPerfil(imgOriginal, 200, 200);
+                        foto_usuario_edicao.Image = imgRedimensionada;
+                        btn_excluir_foto.Enabled = true;
+
+                        // Converte para Base64
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            imgRedimensionada.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            fotoBase64 = Convert.ToBase64String(ms.ToArray());
+                        }
                     }
+
+                    // Salva a foto IMEDIATAMENTE no banco
+                    SalvarApenasFoto(fotoBase64);
                 }
-
-                // Atualização imediata no banco
-                string strCon = "Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
-                string sql = "UPDATE usuarios SET imgbase64 = @img WHERE id = @id";
-
-                using (SqlConnection con = new SqlConnection(strCon))
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        SqlCommand cmd = new SqlCommand(sql, con);
-                        cmd.Parameters.AddWithValue("@img", fotoBase64);
-                        cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Foto atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro ao salvar foto: " + ex.Message);
-                    }
+                    MessageBox.Show("Erro ao carregar imagem: " + ex.Message);
                 }
             }
         }
 
+        // Método auxiliar para salvar só a foto
+        private void SalvarApenasFoto(string novaBase64)
+        {
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                try
+                {
+                    string sql = "UPDATE usuarios SET imgbase64 = @img WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@img", novaBase64);
+                    cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Foto atualizada!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao salvar foto no banco: " + ex.Message);
+                }
+            }
+        }
+
+        // BOTÃO EXCLUIR FOTO
+        private void btn_excluir_foto_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Excluir foto?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SalvarApenasFoto(""); // Salva vazio no banco
+                foto_usuario_edicao.Image = null;
+                fotoBase64 = "";
+                btn_excluir_foto.Enabled = false;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
+
+        // Função de Redimensionar (Mantive a sua que estava ótima)
         public Image EnquadrarPerfil(Image img, int larguraAlvo, int alturaAlvo)
         {
             var canvas = new Bitmap(larguraAlvo, alturaAlvo);
@@ -120,127 +208,21 @@ namespace Projeto_RJ
             return canvas;
         }
 
-        private void btn_excluir_foto_Click(object sender, EventArgs e) // botao para excluir foto
-        {
-            // 1. Confirmação (Boa prática para evitar cliques acidentais)
-            DialogResult confirmacao = MessageBox.Show("Deseja realmente excluir a foto deste usuário permanentemente?", "Confirmar Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        // -------------------------------------------------------------------------
+        // COLE ISSO LÁ NO FINAL, ANTES DO ÚLTIMO "}" PARA PARAR O ERRO
+        // Esses métodos servem apenas para satisfazer o Designer do Visual Studio
+        // -------------------------------------------------------------------------
 
-            if (confirmacao == DialogResult.Yes)
-            {
-                // 2. String de conexão (a mesma que você usou no upload)
-                string strCon = "Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
+        private void txtNome_editar_TextChanged(object sender, EventArgs e) { }
 
-                // 3. SQL para limpar a imagem (setando como vazio ou NULL)
-                string sql = "UPDATE usuarios SET imgbase64 = '' WHERE id = @id";
+        private void txtSenha_editar_TextChanged(object sender, EventArgs e) { }
 
-                using (SqlConnection con = new SqlConnection(strCon))
-                {
-                    try
-                    {
-                        SqlCommand cmd = new SqlCommand(sql, con);
-                        cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
+        private void txtEmail_editar_TextChanged(object sender, EventArgs e) { }
 
-                        con.Open();
-                        cmd.ExecuteNonQuery();
+        private void txtSigla_editar_TextChanged(object sender, EventArgs e) { }
 
-                        // 4. Limpeza da Interface Visual
-                        foto_usuario_edicao.Image = null;
-                        fotoBase64 = ""; // Limpa a variável local
-                        btn_excluir_foto.Enabled = false; // Desativa o botão
+        private void txtLogin_editar_TextChanged(object sender, EventArgs e) { }
 
-                        MessageBox.Show("Foto removida com sucesso do servidor!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro ao excluir foto no banco: " + ex.Message);
-                    }
-                }
-            }
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)         
-        {
-            if (idUsuarioEdicao == null)
-            {
-                MessageBox.Show("Erro: Nenhum usuário identificado para edição.");
-                return;
-            }
-
-            string strCon = "Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
-
-            // (A foto já atualiza sozinha nos outros botões, então não precisa por aqui, mas se quiser garantir, pode deixar)
-            string sql = @"UPDATE usuarios 
-                   SET nome = @nome, 
-                       email = @email, 
-                       sigla = @sigla, 
-                       usuario = @usuario, 
-                       senha = @senha, 
-                       acesso = @acesso 
-                   WHERE id = @id";
-
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                try
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(sql, con))
-                    {
-                        cmd.Parameters.AddWithValue("@nome", txtNome_editar.Text);
-                        cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text);
-                        cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text);
-                        cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text);
-                        cmd.Parameters.AddWithValue("@senha", txtSenha_editar.Text);
-                        cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
-                        cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
-
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Dados do usuário atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); // Fecha a tela e volta pra lista
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao salvar alterações: " + ex.Message);
-                }
-            }
-        }
-        
-
-        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
-
-        private void txtNome_editar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSigla_editar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_editar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void txtLogin_editar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSenha_editar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void foto_usuario_edicao_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // Métodos vazios ignorados para brevidade...
+        private void foto_usuario_edicao_Click(object sender, EventArgs e) { }
     }
 }
