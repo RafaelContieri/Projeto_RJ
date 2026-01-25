@@ -39,8 +39,8 @@
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
-            this.projeto_rjDataSet5 = new Projeto_RJ.projeto_rjDataSet5();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet5 = new Projeto_RJ.projeto_rjDataSet5();
             this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet5TableAdapters.usuariosTableAdapter();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +55,8 @@
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet5)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -135,6 +135,7 @@
             // btn_cadastrar_usuario
             // 
             this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_cadastrar_usuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cadastrar_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cadastrar_usuario.Location = new System.Drawing.Point(1652, 175);
             this.btn_cadastrar_usuario.Name = "btn_cadastrar_usuario";
@@ -148,6 +149,7 @@
             // 
             this.tbl_usuarios.AllowUserToOrderColumns = true;
             this.tbl_usuarios.AutoGenerateColumns = false;
+            this.tbl_usuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.tbl_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbl_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -161,21 +163,21 @@
             this.btn_excluir,
             this.btn_editar});
             this.tbl_usuarios.DataSource = this.usuariosBindingSource;
-            this.tbl_usuarios.Location = new System.Drawing.Point(2, 229);
+            this.tbl_usuarios.Location = new System.Drawing.Point(2, 218);
             this.tbl_usuarios.Name = "tbl_usuarios";
-            this.tbl_usuarios.Size = new System.Drawing.Size(1900, 548);
+            this.tbl_usuarios.Size = new System.Drawing.Size(1900, 826);
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
-            // 
-            // projeto_rjDataSet5
-            // 
-            this.projeto_rjDataSet5.DataSetName = "projeto_rjDataSet5";
-            this.projeto_rjDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "usuarios";
             this.usuariosBindingSource.DataSource = this.projeto_rjDataSet5;
+            // 
+            // projeto_rjDataSet5
+            // 
+            this.projeto_rjDataSet5.DataSetName = "projeto_rjDataSet5";
+            this.projeto_rjDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuariosTableAdapter
             // 
@@ -185,44 +187,58 @@
             // 
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "id";
+            this.id.MinimumWidth = 50;
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Width = 50;
             // 
             // nome
             // 
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "nome";
+            this.nome.MinimumWidth = 250;
             this.nome.Name = "nome";
+            this.nome.Width = 250;
             // 
             // sigla
             // 
             this.sigla.DataPropertyName = "sigla";
             this.sigla.HeaderText = "sigla";
+            this.sigla.MinimumWidth = 50;
             this.sigla.Name = "sigla";
+            this.sigla.Width = 50;
             // 
             // email
             // 
             this.email.DataPropertyName = "email";
             this.email.HeaderText = "email";
+            this.email.MinimumWidth = 250;
             this.email.Name = "email";
+            this.email.Width = 250;
             // 
             // usuario
             // 
             this.usuario.DataPropertyName = "usuario";
             this.usuario.HeaderText = "usuario";
+            this.usuario.MinimumWidth = 250;
             this.usuario.Name = "usuario";
+            this.usuario.Width = 250;
             // 
             // senha
             // 
+            this.senha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.senha.DataPropertyName = "senha";
             this.senha.HeaderText = "senha";
+            this.senha.MinimumWidth = 600;
             this.senha.Name = "senha";
             // 
             // acesso
             // 
             this.acesso.DataPropertyName = "acesso";
             this.acesso.HeaderText = "acesso";
+            this.acesso.MinimumWidth = 50;
             this.acesso.Name = "acesso";
+            this.acesso.Width = 50;
             // 
             // base64
             // 
@@ -275,8 +291,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

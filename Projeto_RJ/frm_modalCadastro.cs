@@ -34,10 +34,12 @@ namespace Projeto_RJ
 
         }
 
-        private void frm_modalCadastro_Load(object sender, EventArgs e) //aplicar lógica para que, quando a imagem nao estiver carregada, os botões de excluir e refresh fiquem desabilitados
+        public void frm_modalCadastro_Load(object sender, EventArgs e) //aplicar lógica para que, quando a imagem nao estiver carregada, os botões de excluir e refresh fiquem desabilitados
         {
+            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet7.acessos'. Você pode movê-la ou removê-la conforme necessário.
+            this.acessosTableAdapter.Fill(this.projeto_rjDataSet7.acessos);
 
-            if(picture_imagemUsuario == null) //se a imagem estiver vazia
+            if (picture_imagemUsuario == null) //se a imagem estiver vazia
             {
                 btn_excluir_foto.Enabled = false;
                 btnRefresh.Enabled = false;
@@ -50,7 +52,9 @@ namespace Projeto_RJ
                 btn_upload_picture.Enabled = false;
             }
             
-          
+
+
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e) // BOTÃO SALVAR USUÁRIO
@@ -68,7 +72,7 @@ namespace Projeto_RJ
             novoUser.Login = txtLogin.Text;
             novoUser.Senha = txtSenha.Text;
             novoUser.Sigla = txtSigla.Text;
-            novoUser.Grupo = txtGrupoUsuario.Text;
+            novoUser.Grupo = cmb_Grupo_usuario.Text;
 
 
             // GRAVAÇÃO: Joga o usuário dentro da nossa lista estática
@@ -86,7 +90,7 @@ namespace Projeto_RJ
             txtLogin.Text = "";
             txtSenha.Text = "";
             txtSigla.Text = "";
-            txtGrupoUsuario.Text = "";
+            cmb_Grupo_usuario.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -107,6 +111,11 @@ namespace Projeto_RJ
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

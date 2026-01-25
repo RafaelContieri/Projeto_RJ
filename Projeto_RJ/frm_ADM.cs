@@ -33,6 +33,8 @@ namespace Projeto_RJ
         private void frm_ADM_Load(object sender, EventArgs e)
         {
             // COLOCAR VALIDAÇÃO DE LOGIN DE ADMINISTRADOR AQUI PARA DESATIVAR BOTÃO DE GESTÃO DE SENHAS SE NÃO FOR ADMIN
+            //ESSA VALIDAÇÃO VAI DEPENDER DO MODAL DO USUARIO LOGADO, OU SEJA SE FOR ADMINISTRADOR, DEIXA O BOTÃO ATIVO, SE NÃO FOR, DESATIVA O BOTÃO
+
 
 
         }

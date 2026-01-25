@@ -31,6 +31,7 @@ namespace Projeto_RJ
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_editarCadastro));
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@ namespace Projeto_RJ
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtNome_editar = new System.Windows.Forms.TextBox();
             this.txtSenha_editar = new System.Windows.Forms.TextBox();
-            this.txtGrupoUsuario_editar = new System.Windows.Forms.TextBox();
             this.txtEmail_editar = new System.Windows.Forms.TextBox();
             this.txtSigla_editar = new System.Windows.Forms.TextBox();
             this.txtLogin_editar = new System.Windows.Forms.TextBox();
@@ -54,9 +54,15 @@ namespace Projeto_RJ
             this.btn_excluir_foto = new System.Windows.Forms.Button();
             this.btn_upload_picture = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
+            this.projeto_rjDataSet6 = new Projeto_RJ.projeto_rjDataSet6();
+            this.acessosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet6TableAdapters.acessosTableAdapter();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -148,15 +154,6 @@ namespace Projeto_RJ
             this.txtSenha_editar.Size = new System.Drawing.Size(256, 22);
             this.txtSenha_editar.TabIndex = 31;
             this.txtSenha_editar.TextChanged += new System.EventHandler(this.txtSenha_editar_TextChanged);
-            // 
-            // txtGrupoUsuario_editar
-            // 
-            this.txtGrupoUsuario_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrupoUsuario_editar.Location = new System.Drawing.Point(564, 260);
-            this.txtGrupoUsuario_editar.Name = "txtGrupoUsuario_editar";
-            this.txtGrupoUsuario_editar.Size = new System.Drawing.Size(256, 22);
-            this.txtGrupoUsuario_editar.TabIndex = 30;
-            this.txtGrupoUsuario_editar.TextChanged += new System.EventHandler(this.txtGrupoUsuario_editar_TextChanged);
             // 
             // txtEmail_editar
             // 
@@ -294,18 +291,44 @@ namespace Projeto_RJ
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // cmb_Grupo_usuario
+            // 
+            this.cmb_Grupo_usuario.DataSource = this.acessosBindingSource;
+            this.cmb_Grupo_usuario.DisplayMember = "NomeMenu";
+            this.cmb_Grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Grupo_usuario.FormattingEnabled = true;
+            this.cmb_Grupo_usuario.Location = new System.Drawing.Point(564, 260);
+            this.cmb_Grupo_usuario.Name = "cmb_Grupo_usuario";
+            this.cmb_Grupo_usuario.Size = new System.Drawing.Size(248, 24);
+            this.cmb_Grupo_usuario.TabIndex = 36;
+            this.cmb_Grupo_usuario.ValueMember = "ID";
+            // 
+            // projeto_rjDataSet6
+            // 
+            this.projeto_rjDataSet6.DataSetName = "projeto_rjDataSet6";
+            this.projeto_rjDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // acessosBindingSource
+            // 
+            this.acessosBindingSource.DataMember = "acessos";
+            this.acessosBindingSource.DataSource = this.projeto_rjDataSet6;
+            // 
+            // acessosTableAdapter
+            // 
+            this.acessosTableAdapter.ClearBeforeFill = true;
+            // 
             // frm_editarCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 641);
+            this.Controls.Add(this.cmb_Grupo_usuario);
             this.Controls.Add(this.btn_upload_picture);
             this.Controls.Add(this.btn_excluir_foto);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNome_editar);
             this.Controls.Add(this.txtSenha_editar);
-            this.Controls.Add(this.txtGrupoUsuario_editar);
             this.Controls.Add(this.txtEmail_editar);
             this.Controls.Add(this.txtSigla_editar);
             this.Controls.Add(this.txtLogin_editar);
@@ -326,6 +349,8 @@ namespace Projeto_RJ
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,7 +364,6 @@ namespace Projeto_RJ
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtNome_editar;
         private System.Windows.Forms.TextBox txtSenha_editar;
-        private System.Windows.Forms.TextBox txtGrupoUsuario_editar;
         private System.Windows.Forms.TextBox txtEmail_editar;
         private System.Windows.Forms.TextBox txtSigla_editar;
         private System.Windows.Forms.TextBox txtLogin_editar;
@@ -360,10 +384,10 @@ namespace Projeto_RJ
             {
                 // Esta linha é a "chave" para resolver o erro de ConstraintException
                 // Ela diz ao DataSet para não travar se encontrar dados nulos ou grandes demais
-                
+                this.acessosTableAdapter.Fill(this.projeto_rjDataSet6.acessos);
 
                 // O Visual Studio costuma colocar a linha de Fill aqui embaixo:
-                // this.usuariosTableAdapter.Fill(this.projeto_rjDataSet4.usuarios);
+
             }
             catch (Exception ex)
             {
@@ -372,5 +396,9 @@ namespace Projeto_RJ
             }
         }
 
+        public ComboBox cmb_Grupo_usuario;
+        private projeto_rjDataSet6 projeto_rjDataSet6;
+        private BindingSource acessosBindingSource;
+        private projeto_rjDataSet6TableAdapters.acessosTableAdapter acessosTableAdapter;
     }
 }

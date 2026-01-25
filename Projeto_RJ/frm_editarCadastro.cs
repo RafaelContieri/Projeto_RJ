@@ -31,7 +31,7 @@ namespace Projeto_RJ
             txtEmail_editar.Text = emailSelecionado;
             txtLogin_editar.Text = siglaSelecionado;
             txtSenha_editar.Text = senhaSelecionada;
-            txtGrupoUsuario_editar.Text = acessoSelecionado;
+            cmb_Grupo_usuario.Text = acessoSelecionado;
 
             // --- LOGICA PARA TRAZER A FOTO ---
             if (!string.IsNullOrEmpty(fotoSelecionada))
@@ -190,7 +190,7 @@ namespace Projeto_RJ
                         cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text);
                         cmd.Parameters.AddWithValue("@login", txtLogin_editar.Text);
                         cmd.Parameters.AddWithValue("@senha", txtSenha_editar.Text);
-                        cmd.Parameters.AddWithValue("@grupo", txtGrupoUsuario_editar.Text);
+                        cmd.Parameters.AddWithValue("@grupo", cmb_Grupo_usuario.Text);
                         cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
 
                         cmd.ExecuteNonQuery();
@@ -224,10 +224,7 @@ namespace Projeto_RJ
 
         }
 
-        private void txtGrupoUsuario_editar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void txtLogin_editar_TextChanged(object sender, EventArgs e)
         {

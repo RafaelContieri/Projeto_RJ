@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_modalCadastro));
             this.lbl_login = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.txtSigla = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtGrupoUsuario = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -53,10 +53,18 @@
             this.btn_upload_picture = new System.Windows.Forms.Button();
             this.picture_imagemUsuario = new System.Windows.Forms.PictureBox();
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
+            this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
+            this.projetorjDataSet61BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet7 = new Projeto_RJ.projeto_rjDataSet7();
+            this.acessosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet7TableAdapters.acessosTableAdapter();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).BeginInit();
             this.grbOpcoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -157,6 +165,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1262, 85);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lbl_name_header
             // 
@@ -206,14 +215,6 @@
             this.txtNome.Size = new System.Drawing.Size(424, 22);
             this.txtNome.TabIndex = 1;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
-            // 
-            // txtGrupoUsuario
-            // 
-            this.txtGrupoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrupoUsuario.Location = new System.Drawing.Point(561, 249);
-            this.txtGrupoUsuario.Name = "txtGrupoUsuario";
-            this.txtGrupoUsuario.Size = new System.Drawing.Size(256, 22);
-            this.txtGrupoUsuario.TabIndex = 5;
             // 
             // txtSenha
             // 
@@ -302,17 +303,43 @@
             this.grbOpcoes.TabIndex = 19;
             this.grbOpcoes.TabStop = false;
             // 
+            // cmb_Grupo_usuario
+            // 
+            this.cmb_Grupo_usuario.DataSource = this.acessosBindingSource;
+            this.cmb_Grupo_usuario.DisplayMember = "NomeMenu";
+            this.cmb_Grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Grupo_usuario.FormattingEnabled = true;
+            this.cmb_Grupo_usuario.Location = new System.Drawing.Point(561, 247);
+            this.cmb_Grupo_usuario.Name = "cmb_Grupo_usuario";
+            this.cmb_Grupo_usuario.Size = new System.Drawing.Size(248, 24);
+            this.cmb_Grupo_usuario.TabIndex = 37;
+            this.cmb_Grupo_usuario.ValueMember = "ID";
+            // 
+            // projeto_rjDataSet7
+            // 
+            this.projeto_rjDataSet7.DataSetName = "projeto_rjDataSet7";
+            this.projeto_rjDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // acessosBindingSource
+            // 
+            this.acessosBindingSource.DataMember = "acessos";
+            this.acessosBindingSource.DataSource = this.projeto_rjDataSet7;
+            // 
+            // acessosTableAdapter
+            // 
+            this.acessosTableAdapter.ClearBeforeFill = true;
+            // 
             // frm_modalCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 641);
+            this.Controls.Add(this.cmb_Grupo_usuario);
             this.Controls.Add(this.grbOpcoes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtGrupoUsuario);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSigla);
             this.Controls.Add(this.txtLogin);
@@ -336,6 +363,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).EndInit();
             this.grbOpcoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,10 +391,14 @@
         private System.Windows.Forms.TextBox txtSigla;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtGrupoUsuario;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox grbOpcoes;
+        public System.Windows.Forms.ComboBox cmb_Grupo_usuario;
+        private System.Windows.Forms.BindingSource projetorjDataSet61BindingSource;
+        private projeto_rjDataSet7 projeto_rjDataSet7;
+        private System.Windows.Forms.BindingSource acessosBindingSource;
+        private projeto_rjDataSet7TableAdapters.acessosTableAdapter acessosTableAdapter;
     }
 }
