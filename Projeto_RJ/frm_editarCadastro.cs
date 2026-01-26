@@ -20,22 +20,17 @@ namespace Projeto_RJ
         {
             InitializeComponent();
 
-            // 1. Guarda o ID e a String da Foto
+            
             this.idUsuarioEdicao = idSelecionado;
             this.fotoBase64 = fotoSelecionada;
-
-            // 2. Preenche os campos de texto (Agora na ordem certa!)
+            cmb_Grupo_usuario.Text = acessoSelecionado;
             txtNome_editar.Text = nomeSelecionado;
             txtEmail_editar.Text = emailSelecionado;
-
-            // AQUI ESTAVA A CONFUSÃO: Agora Login vai pro Login e Sigla vai pra Sigla
             txtLogin_editar.Text = usuarioSelecionado;
             txtSigla_editar.Text = siglaSelecionado;
-
             txtSenha_editar.Text = senhaSelecionada;
-            cmb_Grupo_usuario.Text = acessoSelecionado;
 
-            // 3. LOGICA PARA TRAZER A FOTO
+          
             CarregarFotoNaTela(fotoSelecionada);
         }
 
@@ -208,10 +203,6 @@ namespace Projeto_RJ
             return canvas;
         }
 
-        // -------------------------------------------------------------------------
-        // COLE ISSO LÁ NO FINAL, ANTES DO ÚLTIMO "}" PARA PARAR O ERRO
-        // Esses métodos servem apenas para satisfazer o Designer do Visual Studio
-        // -------------------------------------------------------------------------
 
         private void txtNome_editar_TextChanged(object sender, EventArgs e) { }
 
@@ -224,5 +215,10 @@ namespace Projeto_RJ
         private void txtLogin_editar_TextChanged(object sender, EventArgs e) { }
 
         private void foto_usuario_edicao_Click(object sender, EventArgs e) { }
+
+        private void cmb_Grupo_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

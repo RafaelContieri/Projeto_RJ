@@ -29,7 +29,7 @@ namespace Projeto_RJ
 
 
 
-        private void CarregarDadosGrid() // RECRIA O MÉTODO PARA ATUALIZAR O GRID APÓS UMA EXCLUSÃO
+        public void CarregarDadosGrid() // RECRIA O MÉTODO PARA ATUALIZAR O GRID APÓS UMA EXCLUSÃO
         {
             try
             {
@@ -63,7 +63,7 @@ namespace Projeto_RJ
                 bs.RemoveFilter();
                 tbl_usuarios.DataSource = bs;
 
-                //CarregarDadosGrid();
+                CarregarDadosGrid();
             }
         }
 
@@ -103,9 +103,7 @@ namespace Projeto_RJ
         {
             if (e.RowIndex < 0) return;
 
-            // Captura o ID da linha clicada
-            // Certifique-se que o nome da coluna no Grid é "Id" ou use o índice (ex: Cells[0])
-            //AO CLICAR NO BOTÃO PARA EDITAR OU EXCLUIR, ELE CAPTURA TODOS OS DADOS DA LINHA SELECIONADA (NESSE CASO PARA IMPUTAR OS DADOS NA TELA DE EDIÇÃO)
+            
 
 
             int idSelecionado = Convert.ToInt32(tbl_usuarios.Rows[e.RowIndex].Cells["id"].Value);
@@ -116,6 +114,10 @@ namespace Projeto_RJ
             string senhaSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
             string acessoSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["acesso"].Value.ToString();
             string fotoSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["base64"].Value.ToString();
+
+            
+
+            //MessageBox.Show("acesso: " + acessoSelecionado);
 
 
 

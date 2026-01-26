@@ -122,9 +122,7 @@
     <Compile Include="frm_config.Designer.cs">
       <DependentUpon>frm_config.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_telaLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_telaLogin.cs" />
     <Compile Include="frm_telaLogin.Designer.cs">
       <DependentUpon>frm_telaLogin.cs</DependentUpon>
     </Compile>

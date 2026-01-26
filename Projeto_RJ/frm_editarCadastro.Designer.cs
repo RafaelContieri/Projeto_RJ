@@ -55,14 +55,14 @@ namespace Projeto_RJ
             this.btn_upload_picture = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
-            this.projeto_rjDataSet6 = new Projeto_RJ.projeto_rjDataSet6();
             this.acessosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet6 = new Projeto_RJ.projeto_rjDataSet6();
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet6TableAdapters.acessosTableAdapter();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -301,17 +301,17 @@ namespace Projeto_RJ
             this.cmb_Grupo_usuario.Name = "cmb_Grupo_usuario";
             this.cmb_Grupo_usuario.Size = new System.Drawing.Size(248, 24);
             this.cmb_Grupo_usuario.TabIndex = 36;
-            this.cmb_Grupo_usuario.ValueMember = "ID";
-            // 
-            // projeto_rjDataSet6
-            // 
-            this.projeto_rjDataSet6.DataSetName = "projeto_rjDataSet6";
-            this.projeto_rjDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cmb_Grupo_usuario.SelectedIndexChanged += new System.EventHandler(this.cmb_Grupo_usuario_SelectedIndexChanged);
             // 
             // acessosBindingSource
             // 
             this.acessosBindingSource.DataMember = "acessos";
             this.acessosBindingSource.DataSource = this.projeto_rjDataSet6;
+            // 
+            // projeto_rjDataSet6
+            // 
+            this.projeto_rjDataSet6.DataSetName = "projeto_rjDataSet6";
+            this.projeto_rjDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // acessosTableAdapter
             // 
@@ -349,8 +349,8 @@ namespace Projeto_RJ
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
