@@ -108,7 +108,7 @@ namespace Projeto_RJ
                         cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text.Trim());
                         cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text.Trim());
 
-                        // Enviamos a variável senhaFinal (que já tratou o Hash)
+                        // Enviamos a variável senhaFinal (que já tratou o Hash..)
                         cmd.Parameters.AddWithValue("@senha", senhaFinal);
 
                         cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
