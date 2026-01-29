@@ -125,7 +125,7 @@ namespace Projeto_RJ
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            frm_ADM telaabrir = new frm_ADM();
+            tela_login telaabrir = new tela_login();
             telaabrir.ShowDialog();
         }
 

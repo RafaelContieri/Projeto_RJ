@@ -120,7 +120,22 @@
   <metadata name="dateTimePicker2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="menu_usuario.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_perfil.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        rwAAAK8BK7AVuQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE2SURBVEhLzZW7
+        SgNREEAPikEMaKcEC+0TUPwA/QHtLIJam05QMeIHWIq9lZAunehXWNuKWKhgYWXhIz4YuAvrMPexN40H
+        DiybmbPJsksgTh3oAtfAq1OOD4AJPVyVFnAH/Hi8BZp6KZVZ4MmIah+Ahl5OoWfEfJ7r5RhTwLsR8vkG
+        TOpIiBUjEnNZR0KsGYGYqzoSYskIxFzUkRCjiU9Q4SMwoiMxdo2Qzx29nIL8iksjpr3I+fYFNeAU+DTC
+        H8AJMKaXcpgH9oAzp9y+OT307xgHtoA+cAM8Ay9OOZZz8tmmm63EOnBv3HefMis7SRwbgRS/3W4Q+RPR
+        i1Xd19ECedUHxkJVpbGg48KVMZyrvKB/mAa+jMFcpTVTvsCGMTSs7fIFjoyBYT0sX6DjHjM9lKu0tiX8
+        CwkKKBaql4p9AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

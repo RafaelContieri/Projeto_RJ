@@ -124,6 +124,30 @@
     <value>173, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        rwAAAK8BK7AVuQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFuSURBVEhLtZVJ
+        SgRBEEWf53BCV4J6DxUR7+F0HhU3Ll0rHsUB14quHFcqymsqmyKI6irL7g+fzsqI/JGdGRkBozEP7AOX
+        wB3wUdGxc3vAXFzUBbPAIfAJ/LTwGzgDFqNIEzaA50SojW/AdhSLOKh2FBd3pWs90hTrwFey6K80yFYU
+        96JeE+e+fAFm6gFOEid5VZ1tnC90U/rEeXlUxE3FLFtcOAUsA4+J3Tlt+lwndjUHKeylRKN05wqIGKSI
+        F1vTv9zVwQcTDZnQSvUtHWeBIy908lVGQwxSBP2tj0eJy1sd3xND5BOwWgmLJeAh8Yv06HoHuE/8Is2y
+        yR9R2yVHwWwuris818mSGw3S82vKlphdTWm6o4OPIXtoPp7/PjTL/gDHiUMJ0rQ7qS0Tl/aTIYw07mI3
+        XQ8g1sZYrjejeIF1aWINp8DG06dlesStLbPAZtG16etzCixEkS4whS25VsWbqqxIx86Z58NUzPAL7V+O
+        MAyB2RcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        rwAAAK8BK7AVuQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAD5SURBVEhL7ZbN
+        CcJAEIUfYgd2IAqCTXjwbkt6sYJoGTbgRW/ahTfxagPKCztxncxkY4x4yYMHITvzvs3fZoGXxgDmysMw
+        NnNMsYa1gyirpC2Ah+FlGNfnxRRreHwFMIkyC3HmurEJwIXwUnVjUwB9AzCN8lsHlCC/ANC8XfmDrwKs
+        QsjBMcUa3SfO37QqAEP6IcgSx45GX20AfQGwd8wxXf8x4Bt3gKT/B9gBWBirq2fWskfnmIATgB6AkRHk
+        mbXsOdcBrMNHdDdm5Jm1FHuTgNT645nS61IHeLML0L/MNgHMzrWJTrYFyCRcJNsW2arodz1lSrYwxcyf
+        85GgMpIDynoAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="picture_imagemUsuario.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
@@ -211,12 +235,6 @@
   </data>
   <metadata name="acessosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>846, 17</value>
-  </metadata>
-  <metadata name="acessosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>846, 17</value>
-  </metadata>
-  <metadata name="projeto_rjDataSet7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>696, 17</value>
   </metadata>
   <metadata name="projeto_rjDataSet7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>696, 17</value>

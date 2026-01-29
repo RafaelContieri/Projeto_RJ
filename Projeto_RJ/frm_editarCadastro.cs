@@ -61,7 +61,7 @@ namespace Projeto_RJ
             }
         }
 
-        // BOTÃO SALVAR (O VERDE) - CORRIGIDO E ROBUSTO
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             // Segurança: Verifica se temos o ID para editar
@@ -71,15 +71,30 @@ namespace Projeto_RJ
                 return;
             }
 
+            // --- LÓGICA DO HASH NA EDIÇÃO ---
+            string senhaFinal;
+
+            // Se o texto for exatamente os 5 asteriscos fakes, usamos o Hash que já está no banco
+            if (txtSenha_editar.Text == "*****")
+            {
+                // Recuperamos o Hash original que você deve ter guardado na .Tag ao abrir a tela
+                senhaFinal = txtSenha_editar.Tag?.ToString() ?? "";
+            }
+            else
+            {
+                // O usuário apagou os pontos e digitou algo novo, então geramos um NOVO Hash
+                senhaFinal = BCrypt.Net.BCrypt.HashPassword(txtSenha_editar.Text.Trim());
+            }
+
             // O comando SQL UPDATE
             string sql = @"UPDATE usuarios 
-                           SET nome = @nome, 
-                               email = @email, 
-                               sigla = @sigla, 
-                               usuario = @usuario, 
-                               senha = @senha, 
-                               acesso = @acesso 
-                           WHERE id = @id";
+                   SET nome = @nome, 
+                       email = @email, 
+                       sigla = @sigla, 
+                       usuario = @usuario, 
+                       senha = @senha, 
+                       acesso = @acesso 
+                   WHERE id = @id";
 
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
@@ -88,12 +103,14 @@ namespace Projeto_RJ
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
-                        // Passando os valores corretos das caixas de texto
-                        cmd.Parameters.AddWithValue("@nome", txtNome_editar.Text);
-                        cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text);
-                        cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text);
-                        cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text); // Login
-                        cmd.Parameters.AddWithValue("@senha", txtSenha_editar.Text);
+                        cmd.Parameters.AddWithValue("@nome", txtNome_editar.Text.Trim());
+                        cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text.Trim());
+                        cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text.Trim());
+                        cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text.Trim());
+
+                        // Enviamos a variável senhaFinal (que já tratou o Hash)
+                        cmd.Parameters.AddWithValue("@senha", senhaFinal);
+
                         cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
                         cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
 
@@ -101,7 +118,9 @@ namespace Projeto_RJ
                     }
 
                     MessageBox.Show("Usuário atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); // Fecha a tela para atualizar o Grid lá atrás
+
+                    this.DialogResult = DialogResult.OK; // Sinaliza para a Grid principal recarregar
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -206,7 +225,10 @@ namespace Projeto_RJ
 
         private void txtNome_editar_TextChanged(object sender, EventArgs e) { }
 
-        private void txtSenha_editar_TextChanged(object sender, EventArgs e) { }
+        private void txtSenha_editar_TextChanged(object sender, EventArgs e) { 
+        
+
+        }
 
         private void txtEmail_editar_TextChanged(object sender, EventArgs e) { }
 

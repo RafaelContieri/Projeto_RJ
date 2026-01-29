@@ -77,13 +77,15 @@
             // 
             // btn_users
             // 
+            this.btn_users.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_users.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_users.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_users.Location = new System.Drawing.Point(35, 120);
             this.btn_users.Name = "btn_users";
-            this.btn_users.Size = new System.Drawing.Size(101, 43);
+            this.btn_users.Size = new System.Drawing.Size(229, 43);
             this.btn_users.TabIndex = 10;
-            this.btn_users.Text = "Usuários";
-            this.btn_users.UseVisualStyleBackColor = true;
+            this.btn_users.Text = "Cadastro de Usuário";
+            this.btn_users.UseVisualStyleBackColor = false;
             this.btn_users.Click += new System.EventHandler(this.btn_users_Click);
             // 
             // frm_config

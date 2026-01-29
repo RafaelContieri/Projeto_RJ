@@ -83,15 +83,22 @@ namespace Projeto_RJ
             if (string.IsNullOrWhiteSpace(txtNome.Text) ||
                 string.IsNullOrWhiteSpace(txtLogin.Text) ||
                 string.IsNullOrWhiteSpace(txtSenha.Text) ||
-                string.IsNullOrWhiteSpace(cmb_Grupo_usuario.Text))
+                string.IsNullOrWhiteSpace(cmb_Grupo_usuario.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                !txtEmail.Text.Contains("@"))
             {
-                MessageBox.Show("Preencha Nome, Login, Senha e Grupo de Usuário!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Certifique-se de preencher todos os campos e inserir um e-mail válido!", "Dados Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // --- NOVIDADE: GERANDO O HASH DA SENHA ---
+            // Pegamos o que está no TextBox e transformamos em uma assinatura segura
+            string senhaOriginal = txtSenha.Text.Trim();
+            string senhaComHash = BCrypt.Net.BCrypt.HashPassword(senhaOriginal);
+
             // 2. SQL de Inserção
             string sql = @"INSERT INTO usuarios (nome, sigla, email, usuario, senha, acesso, imgbase64) 
-                           VALUES (@nome, @sigla, @email, @usuario, @senha, @acesso, @img)";
+                   VALUES (@nome, @sigla, @email, @usuario, @senha, @acesso, @img)";
 
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
@@ -104,10 +111,13 @@ namespace Projeto_RJ
                         cmd.Parameters.AddWithValue("@sigla", txtSigla.Text.Trim());
                         cmd.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@usuario", txtLogin.Text.Trim());
-                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text.Trim());
+
+                        // --- AJUSTE: Enviamos a senha com Hash para o banco ---
+                        cmd.Parameters.AddWithValue("@senha", senhaComHash);
+
                         cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
 
-                        // Trata a imagem: Se estiver vazio, envia NULL para o SQL
+                        // Trata a imagem
                         if (string.IsNullOrEmpty(fotoBase64))
                             cmd.Parameters.AddWithValue("@img", DBNull.Value);
                         else
@@ -116,9 +126,8 @@ namespace Projeto_RJ
                         cmd.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuário cadastrado com sucesso e senha protegida!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Define o resultado como OK para a Grid principal atualizar e fecha
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -199,8 +208,9 @@ namespace Projeto_RJ
         {
         }
 
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

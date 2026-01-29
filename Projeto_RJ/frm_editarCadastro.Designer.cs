@@ -77,9 +77,9 @@ namespace Projeto_RJ
             dateTimePicker2.Enabled = false;
             dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1028, 27);
+            dateTimePicker2.Location = new System.Drawing.Point(993, 29);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(222, 32);
+            dateTimePicker2.Size = new System.Drawing.Size(258, 32);
             dateTimePicker2.TabIndex = 6;
             // 
             // panel1
@@ -108,6 +108,7 @@ namespace Projeto_RJ
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -124,6 +125,7 @@ namespace Projeto_RJ
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,9 +152,11 @@ namespace Projeto_RJ
             // 
             this.txtSenha_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha_editar.Location = new System.Drawing.Point(564, 367);
+            this.txtSenha_editar.MaxLength = 100;
             this.txtSenha_editar.Name = "txtSenha_editar";
             this.txtSenha_editar.Size = new System.Drawing.Size(256, 22);
             this.txtSenha_editar.TabIndex = 31;
+            this.txtSenha_editar.UseSystemPasswordChar = true;
             this.txtSenha_editar.TextChanged += new System.EventHandler(this.txtSenha_editar_TextChanged);
             // 
             // txtEmail_editar

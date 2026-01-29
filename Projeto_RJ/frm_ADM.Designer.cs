@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ADM));
             this.panel1 = new System.Windows.Forms.Panel();
@@ -36,8 +37,16 @@
             this.btn_gestaoSenhas = new System.Windows.Forms.Button();
             this.btn_controleSenha = new System.Windows.Forms.Button();
             this.btn_config = new System.Windows.Forms.Button();
+            this.Gestão_senha = new System.Windows.Forms.ToolStripMenuItem();
+            this.Controle_senha = new System.Windows.Forms.ToolStripMenuItem();
+            this.Senha_painel = new System.Windows.Forms.ToolStripMenuItem();
+            this.Configurações = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sair = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_usuario = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btn_perfil = new System.Windows.Forms.Button();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
+            this.menu_usuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -50,7 +59,7 @@
             dateTimePicker2.Enabled = false;
             dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1655, 25);
+            dateTimePicker2.Location = new System.Drawing.Point(1542, 27);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new System.Drawing.Size(222, 32);
             dateTimePicker2.TabIndex = 6;
@@ -59,6 +68,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.btn_perfil);
             this.panel1.Controls.Add(this.lbl_name_header);
             this.panel1.Controls.Add(dateTimePicker2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -150,6 +160,58 @@
             this.btn_config.UseVisualStyleBackColor = false;
             this.btn_config.Click += new System.EventHandler(this.btn_config_Click);
             // 
+            // Gestão_senha
+            // 
+            this.Gestão_senha.Name = "Gestão_senha";
+            this.Gestão_senha.Size = new System.Drawing.Size(154, 22);
+            this.Gestão_senha.Text = "gestao_senha";
+            // 
+            // Controle_senha
+            // 
+            this.Controle_senha.Name = "Controle_senha";
+            this.Controle_senha.Size = new System.Drawing.Size(154, 22);
+            this.Controle_senha.Text = "controle_senha";
+            // 
+            // Senha_painel
+            // 
+            this.Senha_painel.Name = "Senha_painel";
+            this.Senha_painel.Size = new System.Drawing.Size(154, 22);
+            this.Senha_painel.Text = "senha_painel";
+            // 
+            // Configurações
+            // 
+            this.Configurações.Name = "Configurações";
+            this.Configurações.Size = new System.Drawing.Size(154, 22);
+            this.Configurações.Text = "config";
+            // 
+            // Sair
+            // 
+            this.Sair.Name = "Sair";
+            this.Sair.Size = new System.Drawing.Size(154, 22);
+            this.Sair.Text = "sair";
+            // 
+            // menu_usuario
+            // 
+            this.menu_usuario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Gestão_senha,
+            this.Controle_senha,
+            this.Senha_painel,
+            this.Configurações,
+            this.Sair});
+            this.menu_usuario.Name = "menu_usuario";
+            this.menu_usuario.Size = new System.Drawing.Size(155, 114);
+            // 
+            // btn_perfil
+            // 
+            this.btn_perfil.BackColor = System.Drawing.Color.White;
+            this.btn_perfil.ContextMenuStrip = this.menu_usuario;
+            this.btn_perfil.Image = ((System.Drawing.Image)(resources.GetObject("btn_perfil.Image")));
+            this.btn_perfil.Location = new System.Drawing.Point(1804, 27);
+            this.btn_perfil.Name = "btn_perfil";
+            this.btn_perfil.Size = new System.Drawing.Size(32, 32);
+            this.btn_perfil.TabIndex = 8;
+            this.btn_perfil.UseVisualStyleBackColor = false;
+            // 
             // frm_ADM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +231,7 @@
             this.Load += new System.EventHandler(this.frm_ADM_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menu_usuario.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -181,5 +244,12 @@
         private System.Windows.Forms.Button btn_controleSenha;
         private System.Windows.Forms.Button btn_config;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_perfil;
+        private System.Windows.Forms.ContextMenuStrip menu_usuario;
+        public System.Windows.Forms.ToolStripMenuItem Gestão_senha;
+        public System.Windows.Forms.ToolStripMenuItem Controle_senha;
+        public System.Windows.Forms.ToolStripMenuItem Senha_painel;
+        public System.Windows.Forms.ToolStripMenuItem Configurações;
+        public System.Windows.Forms.ToolStripMenuItem Sair;
     }
 }
