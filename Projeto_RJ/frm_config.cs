@@ -22,5 +22,10 @@ namespace Projeto_RJ
             frm_usuarios telaUsers = new frm_usuarios();
             telaUsers.ShowDialog();
         }
+
+        private void frm_config_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

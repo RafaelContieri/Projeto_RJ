@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Projeto_RJ
@@ -9,6 +10,7 @@ namespace Projeto_RJ
         public tela_login()
         {
             InitializeComponent();
+            this.AcceptButton = btn_login; // Define o botão Entrar como o botão padrão ao pressionar Enter
         }
 
         private void containerImagem_Click(object sender, EventArgs e)
@@ -69,9 +71,10 @@ namespace Projeto_RJ
             }
             catch { /* Falha silenciosa para não travar o login */ }
         }
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
-            // 1. SQL busca pelo usuário
+
+            
             string sql = "SELECT id, nome, usuario, senha, email, acesso, imgbase64 FROM usuarios WHERE usuario = @user";
 
             using (SqlConnection con = new SqlConnection(@"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);"))
@@ -84,16 +87,15 @@ namespace Projeto_RJ
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.Read()) // O usuário EXISTE no banco
+                    if (reader.Read())
                     {
-                        // Pegamos a senha do banco e o que foi digitado, removendo espaços extras
-                        string senhaBanco = reader["senha"].ToString().Trim();
-
-                        // IMPORTANTE: Mudei de lbl_senha_login para txt_senha_login (ajuste o nome se necessário)
+                        
+                        string hashBanco = reader["senha"].ToString().Trim();
                         string senhaDigitada = txt_senha_login.Text.Trim();
 
-                        // 2. Verificação Exata da Senha
-                        if (senhaBanco.Equals(senhaDigitada))
+                        
+                        // O BCrypt.Verify retorna true se a senha digitada bater com o Hash do banco
+                        if (BCrypt.Net.BCrypt.Verify(senhaDigitada, hashBanco))
                         {
                             // SUCESSO: Alimenta a sessão global
                             SessaoUsuario.Id = Convert.ToInt32(reader["id"]);
@@ -112,9 +114,9 @@ namespace Projeto_RJ
                         }
                         else
                         {
-                            // LOG: Senha errada
+                            // LOG: Senha errada (Hash não bateu)
                             GravarLogInterno($"Falha: Senha incorreta para o usuário '{txt_usuario_login.Text}'.");
-                            MessageBox.Show("Senha incorreta!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Usuário ou senha inválidos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txt_senha_login.Clear();
                             txt_senha_login.Focus();
                         }
@@ -123,13 +125,13 @@ namespace Projeto_RJ
                     {
                         // LOG: Usuário não existe
                         GravarLogInterno($"Falha: Usuário '{txt_usuario_login.Text}' não encontrado.");
-                        MessageBox.Show("Usuário não encontrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Usuário ou senha inválidos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txt_usuario_login.Focus();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro técnico de conexão: " + ex.Message, "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("Erro técnico: " + ex.Message, "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
         }
@@ -146,6 +148,58 @@ namespace Projeto_RJ
             {
                 MessageBox.Show("Ainda não existem registros de log.");
             }
+        }
+
+        private void tela_login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_container_login_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            //pictureBox3.BackColor = Color.Transparent;
+        }
+
+        private void txt_usuario_login_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_header_login_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_senha_login_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public void btn_login_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

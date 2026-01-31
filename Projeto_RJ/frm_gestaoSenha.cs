@@ -128,27 +128,24 @@ namespace Projeto_RJ
             {
                 using (SqlConnection conexao = new SqlConnection(stringConexao))
                 {
-                    conexao.Open(); // Abre a porta do banco                  
+                    conexao.Open();
 
-                    // Total Geral
-                    string sqlTotal = "SELECT COUNT(*) FROM Senhas";
-                    SqlCommand cmdTotal = new SqlCommand(sqlTotal, conexao);
-                    int total = (int)cmdTotal.ExecuteScalar();
+                    // 1. Total Geral (Hoje)
+                    string sqlTotal = "SELECT COUNT(*) FROM Senhas WHERE CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    int total = (int)new SqlCommand(sqlTotal, conexao).ExecuteScalar();
 
-                    // Total Recepção
-                    string sqlRecepcao = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Recepção'";
-                    SqlCommand cmdRecepcao = new SqlCommand(sqlRecepcao, conexao);
-                    int recepcao = (int)cmdRecepcao.ExecuteScalar();
+                    // 2. Total Recepção (Hoje)
+                    string sqlRecepcao = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Recepção' AND CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    int recepcao = (int)new SqlCommand(sqlRecepcao, conexao).ExecuteScalar();
 
-                    // Total Retirada
-                    string sqlRetirada = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Exames'";
-                    SqlCommand cmdRetirada = new SqlCommand(sqlRetirada, conexao);
-                    int retirada = (int)cmdRetirada.ExecuteScalar();
+                    // 3. Total Retirada de Exames (Hoje) - Ajustado para filtrar data
+                    string sqlRetirada = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Exames' AND CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    int retirada = (int)new SqlCommand(sqlRetirada, conexao).ExecuteScalar();
 
-                    // Total Preferencial
-                    string sqlPref = "SELECT COUNT(*) FROM Senhas WHERE Servico LIKE '%Preferencial'";
-                    SqlCommand cmdPref = new SqlCommand(sqlPref, conexao);
-                    int preferencial = (int)cmdPref.ExecuteScalar();
+                    // 4. Total Preferencial (Hoje) - Ajustado para data e otimização de busca
+                    // Dica: Se o serviço sempre termina com 'Preferencial', use o LIKE de forma segura
+                    string sqlPref = "SELECT COUNT(*) FROM Senhas WHERE Servico LIKE '%Preferencial%' AND CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    int preferencial = (int)new SqlCommand(sqlPref, conexao).ExecuteScalar();
 
 
 

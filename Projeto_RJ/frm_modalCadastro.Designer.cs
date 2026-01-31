@@ -237,6 +237,7 @@
             this.txtSenha.Size = new System.Drawing.Size(248, 22);
             this.txtSenha.TabIndex = 6;
             this.txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // btnCancelar
             // 

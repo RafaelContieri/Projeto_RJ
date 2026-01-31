@@ -212,5 +212,10 @@ namespace Projeto_RJ
         {
 
         }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

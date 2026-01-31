@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.btn_users = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,11 +89,22 @@
             this.btn_users.UseVisualStyleBackColor = false;
             this.btn_users.Click += new System.EventHandler(this.btn_users_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(35, 200);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(229, 43);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Verificar log";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frm_config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_users);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -101,6 +113,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_config_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -112,5 +125,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_name_header;
         private System.Windows.Forms.Button btn_users;
+        private System.Windows.Forms.Button button1;
     }
 }

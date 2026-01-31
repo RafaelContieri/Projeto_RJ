@@ -64,29 +64,28 @@ namespace Projeto_RJ
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // Segurança: Verifica se temos o ID para editar
             if (idUsuarioEdicao == null || idUsuarioEdicao == 0)
             {
                 MessageBox.Show("Erro: Usuário não identificado para edição.");
                 return;
             }
 
-            // --- LÓGICA DO HASH NA EDIÇÃO ---
-            string senhaFinal;
+            // 1. Lógica do Hash: Identifica se o que está no campo é um Hash ou Senha Pura
+            string senhaDigitada = txtSenha_editar.Text.Trim();
+            string senhaParaSalvar;
 
-            // Se o texto for exatamente os 5 asteriscos fakes, usamos o Hash que já está no banco
-            if (txtSenha_editar.Text == "*****")
+            // Se o texto tem 60 caracteres e começa com $, já é o Hash antigo. Não mexemos.
+            if (senhaDigitada.Length == 60 && senhaDigitada.StartsWith("$"))
             {
-                // Recuperamos o Hash original que você deve ter guardado na .Tag ao abrir a tela
-                senhaFinal = txtSenha_editar.Tag?.ToString() ?? "";
+                senhaParaSalvar = senhaDigitada;
             }
             else
             {
-                // O usuário apagou os pontos e digitou algo novo, então geramos um NOVO Hash
-                senhaFinal = BCrypt.Net.BCrypt.HashPassword(txtSenha_editar.Text.Trim());
+                // Se o usuário digitou algo novo (ex: "123"), geramos o Hash agora
+                senhaParaSalvar = BCrypt.Net.BCrypt.HashPassword(senhaDigitada);
             }
 
-            // O comando SQL UPDATE
+            // 2. Query SQL (Certifique-se que os nomes das colunas batem com o seu banco)
             string sql = @"UPDATE usuarios 
                    SET nome = @nome, 
                        email = @email, 
@@ -103,28 +102,28 @@ namespace Projeto_RJ
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
+                        // ATENÇÃO: Os nomes abaixo devem ser IGUAIS aos da string 'sql' acima
                         cmd.Parameters.AddWithValue("@nome", txtNome_editar.Text.Trim());
                         cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text.Trim());
                         cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text.Trim());
                         cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text.Trim());
-
-                        // Enviamos a variável senhaFinal (que já tratou o Hash..)
-                        cmd.Parameters.AddWithValue("@senha", senhaFinal);
-
                         cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
                         cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
+
+                        // Aqui é onde morava o erro da variável escalar:
+                        cmd.Parameters.AddWithValue("@senha", senhaParaSalvar);
 
                         cmd.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Usuário atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.DialogResult = DialogResult.OK; // Sinaliza para a Grid principal recarregar
+                    MessageBox.Show("Dados atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao salvar: " + ex.Message);
+                    // Isso vai te mostrar no MessageBox se o erro é no SQL ou no C#
+                    MessageBox.Show("Erro ao salvar: " + ex.Message, "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
