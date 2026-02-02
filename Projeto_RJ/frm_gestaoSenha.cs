@@ -16,6 +16,7 @@ namespace Projeto_RJ
         public frm_gestaoSenha()
         {
             InitializeComponent();
+            CarregarDadosDoBanco();
         }
 
         private void frm_gestaoSenha_Load(object sender, EventArgs e)
@@ -201,7 +202,7 @@ namespace Projeto_RJ
                 MessageBox.Show("Erro ao conectar no banco: " + ex.Message);
             }
 
-            MessageBox.Show("Dados atualizados com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
 
            
         }

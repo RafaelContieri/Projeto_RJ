@@ -246,6 +246,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="controle_historico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controle_historico.Designer.cs">
+      <DependentUpon>controle_historico.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="controle_historico.resx">
+      <DependentUpon>controle_historico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

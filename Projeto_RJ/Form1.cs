@@ -88,7 +88,7 @@ namespace Projeto_RJ
         {
            
 
-            string senhaGerada = CriarSenha("Preferencial", "Recepção Preferencial");
+            string senhaGerada = CriarSenha("Preferencial", "Recepção");
 
             if (!string.IsNullOrEmpty(senhaGerada))
             {
@@ -100,7 +100,7 @@ namespace Projeto_RJ
         private void button2_Click(object sender, EventArgs e)
         {
             
-            string senhaGerada = CriarSenha("Preferencial", "Exames Preferencial");
+            string senhaGerada = CriarSenha("Preferencial", "Exames");
 
             if (!string.IsNullOrEmpty(senhaGerada))
             {
