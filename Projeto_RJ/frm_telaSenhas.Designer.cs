@@ -122,9 +122,9 @@
             this.lbl_senhaDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_senhaDB.Location = new System.Drawing.Point(563, 122);
             this.lbl_senhaDB.Name = "lbl_senhaDB";
-            this.lbl_senhaDB.Size = new System.Drawing.Size(344, 120);
+            this.lbl_senhaDB.Size = new System.Drawing.Size(328, 120);
             this.lbl_senhaDB.TabIndex = 13;
-            this.lbl_senhaDB.Text = "label3";
+            this.lbl_senhaDB.Text = "NULL";
             this.lbl_senhaDB.Click += new System.EventHandler(this.lbl_senhaDB_Click);
             // 
             // label2
@@ -145,9 +145,9 @@
             this.lbl_guicheDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_guicheDB.Location = new System.Drawing.Point(561, 264);
             this.lbl_guicheDB.Name = "lbl_guicheDB";
-            this.lbl_guicheDB.Size = new System.Drawing.Size(344, 120);
+            this.lbl_guicheDB.Size = new System.Drawing.Size(328, 120);
             this.lbl_guicheDB.TabIndex = 16;
-            this.lbl_guicheDB.Text = "label5";
+            this.lbl_guicheDB.Text = "NULL";
             this.lbl_guicheDB.Click += new System.EventHandler(this.lbl_guicheDB_Click);
             // 
             // label3

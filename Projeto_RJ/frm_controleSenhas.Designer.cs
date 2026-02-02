@@ -28,25 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_controleSenhas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_name_header = new System.Windows.Forms.Label();
-            this.btnChamarSenha = new System.Windows.Forms.Button();
             this.btn_refreshSenha = new System.Windows.Forms.Button();
             this.lbl_senhaChamada = new System.Windows.Forms.Label();
             this.panel_senhaChamada = new System.Windows.Forms.Panel();
             this.lblSenhaAtual = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnChamarSenha = new System.Windows.Forms.Button();
+            this.container_Senhas = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbl_senhas_chamadas = new System.Windows.Forms.Label();
+            this.projeto_rjDataSet8 = new Projeto_RJ.projeto_rjDataSet8();
+            this.senhasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.senhasTableAdapter = new Projeto_RJ.projeto_rjDataSet8TableAdapters.senhasTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoatendimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numerosequencialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusatendimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel_senhaChamada.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.senhasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -88,20 +98,6 @@
             this.lbl_name_header.TabIndex = 7;
             this.lbl_name_header.Text = "PAINEL INICIAL > CONTROLE DE SENHAS";
             this.lbl_name_header.Click += new System.EventHandler(this.lbl_name_header_Click);
-            // 
-            // btnChamarSenha
-            // 
-            this.btnChamarSenha.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnChamarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChamarSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChamarSenha.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnChamarSenha.Location = new System.Drawing.Point(35, 140);
-            this.btnChamarSenha.Name = "btnChamarSenha";
-            this.btnChamarSenha.Size = new System.Drawing.Size(390, 95);
-            this.btnChamarSenha.TabIndex = 12;
-            this.btnChamarSenha.Text = "CHAMAR SENHA";
-            this.btnChamarSenha.UseVisualStyleBackColor = false;
-            this.btnChamarSenha.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // btn_refreshSenha
             // 
@@ -151,63 +147,116 @@
             this.lblSenhaAtual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSenhaAtual.Click += new System.EventHandler(this.lblSenhaAtual_Click);
             // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(1580, 466);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(280, 164);
-            this.panel6.TabIndex = 28;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(1137, 832);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(280, 164);
-            this.panel5.TabIndex = 27;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(778, 832);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(280, 164);
-            this.panel4.TabIndex = 26;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(419, 832);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(280, 164);
-            this.panel3.TabIndex = 25;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(60, 832);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(280, 164);
-            this.panel2.TabIndex = 24;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 763);
+            this.label3.Location = new System.Drawing.Point(12, 763);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 29);
             this.label3.TabIndex = 23;
             this.label3.Text = "Histórico de chamadas";
             // 
-            // panel7
+            // btnChamarSenha
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(1493, 832);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(280, 164);
-            this.panel7.TabIndex = 28;
+            this.btnChamarSenha.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnChamarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChamarSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChamarSenha.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnChamarSenha.Location = new System.Drawing.Point(35, 140);
+            this.btnChamarSenha.Name = "btnChamarSenha";
+            this.btnChamarSenha.Size = new System.Drawing.Size(390, 95);
+            this.btnChamarSenha.TabIndex = 12;
+            this.btnChamarSenha.Text = "CHAMAR SENHA";
+            this.btnChamarSenha.UseVisualStyleBackColor = false;
+            this.btnChamarSenha.Click += new System.EventHandler(this.btnIniciar_Click);
+            // 
+            // container_Senhas
+            // 
+            this.container_Senhas.Location = new System.Drawing.Point(17, 805);
+            this.container_Senhas.Name = "container_Senhas";
+            this.container_Senhas.Size = new System.Drawing.Size(1885, 224);
+            this.container_Senhas.TabIndex = 24;
+            this.container_Senhas.Paint += new System.Windows.Forms.PaintEventHandler(this.container_Senhas_Paint);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.senhaDataGridViewTextBoxColumn,
+            this.tipoatendimentoDataGridViewTextBoxColumn,
+            this.servicoDataGridViewTextBoxColumn,
+            this.numerosequencialDataGridViewTextBoxColumn,
+            this.statusatendimentoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.senhasBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(1184, 224);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(674, 575);
+            this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // lbl_senhas_chamadas
+            // 
+            this.lbl_senhas_chamadas.AutoSize = true;
+            this.lbl_senhas_chamadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_senhas_chamadas.Location = new System.Drawing.Point(1180, 184);
+            this.lbl_senhas_chamadas.Name = "lbl_senhas_chamadas";
+            this.lbl_senhas_chamadas.Size = new System.Drawing.Size(144, 20);
+            this.lbl_senhas_chamadas.TabIndex = 26;
+            this.lbl_senhas_chamadas.Text = "Próximas senhas";
+            // 
+            // projeto_rjDataSet8
+            // 
+            this.projeto_rjDataSet8.DataSetName = "projeto_rjDataSet8";
+            this.projeto_rjDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // senhasBindingSource
+            // 
+            this.senhasBindingSource.DataMember = "senhas";
+            this.senhasBindingSource.DataSource = this.projeto_rjDataSet8;
+            // 
+            // senhasTableAdapter
+            // 
+            this.senhasTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // senhaDataGridViewTextBoxColumn
+            // 
+            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
+            this.senhaDataGridViewTextBoxColumn.HeaderText = "senha";
+            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
+            // 
+            // tipoatendimentoDataGridViewTextBoxColumn
+            // 
+            this.tipoatendimentoDataGridViewTextBoxColumn.DataPropertyName = "tipo_atendimento";
+            this.tipoatendimentoDataGridViewTextBoxColumn.HeaderText = "tipo_atendimento";
+            this.tipoatendimentoDataGridViewTextBoxColumn.Name = "tipoatendimentoDataGridViewTextBoxColumn";
+            // 
+            // servicoDataGridViewTextBoxColumn
+            // 
+            this.servicoDataGridViewTextBoxColumn.DataPropertyName = "servico";
+            this.servicoDataGridViewTextBoxColumn.HeaderText = "servico";
+            this.servicoDataGridViewTextBoxColumn.Name = "servicoDataGridViewTextBoxColumn";
+            // 
+            // numerosequencialDataGridViewTextBoxColumn
+            // 
+            this.numerosequencialDataGridViewTextBoxColumn.DataPropertyName = "numero_sequencial";
+            this.numerosequencialDataGridViewTextBoxColumn.HeaderText = "numero_sequencial";
+            this.numerosequencialDataGridViewTextBoxColumn.Name = "numerosequencialDataGridViewTextBoxColumn";
+            // 
+            // statusatendimentoDataGridViewTextBoxColumn
+            // 
+            this.statusatendimentoDataGridViewTextBoxColumn.DataPropertyName = "status_atendimento";
+            this.statusatendimentoDataGridViewTextBoxColumn.HeaderText = "status_atendimento";
+            this.statusatendimentoDataGridViewTextBoxColumn.Name = "statusatendimentoDataGridViewTextBoxColumn";
             // 
             // frm_controleSenhas
             // 
@@ -215,12 +264,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lbl_senhas_chamadas);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.container_Senhas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel_senhaChamada);
             this.Controls.Add(this.lbl_senhaChamada);
@@ -237,6 +283,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_senhaChamada.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.senhasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,17 +295,23 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_name_header;
-        private System.Windows.Forms.Button btnChamarSenha;
         private System.Windows.Forms.Button btn_refreshSenha;
         private System.Windows.Forms.Label lbl_senhaChamada;
         private System.Windows.Forms.Panel panel_senhaChamada;
         private System.Windows.Forms.Label lblSenhaAtual;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnChamarSenha;
+        private System.Windows.Forms.FlowLayoutPanel container_Senhas;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lbl_senhas_chamadas;
+        private projeto_rjDataSet8 projeto_rjDataSet8;
+        private System.Windows.Forms.BindingSource senhasBindingSource;
+        private projeto_rjDataSet8TableAdapters.senhasTableAdapter senhasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoatendimentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numerosequencialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusatendimentoDataGridViewTextBoxColumn;
     }
 }

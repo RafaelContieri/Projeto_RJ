@@ -94,7 +94,10 @@ namespace Projeto_RJ
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) { }
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e) { }
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e) {
+
+            
+        }
         private void lbl_senhaDB_Click(object sender, EventArgs e) { }
         private void lbl_senha_Click(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }

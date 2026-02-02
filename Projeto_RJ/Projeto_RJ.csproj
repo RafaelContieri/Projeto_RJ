@@ -107,6 +107,11 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="projeto_rjDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjDataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sessao_Usuario.cs" />
     <Compile Include="tela_login.cs">
       <SubType>Form</SubType>
@@ -401,6 +406,17 @@
     </None>
     <None Include="projeto_rjDataSet7.xss">
       <DependentUpon>projeto_rjDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet8.xsc">
+      <DependentUpon>projeto_rjDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjDataSet8.xss">
+      <DependentUpon>projeto_rjDataSet8.xsd</DependentUpon>
     </None>
     <None Include="projeto_rjSENHAS.xsc">
       <DependentUpon>projeto_rjSENHAS.xsd</DependentUpon>
