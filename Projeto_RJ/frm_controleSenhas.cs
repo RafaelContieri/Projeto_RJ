@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Projeto_RJ
@@ -8,22 +9,22 @@ namespace Projeto_RJ
     public partial class frm_controleSenhas : Form
     {
         string strCon = @"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
-
         public frm_controleSenhas()
         {
             InitializeComponent();
-            CarregarSenhasPendentes();
         }
+
+        string senhaId = "";
 
         private void frm_controleSenhas_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet8.senhas'. Você pode movê-la ou removê-la conforme necessário.
-            this.senhasTableAdapter.Fill(this.projeto_rjDataSet8.senhas);
-            // Busca o histórico assim que abrir a tela de controle
-            ultimasSenhas();
+            
+            ultimasSenhas();      
+            carregarDADOSGRID();  
+            
         }
 
-        private void ultimasSenhas()
+        private void ultimasSenhas() // histórico das senhas
         {
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -32,9 +33,10 @@ namespace Projeto_RJ
                     // IMPORTANTE: Abrir a conexão!
                     con.Open();
 
-                    string sqlHist = @"SELECT senha, tipo_atendimento FROM Senhas 
-                                      WHERE CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE) 
-                                      ORDER BY id DESC OFFSET 1 ROWS FETCH NEXT 5 ROWS ONLY";
+                    string sqlHist = @"SELECT TOP 5 senha, tipo_atendimento, id 
+                                     FROM Senhas 
+                                    WHERE data_geracao = CAST(GETDATE() AS DATE) 
+                                     ORDER BY id DESC;";
 
                     SqlCommand cmdHist = new SqlCommand(sqlHist, con);
 
@@ -65,18 +67,128 @@ namespace Projeto_RJ
         // Simulação de chamada de nova senha
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            // 1. Aqui você terá seu código de INSERT no banco SQL Server
-            // InserirSenhaNoBanco();
-
-            // 2. Após inserir, você atualiza o histórico desta tela na hora
-            ultimasSenhas();
+            
+            lastSenha();
+            
+            
         }
 
-        // --- MÉTODOS ORIGINAIS MANTIDOS ---
+
+     
+        public void lastSenha()
+        {
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                try
+                {
+                    con.Open();
+
+                    string servico = "Recepção"; //Passar o tipo de serviço que deseja buscar a última senha. Exemplo: "Recepção", "Protocolo", etc.
+                    string tipo = "Normal"; //Passar o tipo de atendimento que deseja buscar a última senha. Exemplo: "Normal", "Prioritário", etc.
+                    
+
+
+                    string sqlSelect = @"SELECT TOP 1 id, senha, tipo_atendimento, servico
+                                 FROM Senhas 
+                                WHERE CAST(data_geracao AS DATE) = CAST(GETDATE() AS DATE) 
+                                AND tipo_atendimento = @tipo 
+                                AND servico = @servico
+                                AND status_atendimento = 'Aguardando'
+                                ORDER BY id DESC";
+
+                                SqlCommand cmd = new SqlCommand(sqlSelect, con);
+                                        cmd.Parameters.AddWithValue("@tipo", tipo);
+                                            cmd.Parameters.AddWithValue("@servico", servico);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            senhaChamada.Text = reader["senha"].ToString();
+                            senhaId = reader["id"].ToString();
+                            MessageBox.Show("ID SELECIONADO: " + senhaId);
+                           
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhuma senha encontrada para o tipo e serviço especificados.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                    MessageBox.Show("Erro ao buscar última senha: " + ex.Message);
+                }
+
+                
+            }
+            
+        }
+
+        private void alterarStatusSenha()
+        {
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                string statusAtendimento = "Chamado";
+
+                try
+                {
+                    con.Open();
+                    string sqlUpdate = @"UPDATE Senhas 
+                                 SET status_atendimento = @status_atendimento 
+                                 WHERE id = @id";
+
+                    SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, con);
+
+                    
+                    cmdUpdate.Parameters.AddWithValue("@status_atendimento", statusAtendimento);
+                    cmdUpdate.Parameters.AddWithValue("@id", senhaId);
+
+                    
+                    int linhasAfetadas = cmdUpdate.ExecuteNonQuery();
+
+                    if (linhasAfetadas > 0)
+                    {
+                        MessageBox.Show("Senha chamada com sucesso! ");
+                        senhaChamada.Text = null; // Limpa o label após chamar a senha
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma senha encontrada com o ID: " + senhaId);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao atualizar status da senha: " + ex.Message);
+                }
+            }
+        }
+
+        private void btn_refreshSenha_Click(object sender, EventArgs e)
+        {
+            if(lbl_senhaChamada == null)
+            {
+                btn_refreshSenha.Visible = true;
+            }
+            else
+            {
+                alterarStatusSenha();
+                carregarDADOSGRID();
+
+            }
+            
+
+        }
+
+
+
         private void lblSenhaAtual_Click(object sender, EventArgs e)
         {
             // Exemplo visual
-            lblSenhaAtual.Text = "P005";
+            
         }
 
         private void lbl_name_header_Click(object sender, EventArgs e)
@@ -89,45 +201,6 @@ namespace Projeto_RJ
 
         }
 
-        private void CarregarSenhasPendentes()
-        {
-            // Exemplo de variáveis que viriam do seu sistema de login
-            string tipoGuicheUsuario = "Preferencial"; // Ou "Normal"
-            string servicoUsuario = "Recepção";        // Ou "Entrega de Exames"
-
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                try
-                {
-                    con.Open();
-
-                    // SQL que filtra por Status, Tipo de Atendimento e Serviço
-                    // De acordo com a sua imagem do banco
-                    string sql = @"SELECT id, senha, tipo_atendimento, servico, data_geracao 
-                           FROM Senhas 
-                           WHERE status_atendimento = 'Pendente' 
-                           AND tipo_atendimento = @tipo 
-                           AND servico = @servico 
-                           ORDER BY id ASC";
-
-                    SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@tipo", tipoGuicheUsuario);
-                    cmd.Parameters.AddWithValue("@servico", servicoUsuario);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    // Vincula o resultado ao seu DataGridView
-                    dataGridView1.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao carregar lista: " + ex.Message);
-                }
-            }
-        }
-
 
 
         private void panel_senhaChamada_Paint(object sender, PaintEventArgs e)
@@ -135,10 +208,7 @@ namespace Projeto_RJ
 
         }
 
-        private void btn_refreshSenha_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void lbl_senhaChamada_Click(object sender, EventArgs e)
         {
@@ -177,7 +247,34 @@ namespace Projeto_RJ
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, EventArgs e)
+        {
+            
+            carregarDADOSGRID();
+
+            
+            
+        }
+
+       
+        private void carregarDADOSGRID()
+        {
+            try
+            {
+                this.pR_BuscarSenhasChamadasTableAdapter.Fill(
+                    this.projeto_rjDataSet12.PR_BuscarSenhasChamadas,
+                    "Normal",
+                    "Recepção"
+                );
+            }
+            catch (Exception ex)
+            {
+                // Debug para saber se houve erro no banco durante a atualização
+                MessageBox.Show("Erro na atualização automática: " + ex.Message);
+            }
+        }
+
+        private void senhaChamada_Click(object sender, EventArgs e)
         {
 
         }

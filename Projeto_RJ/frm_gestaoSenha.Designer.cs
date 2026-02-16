@@ -48,7 +48,6 @@
             this.lblPreferencial = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnAtualizar = new System.Windows.Forms.Button();
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel_atendimentoTotal.SuspendLayout();
@@ -282,26 +281,11 @@
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAtualizar.Location = new System.Drawing.Point(911, 182);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(104, 39);
-            this.btnAtualizar.TabIndex = 17;
-            this.btnAtualizar.Text = "ATUALIZAR";
-            this.btnAtualizar.UseVisualStyleBackColor = false;
-            this.btnAtualizar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frm_gestaoSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -346,7 +330,6 @@
         private System.Windows.Forms.Label lblPreferencial;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnAtualizar;
         public System.Windows.Forms.Label lbl_qtdPessoas;
         private System.Windows.Forms.Label lbl_pessoas;
     }

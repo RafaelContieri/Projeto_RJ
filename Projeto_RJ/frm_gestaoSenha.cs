@@ -121,8 +121,6 @@ namespace Projeto_RJ
 
         private void CarregarDadosDoBanco()
         {
-            // LÓGICA PARA CARREGAR OS DADOS DO BANCO DE DADOS E ATUALIZAR AS LABELS NA TELA
-            
             string stringConexao = @"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$)";
 
             try
@@ -131,80 +129,39 @@ namespace Projeto_RJ
                 {
                     conexao.Open();
 
-                    // 1. Total Geral (Hoje)
-                    string sqlTotal = "SELECT COUNT(*) FROM Senhas WHERE CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    
+                    string sqlTotal = "SELECT COUNT(*) FROM Senhas WHERE CAST(data_geracao AS DATE) = CAST(GETDATE() AS DATE);";
                     int total = (int)new SqlCommand(sqlTotal, conexao).ExecuteScalar();
 
-                    // 2. Total Recepção (Hoje)
-                    string sqlRecepcao = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Recepção' AND CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    
+                    string sqlRecepcao = "SELECT COUNT(*) FROM Senhas WHERE servico = 'Recepção' AND CAST(data_geracao AS DATE) = CAST(GETDATE() AS DATE);";
                     int recepcao = (int)new SqlCommand(sqlRecepcao, conexao).ExecuteScalar();
 
-                    // 3. Total Retirada de Exames (Hoje) - Ajustado para filtrar data
-                    string sqlRetirada = "SELECT COUNT(*) FROM Senhas WHERE Servico = 'Exames' AND CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    
+                    string sqlRetirada = "SELECT COUNT(*) FROM Senhas WHERE servico = 'Exames' AND CAST(data_geracao AS DATE) = CAST(GETDATE() AS DATE);";
                     int retirada = (int)new SqlCommand(sqlRetirada, conexao).ExecuteScalar();
 
-                    // 4. Total Preferencial (Hoje) - Ajustado para data e otimização de busca
-                    // Dica: Se o serviço sempre termina com 'Preferencial', use o LIKE de forma segura
-                    string sqlPref = "SELECT COUNT(*) FROM Senhas WHERE Servico LIKE '%Preferencial%' AND CAST(data_criacao AS DATE) = CAST(GETDATE() AS DATE);";
+                    
+                    string sqlPref = "SELECT COUNT(*) FROM Senhas WHERE tipo_atendimento = 'Preferencial' AND CAST(data_geracao AS DATE) = CAST(GETDATE() AS DATE);";
                     int preferencial = (int)new SqlCommand(sqlPref, conexao).ExecuteScalar();
 
-
-
+                    // Atualização das Labels
                     lblTotal.Text = total.ToString();
                     lblRecepcao.Text = recepcao.ToString();
                     lblRetiradaExames.Text = retirada.ToString();
                     lblPreferencial.Text = preferencial.ToString();
 
-                    // Lógica do Plural/Singular 
-                    if (total == 1)
-                    {
-                        lbl_qtdPessoas.Text = "PESSOA";
-                    }
-                    else
-                    {
-                        lbl_qtdPessoas.Text = "PESSOAS";
-                    }
-                    if (recepcao == 1)
-                    {
-                        lbl_pessoas.Text = "PESSOA";
-                    }
-                    else
-                    {
-                        lbl_pessoas.Text = "PESSOAS";
-                    }
-                    if (retirada == 1)
-                    {
-                        label5.Text = "PESSOA";
-                    }
-                    else
-                    {
-                        label5.Text = "PESSOAS";
-                    }
-                    if (preferencial == 1)
-                    {
-                        label8.Text = "PESSOA";
-                    }
-                    else
-                    {
-                        label8.Text = "PESSOAS";
-                    }
-
-                    // Centraliza o texto 
-                    lbl_qtdPessoas.TextAlign = ContentAlignment.MiddleCenter;
-                    lbl_pessoas.TextAlign = ContentAlignment.MiddleCenter;
-                    label5.TextAlign = ContentAlignment.MiddleCenter;
-                    label8.TextAlign = ContentAlignment.MiddleCenter;
-
+                    // Lógica de Plural/Singular simplificada (Operador Ternário)
+                    lbl_qtdPessoas.Text = (total == 1) ? "PESSOA" : "PESSOAS";
+                    lbl_pessoas.Text = (recepcao == 1) ? "PESSOA" : "PESSOAS";
+                    label5.Text = (retirada == 1) ? "PESSOA" : "PESSOAS";
+                    label8.Text = (preferencial == 1) ? "PESSOA" : "PESSOAS";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao conectar no banco: " + ex.Message);
+                MessageBox.Show("Erro ao carregar indicadores: " + ex.Message);
             }
-
-            
-
-           
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
