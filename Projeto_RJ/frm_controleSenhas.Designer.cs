@@ -50,6 +50,8 @@
             this.lbl_senhas_chamadas = new System.Windows.Forms.Label();
             this.senhaChamada = new System.Windows.Forms.Label();
             this.pR_BuscarSenhasChamadasTableAdapter = new Projeto_RJ.projeto_rjDataSet12TableAdapters.PR_BuscarSenhasChamadasTableAdapter();
+            this.atualizarListaAutomatico = new System.Windows.Forms.CheckBox();
+            this.timerAtualizar = new System.Windows.Forms.Timer(this.components);
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -151,8 +153,9 @@
             // 
             this.container_Senhas.Location = new System.Drawing.Point(17, 805);
             this.container_Senhas.Name = "container_Senhas";
-            this.container_Senhas.Size = new System.Drawing.Size(1885, 224);
+            this.container_Senhas.Size = new System.Drawing.Size(1854, 224);
             this.container_Senhas.TabIndex = 24;
+            this.container_Senhas.WrapContents = false;
             this.container_Senhas.Paint += new System.Windows.Forms.PaintEventHandler(this.container_Senhas_Paint);
             // 
             // dataGridView1
@@ -167,7 +170,7 @@
             this.statusatendimentoDataGridViewTextBoxColumn,
             this.datageracaoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pRBuscarSenhasChamadasBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(952, 224);
+            this.dataGridView1.Location = new System.Drawing.Point(952, 201);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(906, 575);
             this.dataGridView1.TabIndex = 25;
@@ -226,10 +229,10 @@
             // lbl_senhas_chamadas
             // 
             this.lbl_senhas_chamadas.AutoSize = true;
-            this.lbl_senhas_chamadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_senhas_chamadas.Location = new System.Drawing.Point(948, 184);
+            this.lbl_senhas_chamadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_senhas_chamadas.Location = new System.Drawing.Point(947, 142);
             this.lbl_senhas_chamadas.Name = "lbl_senhas_chamadas";
-            this.lbl_senhas_chamadas.Size = new System.Drawing.Size(144, 20);
+            this.lbl_senhas_chamadas.Size = new System.Drawing.Size(192, 25);
             this.lbl_senhas_chamadas.TabIndex = 26;
             this.lbl_senhas_chamadas.Text = "Próximas senhas";
             // 
@@ -249,12 +252,30 @@
             // 
             this.pR_BuscarSenhasChamadasTableAdapter.ClearBeforeFill = true;
             // 
+            // atualizarListaAutomatico
+            // 
+            this.atualizarListaAutomatico.AutoSize = true;
+            this.atualizarListaAutomatico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atualizarListaAutomatico.Location = new System.Drawing.Point(952, 170);
+            this.atualizarListaAutomatico.Name = "atualizarListaAutomatico";
+            this.atualizarListaAutomatico.Size = new System.Drawing.Size(147, 20);
+            this.atualizarListaAutomatico.TabIndex = 28;
+            this.atualizarListaAutomatico.Text = "Atualizar Automático";
+            this.atualizarListaAutomatico.UseVisualStyleBackColor = true;
+            this.atualizarListaAutomatico.CheckedChanged += new System.EventHandler(this.atualizarListaAutomatico_CheckedChanged);
+            // 
+            // timerAtualizar
+            // 
+            this.timerAtualizar.Interval = 10000;
+            this.timerAtualizar.Tick += new System.EventHandler(this.timerAtualizar_Tick);
+            // 
             // frm_controleSenhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.atualizarListaAutomatico);
             this.Controls.Add(this.senhaChamada);
             this.Controls.Add(this.lbl_senhas_chamadas);
             this.Controls.Add(this.dataGridView1);
@@ -302,5 +323,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servicoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusatendimentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datageracaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.CheckBox atualizarListaAutomatico;
+        private System.Windows.Forms.Timer timerAtualizar;
     }
 }

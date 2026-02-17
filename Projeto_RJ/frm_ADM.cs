@@ -10,6 +10,9 @@ namespace Projeto_RJ
             InitializeComponent();
         }
 
+
+
+
         
 
         private void btn_gestaoSenhas_Click(object sender, EventArgs e)
@@ -28,22 +31,28 @@ namespace Projeto_RJ
             // COLOCAR VALIDAÇÃO DE LOGIN DE ADMINISTRADOR AQUI PARA DESATIVAR BOTÃO DE GESTÃO DE SENHAS SE NÃO FOR ADMIN
             //ESSA VALIDAÇÃO VAI DEPENDER DO MODAL DO USUARIO LOGADO, OU SEJA SE FOR ADMINISTRADOR, DEIXA O BOTÃO ATIVO, SE NÃO FOR, DESATIVA O BOTÃO
 
-
-
-
-
         }
 
         private void btn_controleSenha_Click(object sender, EventArgs e)
         {
             frm_controleSenhas frm_ControleSenhas = new frm_controleSenhas();
-            frm_ControleSenhas.ShowDialog();
+            frm_ControleSenhas.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e) //botão para acessar a tela de senhas ==>  (TV)
+        private void button1_Click_1(object sender, EventArgs e) //botao da tela de senhas
         {
-            frm_telaSenhas frm_TelaSenhas = new frm_telaSenhas();
-            frm_TelaSenhas.ShowDialog();
+            //Verifica se o telão já não está aberto (para não abrir duplicado)
+            if (frm_telaSenhas.Instancia == null || frm_telaSenhas.Instancia.IsDisposed)
+            {
+                frm_telaSenhas telao = new frm_telaSenhas();
+                telao.Show();
+
+            }
+            else
+            {
+                // Se já estiver aberto, apenas traz ele para a frente
+                frm_telaSenhas.Instancia.BringToFront();
+            }
         }
 
         private void btn_config_Click(object sender, EventArgs e)

@@ -353,6 +353,7 @@
     <EmbeddedResource Include="TOTEM.resx">
       <DependentUpon>TOTEM.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="appsettings.json" />
     <None Include="packages.config" />
     <None Include="projeto_rjDataSet.xsc">
       <DependentUpon>projeto_rjDataSet.xsd</DependentUpon>

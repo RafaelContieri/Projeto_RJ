@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Projeto_RJ
@@ -16,6 +17,20 @@ namespace Projeto_RJ
 
         string senhaId = "";
 
+        public string senhaTelao { get; private set; }
+        public string guicheTelao { get; private set; }
+
+        public string statusSENHA { get; private set; }
+
+
+
+        
+
+
+        // Variável global para manter o link com o telão aberto
+        public frm_telaSenhas telaoAberto;
+
+
         private void frm_controleSenhas_Load(object sender, EventArgs e)
         {
             
@@ -24,19 +39,20 @@ namespace Projeto_RJ
             
         }
 
-        private void ultimasSenhas() // histórico das senhas
+        private void ultimasSenhas() // Método para carregar o histórico de senhas do dia no controle de histórico
         {
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 try
                 {
-                    // IMPORTANTE: Abrir a conexão!
+                    
                     con.Open();
 
-                    string sqlHist = @"SELECT TOP 5 senha, tipo_atendimento, id 
-                                     FROM Senhas 
-                                    WHERE data_geracao = CAST(GETDATE() AS DATE) 
-                                     ORDER BY id DESC;";
+                    string sqlHist = @"SELECT senha, tipo_atendimento, id , status_atendimento
+                                       FROM Senhas 
+                                       WHERE data_geracao = CAST(GETDATE() AS DATE)
+                                       AND status_atendimento = 'Chamado'
+                                       ORDER BY id DESC;";
 
                     SqlCommand cmdHist = new SqlCommand(sqlHist, con);
 
@@ -51,8 +67,11 @@ namespace Projeto_RJ
 
                             string senhaVal = readerHist["senha"].ToString();
                             string localVal = readerHist["tipo_atendimento"].ToString();
+                            string statusSENHA = readerHist["status_atendimento"].ToString();
 
-                            card.Configurar(senhaVal, localVal);
+                            // LOG ===> MessageBox.Show($"Senha: {senhaVal}, Local: {localVal}, Status: {statusSENHA}"); // Debug para verificar os valores
+
+                            card.Configurar(senhaVal, localVal, statusSENHA);
                             container_Senhas.Controls.Add(card);
                         }
                     }
@@ -75,7 +94,7 @@ namespace Projeto_RJ
 
 
      
-        public void lastSenha()
+        public void lastSenha() // Método para buscar a última senha gerada do tipo e serviço especificados, e chamar a mesma
         {
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -94,7 +113,7 @@ namespace Projeto_RJ
                                 AND tipo_atendimento = @tipo 
                                 AND servico = @servico
                                 AND status_atendimento = 'Aguardando'
-                                ORDER BY id DESC";
+                                ORDER BY id DESC"; //select para pegar a senha e chamar a mesma
 
                                 SqlCommand cmd = new SqlCommand(sqlSelect, con);
                                         cmd.Parameters.AddWithValue("@tipo", tipo);
@@ -106,8 +125,16 @@ namespace Projeto_RJ
                         {
                             senhaChamada.Text = reader["senha"].ToString();
                             senhaId = reader["id"].ToString();
+                            senhaTelao = reader["senha"].ToString();
+                            guicheTelao = reader["tipo_atendimento"].ToString();
                             MessageBox.Show("ID SELECIONADO: " + senhaId);
-                           
+
+                            if (frm_telaSenhas.Instancia != null && !frm_telaSenhas.Instancia.IsDisposed)
+                            {
+                                frm_telaSenhas.Instancia.ReceberNovaSenha(senhaTelao, guicheTelao);
+                            }
+
+
 
 
                         }
@@ -128,7 +155,7 @@ namespace Projeto_RJ
             
         }
 
-        private void alterarStatusSenha()
+        private void alterarStatusSenha() // Método para alterar o status da senha para "Chamado" no banco de dados
         {
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -176,7 +203,7 @@ namespace Projeto_RJ
             else
             {
                 alterarStatusSenha();
-                carregarDADOSGRID();
+                //carregarDADOSGRID();
 
             }
             
@@ -274,8 +301,33 @@ namespace Projeto_RJ
             }
         }
 
+
         private void senhaChamada_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void atualizarListaAutomatico_CheckedChanged(object sender, EventArgs e)
+        {
+            if(atualizarListaAutomatico.Checked)
+            {
+                
+                timerAtualizar.Enabled = true;
+                timerAtualizar.Start();
+            }
+            else
+            {
+                timerAtualizar.Enabled = false;
+                timerAtualizar.Stop();
+            }
+        }
+
+        private void timerAtualizar_Tick(object sender, EventArgs e)
+        {
+            timerAtualizar.Start();
+            carregarDADOSGRID();
+
+            
 
         }
     }

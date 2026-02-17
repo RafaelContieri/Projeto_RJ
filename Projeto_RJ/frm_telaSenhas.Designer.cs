@@ -40,8 +40,8 @@
             this.lbl_guicheDB = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flow_historico = new System.Windows.Forms.FlowLayoutPanel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
@@ -154,7 +154,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 732);
+            this.label3.Location = new System.Drawing.Point(4, 754);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 29);
             this.label3.TabIndex = 17;
@@ -163,16 +163,12 @@
             // 
             // flow_historico
             // 
-            this.flow_historico.Location = new System.Drawing.Point(12, 798);
+            this.flow_historico.Location = new System.Drawing.Point(9, 798);
             this.flow_historico.Name = "flow_historico";
-            this.flow_historico.Size = new System.Drawing.Size(1891, 231);
+            this.flow_historico.Size = new System.Drawing.Size(1868, 231);
             this.flow_historico.TabIndex = 18;
+            this.flow_historico.WrapContents = false;
             this.flow_historico.Paint += new System.Windows.Forms.PaintEventHandler(this.flow_historico_Paint);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 3000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
             // 
@@ -184,6 +180,11 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "HORA:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 3000;
             // 
             // frm_telaSenhas
             // 
@@ -224,7 +225,7 @@
         private System.Windows.Forms.Label lbl_guicheDB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flow_historico;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
