@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_modalCadastro));
             this.lbl_login = new System.Windows.Forms.Label();
             this.lbl_sigla = new System.Windows.Forms.Label();
@@ -56,31 +55,17 @@
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet7TableAdapters.acessosTableAdapter();
             this.btn_upload_picture = new System.Windows.Forms.Button();
             this.btn_excluir_foto = new System.Windows.Forms.Button();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.projeto_rjDataSet16 = new Projeto_RJ.projeto_rjDataSet16();
+            this.acessosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.acessosTableAdapter1 = new Projeto_RJ.projeto_rjDataSet16TableAdapters.acessosTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
-            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.Enabled = false;
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1134, 27);
-            dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(222, 32);
-            dateTimePicker2.TabIndex = 6;
             // 
             // lbl_login
             // 
@@ -137,6 +122,7 @@
             this.lbl_grupo_usuario.Size = new System.Drawing.Size(126, 16);
             this.lbl_grupo_usuario.TabIndex = 4;
             this.lbl_grupo_usuario.Text = "Grupo de usuário";
+            this.lbl_grupo_usuario.Click += new System.EventHandler(this.lbl_grupo_usuario_Click);
             // 
             // lbl_senha
             // 
@@ -165,7 +151,6 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.lbl_name_header);
-            this.panel1.Controls.Add(dateTimePicker2);
             this.panel1.Location = new System.Drawing.Point(-105, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
@@ -289,7 +274,7 @@
             // 
             // cmb_Grupo_usuario
             // 
-            this.cmb_Grupo_usuario.DataSource = this.acessosBindingSource;
+            this.cmb_Grupo_usuario.DataSource = this.acessosBindingSource1;
             this.cmb_Grupo_usuario.DisplayMember = "NomeMenu";
             this.cmb_Grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Grupo_usuario.FormattingEnabled = true;
@@ -340,6 +325,20 @@
             this.btn_excluir_foto.UseVisualStyleBackColor = true;
             this.btn_excluir_foto.Click += new System.EventHandler(this.btn_excluir_foto_Click);
             // 
+            // projeto_rjDataSet16
+            // 
+            this.projeto_rjDataSet16.DataSetName = "projeto_rjDataSet16";
+            this.projeto_rjDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // acessosBindingSource1
+            // 
+            this.acessosBindingSource1.DataMember = "acessos";
+            this.acessosBindingSource1.DataSource = this.projeto_rjDataSet16;
+            // 
+            // acessosTableAdapter1
+            // 
+            this.acessosTableAdapter1.ClearBeforeFill = true;
+            // 
             // frm_modalCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -379,6 +378,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,5 +412,8 @@
         private projeto_rjDataSet7TableAdapters.acessosTableAdapter acessosTableAdapter;
         private System.Windows.Forms.Button btn_upload_picture;
         private System.Windows.Forms.Button btn_excluir_foto;
+        private projeto_rjDataSet16 projeto_rjDataSet16;
+        private System.Windows.Forms.BindingSource acessosBindingSource1;
+        private projeto_rjDataSet16TableAdapters.acessosTableAdapter acessosTableAdapter1;
     }
 }

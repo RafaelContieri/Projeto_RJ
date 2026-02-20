@@ -137,6 +137,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>projeto_rjDataSet15.xsd</DependentUpon>
     </Compile>
+    <Compile Include="projeto_rjDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjDataSet16.xsd</DependentUpon>
+    </Compile>
     <Compile Include="projeto_rjDataSet8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,6 +153,12 @@
       <DependentUpon>projeto_rjDataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="sessao_Usuario.cs" />
+    <Compile Include="sideBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="sideBar.Designer.cs">
+      <DependentUpon>sideBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="tela_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,11 +270,11 @@
     <Compile Include="TOTEM.Designer.cs">
       <DependentUpon>TOTEM.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmErro.cs">
+    <Compile Include="modal_Aviso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmErro.Designer.cs">
-      <DependentUpon>frmErro.cs</DependentUpon>
+    <Compile Include="modal_Aviso.Designer.cs">
+      <DependentUpon>modal_Aviso.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSucesso.cs">
       <SubType>Form</SubType>
@@ -310,8 +321,8 @@
     <EmbeddedResource Include="frm_config.resx">
       <DependentUpon>frm_config.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmErro.resx">
-      <DependentUpon>frmErro.cs</DependentUpon>
+    <EmbeddedResource Include="modal_Aviso.resx">
+      <DependentUpon>modal_Aviso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSucesso.resx">
       <DependentUpon>frmSucesso.cs</DependentUpon>
@@ -330,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_usuarios.resx">
       <DependentUpon>frm_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sideBar.resx">
+      <DependentUpon>sideBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tela_INICIO.resx">
       <DependentUpon>tela_INICIO.cs</DependentUpon>
@@ -442,6 +456,17 @@
     </None>
     <None Include="projeto_rjDataSet15.xss">
       <DependentUpon>projeto_rjDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet16.xsc">
+      <DependentUpon>projeto_rjDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjDataSet16.xss">
+      <DependentUpon>projeto_rjDataSet16.xsd</DependentUpon>
     </None>
     <None Include="projeto_rjDataSet2.xsc">
       <DependentUpon>projeto_rjDataSet2.xsd</DependentUpon>

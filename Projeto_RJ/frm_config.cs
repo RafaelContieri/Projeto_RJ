@@ -15,6 +15,7 @@ namespace Projeto_RJ
         public frm_config()
         {
             InitializeComponent();
+            sideBar1.Visible = false;
         }
 
         private void btn_users_Click(object sender, EventArgs e)

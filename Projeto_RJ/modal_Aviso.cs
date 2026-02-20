@@ -24,17 +24,23 @@ namespace Projeto_RJ
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void btnIniciar_Click(object sender, EventArgs e)
+        private void btnIniciar_Click(object sender, EventArgs e) //botao de sim
         {
-            this.Close();
+            //SessaoUsuario.LimparSessao();
         }
 
         private void modalError_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e) //corrigir aqui para o botão de não, para fechar apenas o modal
+        {
+            //this.DialogResult = DialogResult.No; // Define o resultado
+           // this.Close(); // Fecha apenas esta janela (o modal)
         }
     }
 }

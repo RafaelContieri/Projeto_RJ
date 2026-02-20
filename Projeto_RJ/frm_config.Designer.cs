@@ -28,37 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_config));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.btn_users = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.sideBar1 = new Projeto_RJ.sideBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
-            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.Enabled = false;
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1655, 25);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(222, 32);
-            dateTimePicker2.TabIndex = 6;
-            // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.lbl_name_header);
-            this.panel1.Controls.Add(dateTimePicker2);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1902, 85);
@@ -99,11 +85,34 @@
             this.button1.Text = "Verificar log";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1844, 29);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 32);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "   9";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // sideBar1
+            // 
+            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
+            this.sideBar1.Name = "sideBar1";
+            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
+            this.sideBar1.TabIndex = 20;
+            // 
             // frm_config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.sideBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_users);
             this.Controls.Add(this.panel1);
@@ -126,5 +135,7 @@
         private System.Windows.Forms.Label lbl_name_header;
         private System.Windows.Forms.Button btn_users;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private sideBar sideBar1;
     }
 }

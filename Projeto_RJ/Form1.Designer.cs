@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -38,26 +37,10 @@
             this.btnIniciar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_name_header = new System.Windows.Forms.Label();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.containerImagem)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
-            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.Enabled = false;
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1655, 25);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(222, 32);
-            dateTimePicker2.TabIndex = 6;
             // 
             // panel2
             // 
@@ -139,7 +122,6 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.lbl_name_header);
-            this.panel1.Controls.Add(dateTimePicker2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1902, 85);

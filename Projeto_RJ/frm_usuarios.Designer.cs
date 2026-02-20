@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_usuarios));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,9 +38,6 @@
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projeto_rjDataSet5 = new Projeto_RJ.projeto_rjDataSet5();
-            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet5TableAdapters.usuariosTableAdapter();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,34 +48,20 @@
             this.base64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_editar = new System.Windows.Forms.DataGridViewImageColumn();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet5 = new Projeto_RJ.projeto_rjDataSet5();
+            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet5TableAdapters.usuariosTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet5)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.DarkOrange;
-            dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonFace;
-            dateTimePicker2.Enabled = false;
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(1512, 27);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(222, 32);
-            dateTimePicker2.TabIndex = 6;
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.lbl_name_header);
-            this.panel1.Controls.Add(dateTimePicker2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1902, 85);
@@ -169,20 +151,6 @@
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.projeto_rjDataSet5;
-            // 
-            // projeto_rjDataSet5
-            // 
-            this.projeto_rjDataSet5.DataSetName = "projeto_rjDataSet5";
-            this.projeto_rjDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -269,6 +237,20 @@
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btn_editar.Width = 40;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.projeto_rjDataSet5;
+            // 
+            // projeto_rjDataSet5
+            // 
+            this.projeto_rjDataSet5.DataSetName = "projeto_rjDataSet5";
+            this.projeto_rjDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // frm_usuarios
             // 

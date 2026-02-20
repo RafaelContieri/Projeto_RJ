@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mysqlx.Crud;
+using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,6 +13,8 @@ namespace Projeto_RJ
             InitializeComponent();
             this.AcceptButton = btn_login; // Define o botão Entrar como o botão padrão ao pressionar Enter
         }
+
+        
 
         private void containerImagem_Click(object sender, EventArgs e)
         {
@@ -58,24 +61,12 @@ namespace Projeto_RJ
 
         }
 
-       
-        private void GravarLogInterno(string mensagem)
-        {
-            try
-            {
-                string caminhoLog = AppDomain.CurrentDomain.BaseDirectory + "log_acessos.txt";
-                string linhaLog = $"[{DateTime.Now:dd/MM/yyyy HH:mm:ss}] - {mensagem}{Environment.NewLine}";
 
-                // Adiciona a linha ao arquivo sem apagar o que já existe
-                System.IO.File.AppendAllText(caminhoLog, linhaLog);
-            }
-            catch { /* Falha silenciosa para não travar o login */ }
-        }
-        private void btn_login_Click(object sender, EventArgs e)
+        public void btn_login_Click(object sender, EventArgs e)
         {
-
+            string sql = "SELECT id, nome, usuario, senha, email, acesso, imgbase64, usuarioLogado FROM usuarios WHERE usuario = @user";
+            string sqlUpdate = "UPDATE usuarios SET usuarioLogado = 'S' WHERE id = @id";
             
-            string sql = "SELECT id, nome, usuario, senha, email, acesso, imgbase64 FROM usuarios WHERE usuario = @user";
 
             using (SqlConnection con = new SqlConnection(@"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);"))
             {
@@ -85,56 +76,86 @@ namespace Projeto_RJ
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("@user", txt_usuario_login.Text.Trim());
 
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    if (reader.Read())
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        
-                        string hashBanco = reader["senha"].ToString().Trim();
-                        string senhaDigitada = txt_senha_login.Text.Trim();
-
-                        
-                        // O BCrypt.Verify retorna true se a senha digitada bater com o Hash do banco
-                        if (BCrypt.Net.BCrypt.Verify(senhaDigitada, hashBanco))
+                        if (reader.Read())
                         {
-                            // SUCESSO: Alimenta a sessão global
-                            SessaoUsuario.Id = Convert.ToInt32(reader["id"]);
-                            SessaoUsuario.Nome = reader["nome"].ToString();
-                            SessaoUsuario.Login = reader["usuario"].ToString();
-                            SessaoUsuario.Email = reader["email"].ToString();
-                            SessaoUsuario.NivelAcesso = reader["acesso"].ToString();
-                            SessaoUsuario.FotoBase64 = reader["imgbase64"].ToString();
+                            string hashBanco = reader["senha"].ToString().Trim();
+                            string senhaDigitada = txt_senha_login.Text.Trim();
 
-                            this.Hide();
-                            using (frm_ADM principal = new frm_ADM())
+                            if (BCrypt.Net.BCrypt.Verify(senhaDigitada, hashBanco))
                             {
-                                principal.ShowDialog();
+                                // 1. Alimenta a sessão global
+                                SessaoUsuario.Id = Convert.ToInt32(reader["id"]);
+                                SessaoUsuario.Nome = reader["nome"].ToString();
+                                SessaoUsuario.Login = reader["usuario"].ToString();
+                                SessaoUsuario.Email = reader["email"].ToString();
+                                SessaoUsuario.NivelAcesso = reader["acesso"].ToString();
+                                SessaoUsuario.FotoBase64 = reader["imgbase64"].ToString();
+                                
+
+                                // IMPORTANTE: Fechamos o reader para poder fazer o UPDATE na mesma conexão
+                                reader.Close();
+
+                                // 2. Agora sim, fazemos o UPDATE para 'S'
+                                using (SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, con))
+                                {
+                                    cmdUpdate.Parameters.AddWithValue("@id", SessaoUsuario.Id); // Usamos o ID numérico da sessão
+                                    cmdUpdate.ExecuteNonQuery(); // ExecuteNonQuery é para UPDATE/INSERT/DELETE
+                                }
+
+                                // 3. Abre a tela principal
+                                this.Hide();
+                                using (frm_ADM principal = new frm_ADM())
+                                {
+                                    principal.ShowDialog();
+                                    // MessageBox.Show("Logado?: " + SessaoUsuario.logado); ATIVEI PARA TESTE, MOSTRA SE A SESSÃO ESTÁ MARCADA COMO LOGADA
+                                }
+                                this.Close();
                             }
-                            this.Close();
+                            else
+                            {
+                                MessageBox.Show("Usuário ou senha inválidos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                         else
                         {
-                            // LOG: Senha errada (Hash não bateu)
-                            GravarLogInterno($"Falha: Senha incorreta para o usuário '{txt_usuario_login.Text}'.");
-                            MessageBox.Show("Usuário ou senha inválidos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            txt_senha_login.Clear();
-                            txt_senha_login.Focus();
+                            MessageBox.Show("Usuário ou senha inválidos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                    else
-                    {
-                        // LOG: Usuário não existe
-                        GravarLogInterno($"Falha: Usuário '{txt_usuario_login.Text}' não encontrado.");
-                        MessageBox.Show("Usuário ou senha inválidos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txt_usuario_login.Focus();
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro técnico: " + ex.Message, "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
+            } // Aqui a conexão fecha automaticamente pelo 'using'
+        }
+
+        public void DeslogarUsuario()
+        {
+            // Usamos o ID que está salvo na memória desde o Login
+            int idUsuario = SessaoUsuario.Id;
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);"))
+            {
+                string sql = "UPDATE usuarios SET usuarioLogado = 'N' WHERE id = @id";
+                try
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idUsuario);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao encerrar sessão no banco: " + ex.Message);
+                }
             }
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
