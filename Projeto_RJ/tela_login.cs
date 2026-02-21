@@ -132,9 +132,11 @@ namespace Projeto_RJ
         }
 
         public void DeslogarUsuario()
+
         {
             // Usamos o ID que está salvo na memória desde o Login
             int idUsuario = SessaoUsuario.Id;
+
 
             using (SqlConnection con = new SqlConnection(@"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);"))
             {
@@ -219,6 +221,11 @@ namespace Projeto_RJ
         }
 
         public void btn_login_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -29,7 +29,9 @@ namespace Projeto_RJ
 
         private void btnIniciar_Click(object sender, EventArgs e) //botao de sim
         {
-            //SessaoUsuario.LimparSessao();
+            SessaoUsuario.LimparSessao();
+            this.DialogResult = DialogResult.No; // Define o resultado
+            this.Close(); // Fecha apenas esta janela (o modal)
         }
 
         private void modalError_Load(object sender, EventArgs e)
@@ -39,8 +41,7 @@ namespace Projeto_RJ
 
         private void button1_Click(object sender, EventArgs e) //corrigir aqui para o botão de não, para fechar apenas o modal
         {
-            //this.DialogResult = DialogResult.No; // Define o resultado
-           // this.Close(); // Fecha apenas esta janela (o modal)
+            
         }
     }
 }

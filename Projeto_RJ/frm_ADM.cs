@@ -125,8 +125,8 @@ namespace Projeto_RJ
 
         private void frm_ADM_FormClosed(object sender, FormClosedEventArgs e) //Evento para garantir que a sessão seja limpa ao fechar o formulário principal
         {
-            //modalError abrimodal = new modalError();
-            // abrimodal.ShowDialog();
+            modalError abrimodal = new modalError();
+             abrimodal.ShowDialog();
 
             //corrigir aqui para abrir o modal de confirmação, e se o usuário clicar em sim, aí sim limpar a sessão, se clicar em não, apenas fechar o modal e manter a sessão ativa
         }

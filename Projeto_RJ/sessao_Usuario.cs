@@ -28,7 +28,7 @@ namespace Projeto_RJ
             FotoBase64 = null;
             logado = 'N'; // Atribuição direta do caractere
 
-            Application.Exit(); // Encerra o aplicativo após limpar a sessão
+            //Application.Exit(); // Encerra o aplicativo após limpar a sessão
         }
 
         public static void DeslogarUsuario()
