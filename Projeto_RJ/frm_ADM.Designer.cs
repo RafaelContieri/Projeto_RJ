@@ -34,12 +34,12 @@
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.painel_botoes = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_gestaoSenhas = new System.Windows.Forms.Button();
             this.btn_controleSenha = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_config = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.sideBar1 = new Projeto_RJ.sideBar();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.painel_botoes.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.btn_perfil.BackColor = System.Drawing.Color.White;
             this.btn_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_perfil.Image = ((System.Drawing.Image)(resources.GetObject("btn_perfil.Image")));
-            this.btn_perfil.Location = new System.Drawing.Point(1839, 24);
+            this.btn_perfil.Location = new System.Drawing.Point(1821, 24);
             this.btn_perfil.Name = "btn_perfil";
             this.btn_perfil.Size = new System.Drawing.Size(32, 32);
             this.btn_perfil.TabIndex = 8;
@@ -87,6 +87,8 @@
             // 
             // painel_botoes
             // 
+            this.painel_botoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.painel_botoes.AutoSize = true;
             this.painel_botoes.Controls.Add(this.btn_gestaoSenhas);
             this.painel_botoes.Controls.Add(this.btn_controleSenha);
@@ -97,24 +99,6 @@
             this.painel_botoes.Size = new System.Drawing.Size(760, 350);
             this.painel_botoes.TabIndex = 21;
             this.painel_botoes.Paint += new System.Windows.Forms.PaintEventHandler(this.painel_botoes_Paint);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(380, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 40, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button1.Size = new System.Drawing.Size(150, 150);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "senha_painel";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // btn_gestaoSenhas
             // 
@@ -152,6 +136,24 @@
             this.btn_controleSenha.UseVisualStyleBackColor = false;
             this.btn_controleSenha.Click += new System.EventHandler(this.btn_controleSenha_Click_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(380, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 40, 0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button1.Size = new System.Drawing.Size(150, 150);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "senha_painel";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // btn_config
             // 
             this.btn_config.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -170,6 +172,14 @@
             this.btn_config.UseVisualStyleBackColor = false;
             this.btn_config.Click += new System.EventHandler(this.btn_config_Click_1);
             // 
+            // sideBar1
+            // 
+            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
+            this.sideBar1.Name = "sideBar1";
+            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
+            this.sideBar1.TabIndex = 22;
+            // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -184,14 +194,6 @@
             this.button2.Text = "   9";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // sideBar1
-            // 
-            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
-            this.sideBar1.Name = "sideBar1";
-            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
-            this.sideBar1.TabIndex = 22;
             // 
             // frm_ADM
             // 

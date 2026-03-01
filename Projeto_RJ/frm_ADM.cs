@@ -81,6 +81,14 @@ namespace Projeto_RJ
 
         private void button1_Click_2(object sender, EventArgs e)
         {
+
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
             //Verifica se o telão já não está aberto (para não abrir duplicado)
             if (frm_telaSenhas.Instancia == null || frm_telaSenhas.Instancia.IsDisposed)
             {
@@ -97,20 +105,48 @@ namespace Projeto_RJ
 
         private void btn_controleSenha_Click_1(object sender, EventArgs e)
         {
+
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
             frm_controleSenhas frm_ControleSenhas = new frm_controleSenhas();
             frm_ControleSenhas.Show();
         }
 
         private void btn_config_Click_1(object sender, EventArgs e)
         {
+
+
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
+
             frm_config configUSER = new frm_config();
-            configUSER.ShowDialog();
+            configUSER.Show();
+
+           
         }
 
         private void btn_gestaoSenhas_Click_1(object sender, EventArgs e)
         {
-            frm_gestaoSenha telaabrir = new frm_gestaoSenha();
-            telaabrir.ShowDialog();
+
+
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Close(); // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
+            //frm_gestaoSenha telaabrir = new frm_gestaoSenha();
+            //telaabrir.Show();
         }
 
         private void sideBar1_Load(object sender, EventArgs e)
@@ -123,12 +159,18 @@ namespace Projeto_RJ
 
         }
 
-        private void frm_ADM_FormClosed(object sender, FormClosedEventArgs e) //Evento para garantir que a sessão seja limpa ao fechar o formulário principal
+        private void frm_ADM_FormClosed(object sender, EventArgs e) 
         {
             modalError abrimodal = new modalError();
-             abrimodal.ShowDialog();
+             abrimodal.Show();
+
 
             //corrigir aqui para abrir o modal de confirmação, e se o usuário clicar em sim, aí sim limpar a sessão, se clicar em não, apenas fechar o modal e manter a sessão ativa
+        }
+
+        private void sideBar1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
     

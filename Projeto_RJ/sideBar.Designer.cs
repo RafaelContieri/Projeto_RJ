@@ -64,6 +64,7 @@
             this.container_pai.TabIndex = 22;
             this.container_pai.WrapContents = false;
             this.container_pai.Paint += new System.Windows.Forms.PaintEventHandler(this.container_pai_Paint);
+            this.container_pai.MouseEnter += new System.EventHandler(this.container_pai_MouseEnter);
             // 
             // panel_itens
             // 
@@ -167,6 +168,7 @@
             this.container_BotoesMenu.Size = new System.Drawing.Size(432, 358);
             this.container_BotoesMenu.TabIndex = 21;
             this.container_BotoesMenu.WrapContents = false;
+            this.container_BotoesMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.container_BotoesMenu_Paint_1);
             // 
             // gestaosenhas
             // 

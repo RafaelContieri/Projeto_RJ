@@ -43,11 +43,17 @@ namespace Projeto_RJ
             this.Load += new EventHandler(sideBar_Load);
 
 
+           
+
+            
+
+
         }
 
         private void container_pai_Paint(object sender, PaintEventArgs e)
         {
-
+            
+                
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e) //side menu
@@ -126,8 +132,16 @@ namespace Projeto_RJ
         }
 
         private void gestaosenhas_Click_1(object sender, EventArgs e) //ok
+
+
         {
-            
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
             Form frm = Application.OpenForms["frm_gestaoSenha"];
 
             if (frm != null)
@@ -149,7 +163,18 @@ namespace Projeto_RJ
         }
 
         private void controlesenhas_Click_1(object sender, EventArgs e) //ok
+
+
+
         {
+
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
             Form frm = Application.OpenForms["frm_controleSenhas"];
 
             if (frm != null)
@@ -171,6 +196,14 @@ namespace Projeto_RJ
 
         private void painelsenhas_Click_1(object sender, EventArgs e) //ok
         {
+
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
             Form frm = Application.OpenForms["frm_telaSenhas"];
 
             if (frm != null)
@@ -192,6 +225,14 @@ namespace Projeto_RJ
 
         private void configuracoes_Click_1(object sender, EventArgs e)
         {
+
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
             Form frm = Application.OpenForms["frm_config"];
 
             if (frm != null)
@@ -213,7 +254,7 @@ namespace Projeto_RJ
 
         private void exit_Click_1(object sender, EventArgs e)
         {
-
+            deslogarToolStripMenuItem_Click(sender, e); // Reutiliza o método de deslogar para o botão de sair
         }
 
         private void lbl_nomeMenu_Click_1(object sender, EventArgs e)
@@ -226,9 +267,13 @@ namespace Projeto_RJ
         }  
 
         private void btn_close_Click_1(object sender, EventArgs e)
-        { 
-
-            this.Visible = false; // Apenas torna o sidebar invisível, sem removê-lo do formulário
+        
+        {
+            
+            
+                this.Visible = false; // Apenas torna o sidebar invisível, sem removê-lo do formulário
+            
+            
         }
 
         private void sideBar_Load(object sender, EventArgs e) // Carrega as informações do usuário na sidebar
@@ -288,9 +333,9 @@ namespace Projeto_RJ
             }
         }
 
-        private void deslogarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void deslogarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SessaoUsuario.LimparSessao();
+            SessaoUsuario.LimparSessao(); //aqui
             Form frmLogin = Application.OpenForms["frm_Login"];
             if (frmLogin != null)
             {
@@ -308,6 +353,16 @@ namespace Projeto_RJ
         private void btn_exitMenu_Click_1(object sender, EventArgs e)
         {
             deslogarToolStripMenuItem_Click(sender, e); // Reutiliza o método de deslogar para o botão de sair
+        }
+
+        private void container_BotoesMenu_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void container_pai_MouseEnter(object sender, EventArgs e)
+        {
+            
         }
     }
 
