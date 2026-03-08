@@ -43,6 +43,7 @@
             this.painelsenhas = new System.Windows.Forms.Button();
             this.configuracoes = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.btn_inicio = new System.Windows.Forms.Button();
             this.container_pai.SuspendLayout();
             this.panel_itens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_fotoMenu)).BeginInit();
@@ -60,10 +61,11 @@
             this.container_pai.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.container_pai.Location = new System.Drawing.Point(0, 0);
             this.container_pai.Name = "container_pai";
-            this.container_pai.Size = new System.Drawing.Size(441, 465);
+            this.container_pai.Size = new System.Drawing.Size(441, 535);
             this.container_pai.TabIndex = 22;
             this.container_pai.WrapContents = false;
             this.container_pai.Paint += new System.Windows.Forms.PaintEventHandler(this.container_pai_Paint);
+            this.container_pai.Leave += new System.EventHandler(this.container_pai_Leave);
             this.container_pai.MouseEnter += new System.EventHandler(this.container_pai_MouseEnter);
             // 
             // panel_itens
@@ -156,6 +158,7 @@
             // 
             this.container_BotoesMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.container_BotoesMenu.BackColor = System.Drawing.Color.Transparent;
+            this.container_BotoesMenu.Controls.Add(this.btn_inicio);
             this.container_BotoesMenu.Controls.Add(this.gestaosenhas);
             this.container_BotoesMenu.Controls.Add(this.controlesenhas);
             this.container_BotoesMenu.Controls.Add(this.painelsenhas);
@@ -165,7 +168,7 @@
             this.container_BotoesMenu.Location = new System.Drawing.Point(3, 98);
             this.container_BotoesMenu.Name = "container_BotoesMenu";
             this.container_BotoesMenu.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.container_BotoesMenu.Size = new System.Drawing.Size(432, 358);
+            this.container_BotoesMenu.Size = new System.Drawing.Size(432, 434);
             this.container_BotoesMenu.TabIndex = 21;
             this.container_BotoesMenu.WrapContents = false;
             this.container_BotoesMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.container_BotoesMenu_Paint_1);
@@ -176,7 +179,7 @@
             this.gestaosenhas.BackColor = System.Drawing.Color.Transparent;
             this.gestaosenhas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gestaosenhas.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestaosenhas.Location = new System.Drawing.Point(3, 8);
+            this.gestaosenhas.Location = new System.Drawing.Point(3, 78);
             this.gestaosenhas.Name = "gestaosenhas";
             this.gestaosenhas.Size = new System.Drawing.Size(427, 64);
             this.gestaosenhas.TabIndex = 0;
@@ -190,7 +193,7 @@
             this.controlesenhas.BackColor = System.Drawing.Color.Transparent;
             this.controlesenhas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.controlesenhas.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.controlesenhas.Location = new System.Drawing.Point(3, 78);
+            this.controlesenhas.Location = new System.Drawing.Point(3, 148);
             this.controlesenhas.Name = "controlesenhas";
             this.controlesenhas.Size = new System.Drawing.Size(427, 64);
             this.controlesenhas.TabIndex = 1;
@@ -204,7 +207,7 @@
             this.painelsenhas.BackColor = System.Drawing.Color.Transparent;
             this.painelsenhas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.painelsenhas.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.painelsenhas.Location = new System.Drawing.Point(3, 148);
+            this.painelsenhas.Location = new System.Drawing.Point(3, 218);
             this.painelsenhas.Name = "painelsenhas";
             this.painelsenhas.Size = new System.Drawing.Size(427, 64);
             this.painelsenhas.TabIndex = 2;
@@ -218,7 +221,7 @@
             this.configuracoes.BackColor = System.Drawing.Color.Transparent;
             this.configuracoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.configuracoes.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configuracoes.Location = new System.Drawing.Point(3, 218);
+            this.configuracoes.Location = new System.Drawing.Point(3, 288);
             this.configuracoes.Name = "configuracoes";
             this.configuracoes.Size = new System.Drawing.Size(427, 64);
             this.configuracoes.TabIndex = 3;
@@ -232,7 +235,7 @@
             this.exit.BackColor = System.Drawing.Color.Transparent;
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(3, 288);
+            this.exit.Location = new System.Drawing.Point(3, 358);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(427, 61);
             this.exit.TabIndex = 4;
@@ -240,13 +243,27 @@
             this.exit.UseVisualStyleBackColor = false;
             this.exit.Click += new System.EventHandler(this.exit_Click_1);
             // 
+            // btn_inicio
+            // 
+            this.btn_inicio.AutoSize = true;
+            this.btn_inicio.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inicio.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inicio.Location = new System.Drawing.Point(3, 8);
+            this.btn_inicio.Name = "btn_inicio";
+            this.btn_inicio.Size = new System.Drawing.Size(427, 64);
+            this.btn_inicio.TabIndex = 5;
+            this.btn_inicio.Text = "Início";
+            this.btn_inicio.UseVisualStyleBackColor = false;
+            this.btn_inicio.Click += new System.EventHandler(this.btn_inicio_Click);
+            // 
             // sideBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.container_pai);
             this.Name = "sideBar";
-            this.Size = new System.Drawing.Size(441, 468);
+            this.Size = new System.Drawing.Size(441, 535);
             this.container_pai.ResumeLayout(false);
             this.container_pai.PerformLayout();
             this.panel_itens.ResumeLayout(false);
@@ -275,5 +292,6 @@
         private System.Windows.Forms.Label lbl_nomeMenu;
         private System.Windows.Forms.Label lbl_AcessoMenu;
         private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Button btn_inicio;
     }
 }

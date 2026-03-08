@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Projeto_RJ
@@ -10,6 +12,12 @@ namespace Projeto_RJ
         public sideBar()
         {
             InitializeComponent();
+            // Botão Início
+            btn_inicio.MouseEnter += (s, e) => { btn_inicio.BackColor = Color.FromArgb(255, 133, 47); };
+            btn_inicio.MouseLeave += (s, e) => { btn_inicio.BackColor = Color.Transparent; };
+            btn_inicio.FlatStyle = FlatStyle.Flat;
+            btn_inicio.FlatAppearance.BorderSize = 0;
+
             // Botão Gestão de Senhas
             gestaosenhas.MouseEnter += (s, e) => { gestaosenhas.BackColor = Color.FromArgb(255, 133, 47); };
             gestaosenhas.MouseLeave += (s, e) => { gestaosenhas.BackColor = Color.Transparent; };
@@ -40,12 +48,12 @@ namespace Projeto_RJ
             exit.FlatStyle = FlatStyle.Flat;
             exit.FlatAppearance.BorderSize = 0;
 
-            this.Load += new EventHandler(sideBar_Load);
+            this.Load += new EventHandler(sideBar_Load); // Garante que o evento de Load seja chamado para carregar as informações do usuário
 
 
-           
 
-            
+            this.Leave += new EventHandler(container_pai_Leave);
+
 
 
         }
@@ -149,16 +157,18 @@ namespace Projeto_RJ
                 // Se ela existir, trazemos ela para a frente (foco)
                 frm.BringToFront();
 
-                
+
                 if (frm.WindowState == FormWindowState.Minimized)
                     frm.WindowState = FormWindowState.Normal;
             }
             else
             {
-                
+
                 frm_gestaoSenha telaabrir = new frm_gestaoSenha();
                 telaabrir.Show();
             }
+
+            
 
         }
 
@@ -335,15 +345,13 @@ namespace Projeto_RJ
 
         public void deslogarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SessaoUsuario.LimparSessao(); //aqui
-            Form frmLogin = Application.OpenForms["frm_Login"];
-            if (frmLogin != null)
-            {
-                frmLogin.Show();
-                frmLogin.BringToFront();
-            }
-            Application.OpenForms["frm_ADM"]?.Close();
+            SessaoUsuario.LimparSessao();
+
+            tela_login novoLogin = new tela_login();
+            novoLogin.Show();
         }
+
+           
 
         private void pic_fotoMenu_Click_1(object sender, EventArgs e)
         {
@@ -363,6 +371,42 @@ namespace Projeto_RJ
         private void container_pai_MouseEnter(object sender, EventArgs e)
         {
             
+        }
+
+        public void container_pai_Leave(object sender, EventArgs e) //corrgir o bug de fechar sidebar apenas se o mouse ver um elemento na tela exemplo ==> botao, painel etc...
+        {
+            if (!this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
+    {
+        this.Visible = false;
+    }
+        }
+
+        private void btn_inicio_Click(object sender, EventArgs e)
+        {
+            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
+
+            if (frmAtual != null && this.Visible == true)
+            {
+                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
+            }
+
+            Form frm = Application.OpenForms["frm_ADM"];
+
+            if (frm != null)
+            {
+                // Se ela existir, trazemos ela para a frente (foco)
+                frm.BringToFront();
+
+
+                if (frm.WindowState == FormWindowState.Minimized)
+                    frm.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+
+                frm_ADM telaabrir = new frm_ADM();
+                telaabrir.Show();
+            }
         }
     }
 

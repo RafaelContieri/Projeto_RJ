@@ -28,5 +28,16 @@ namespace Projeto_RJ
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e) //botao do menu
+        {
+            sideBar1.Visible = true;
+            sideBar1.Focus();
+        }
+
+        private void sideBar1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

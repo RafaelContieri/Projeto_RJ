@@ -14,36 +14,28 @@ namespace Projeto_RJ
         public static string FotoBase64 { get; set; }
         public static char logado { get; set; }
 
-        public static void LimparSessao() // função do X da sidebar
+        public static void LimparSessao()
         {
-            
+
             DeslogarUsuario();
 
-            
+
             Id = 0;
             Nome = null;
             Login = null;
             Email = null;
             NivelAcesso = null;
             FotoBase64 = null;
-            logado = 'N'; // Atribuição direta do caractere
-
+            logado = 'N';
         }
 
-        public static void fecharSistema() // função do botão de sim do modal de fechar sistema
+        public static void fecharSistema()
         {
 
-            DeslogarUsuario();
+            LimparSessao();
 
-            Id = 0;
-            Nome = null;
-            Login = null;
-            Email = null;
-            NivelAcesso = null;
-            FotoBase64 = null;
-            logado = 'N'; // Atribuição direta do caractere
 
-            Application.Exit(); // Encerra o aplicativo após limpar a sessão
+            Application.Exit();
         }
 
         public static void DeslogarUsuario()
@@ -67,5 +59,12 @@ namespace Projeto_RJ
                 }
             }
         }
+
+        public static void deslogarEFecharSistema()
+        {
+            DeslogarUsuario();
+            fecharSistema();
+        }
+
     }
 }

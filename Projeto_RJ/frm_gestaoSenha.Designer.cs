@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_gestaoSenha));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_perfil = new System.Windows.Forms.Button();
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.panel_atendimentoTotal = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.lblPreferencial = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btn_perfil = new System.Windows.Forms.Button();
             this.sideBar1 = new Projeto_RJ.sideBar();
             this.panel1.SuspendLayout();
             this.panel_atendimentoTotal.SuspendLayout();
@@ -66,6 +66,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1902, 85);
             this.panel1.TabIndex = 12;
+            // 
+            // btn_perfil
+            // 
+            this.btn_perfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_perfil.AutoSize = true;
+            this.btn_perfil.BackColor = System.Drawing.Color.White;
+            this.btn_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_perfil.Image = ((System.Drawing.Image)(resources.GetObject("btn_perfil.Image")));
+            this.btn_perfil.Location = new System.Drawing.Point(1820, 24);
+            this.btn_perfil.Name = "btn_perfil";
+            this.btn_perfil.Size = new System.Drawing.Size(32, 32);
+            this.btn_perfil.TabIndex = 9;
+            this.btn_perfil.Text = "   9";
+            this.btn_perfil.UseVisualStyleBackColor = false;
+            this.btn_perfil.Click += new System.EventHandler(this.btn_perfil_Click);
             // 
             // lbl_name_header
             // 
@@ -266,21 +281,6 @@
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // btn_perfil
-            // 
-            this.btn_perfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_perfil.AutoSize = true;
-            this.btn_perfil.BackColor = System.Drawing.Color.White;
-            this.btn_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_perfil.Image = ((System.Drawing.Image)(resources.GetObject("btn_perfil.Image")));
-            this.btn_perfil.Location = new System.Drawing.Point(1820, 24);
-            this.btn_perfil.Name = "btn_perfil";
-            this.btn_perfil.Size = new System.Drawing.Size(32, 32);
-            this.btn_perfil.TabIndex = 9;
-            this.btn_perfil.Text = "   9";
-            this.btn_perfil.UseVisualStyleBackColor = false;
-            this.btn_perfil.Click += new System.EventHandler(this.btn_perfil_Click);
-            // 
             // sideBar1
             // 
             this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -288,6 +288,7 @@
             this.sideBar1.Name = "sideBar1";
             this.sideBar1.Size = new System.Drawing.Size(441, 1041);
             this.sideBar1.TabIndex = 17;
+            this.sideBar1.Visible = false;
             this.sideBar1.Load += new System.EventHandler(this.sideBar1_Load);
             // 
             // frm_gestaoSenha

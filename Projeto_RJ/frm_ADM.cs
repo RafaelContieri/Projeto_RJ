@@ -12,14 +12,14 @@ namespace Projeto_RJ
             InitializeComponent();
             sideBar1.Visible = false;
             
-            
+
         }
 
 
         public void botaoChamarMenu()
         {
             sideBar1.Visible = true;
-
+            sideBar1.Focus();
         }
 
        
@@ -37,8 +37,8 @@ namespace Projeto_RJ
 
         private void frm_ADM_Load(object sender, EventArgs e)
         {
-            // COLOCAR VALIDAÇÃO DE LOGIN DE ADMINISTRADOR AQUI PARA DESATIVAR BOTÃO DE GESTÃO DE SENHAS SE NÃO FOR ADMIN
-            //ESSA VALIDAÇÃO VAI DEPENDER DO MODAL DO USUARIO LOGADO, OU SEJA SE FOR ADMINISTRADOR, DEIXA O BOTÃO ATIVO, SE NÃO FOR, DESATIVA O BOTÃO
+            this.MouseLeave += new EventHandler(sideBar1.container_pai_Leave);
+
 
         }
         private void btn_config_Click(object sender, EventArgs e)
@@ -82,36 +82,12 @@ namespace Projeto_RJ
         private void button1_Click_2(object sender, EventArgs e)
         {
 
-            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
-
-            if (frmAtual != null && this.Visible == true)
-            {
-                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
-            }
-
-            //Verifica se o telão já não está aberto (para não abrir duplicado)
-            if (frm_telaSenhas.Instancia == null || frm_telaSenhas.Instancia.IsDisposed)
-            {
-                frm_telaSenhas telao = new frm_telaSenhas();
-                telao.Show();
-
-            }
-            else
-            {
-                // Se já estiver aberto, apenas traz ele para a frente
-                frm_telaSenhas.Instancia.BringToFront();
-            }
+            frm_telaSenhas telao = new frm_telaSenhas();
+            telao.Show();
         }
 
         private void btn_controleSenha_Click_1(object sender, EventArgs e)
         {
-
-            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
-
-            if (frmAtual != null && this.Visible == true)
-            {
-                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
-            }
 
             frm_controleSenhas frm_ControleSenhas = new frm_controleSenhas();
             frm_ControleSenhas.Show();
@@ -119,14 +95,6 @@ namespace Projeto_RJ
 
         private void btn_config_Click_1(object sender, EventArgs e)
         {
-
-
-            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
-            if (frmAtual != null && this.Visible == true)
-            {
-                this.Visible = false; // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
-            }
-
 
             frm_config configUSER = new frm_config();
             configUSER.Show();
@@ -137,21 +105,13 @@ namespace Projeto_RJ
         private void btn_gestaoSenhas_Click_1(object sender, EventArgs e)
         {
 
-
-            Form frmAtual = this.FindForm(); // procurando a tela que eu estou
-
-            if (frmAtual != null && this.Visible == true)
-            {
-                this.Close(); // Esconde a sidebar ao carregar, para só mostrar quando o botão for clicado
-            }
-
-            //frm_gestaoSenha telaabrir = new frm_gestaoSenha();
-            //telaabrir.Show();
+            frm_gestaoSenha telaabrir = new frm_gestaoSenha();
+            telaabrir.Show();
         }
 
         private void sideBar1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -161,14 +121,24 @@ namespace Projeto_RJ
 
         private void frm_ADM_FormClosed(object sender, EventArgs e) 
         {
-            modalError abrimodal = new modalError();
+            modalError abrimodal = new modalError(); //modal de aviso
              abrimodal.Show();
 
 
-            //corrigir aqui para abrir o modal de confirmação, e se o usuário clicar em sim, aí sim limpar a sessão, se clicar em não, apenas fechar o modal e manter a sessão ativa
+            
         }
 
         private void sideBar1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sideBar1_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_ADM_Leave(object sender, EventArgs e)
         {
 
         }

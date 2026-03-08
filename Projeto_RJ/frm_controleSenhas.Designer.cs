@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_controleSenhas));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_menu = new System.Windows.Forms.Button();
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.btn_refreshSenha = new System.Windows.Forms.Button();
             this.lbl_senhaChamada = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.pR_BuscarSenhasChamadasTableAdapter = new Projeto_RJ.projeto_rjDataSet12TableAdapters.PR_BuscarSenhasChamadasTableAdapter();
             this.atualizarListaAutomatico = new System.Windows.Forms.CheckBox();
             this.timerAtualizar = new System.Windows.Forms.Timer(this.components);
+            this.sideBar1 = new Projeto_RJ.sideBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRBuscarSenhasChamadasBindingSource)).BeginInit();
@@ -61,12 +63,28 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.btn_menu);
             this.panel1.Controls.Add(this.lbl_name_header);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1902, 85);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btn_menu
+            // 
+            this.btn_menu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_menu.AutoSize = true;
+            this.btn_menu.BackColor = System.Drawing.Color.White;
+            this.btn_menu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_menu.Image")));
+            this.btn_menu.Location = new System.Drawing.Point(1826, 29);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Size = new System.Drawing.Size(32, 32);
+            this.btn_menu.TabIndex = 24;
+            this.btn_menu.Text = "   9";
+            this.btn_menu.UseVisualStyleBackColor = false;
+            this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
             // 
             // lbl_name_header
             // 
@@ -251,12 +269,23 @@
             this.timerAtualizar.Interval = 10000;
             this.timerAtualizar.Tick += new System.EventHandler(this.timerAtualizar_Tick);
             // 
+            // sideBar1
+            // 
+            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
+            this.sideBar1.Name = "sideBar1";
+            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
+            this.sideBar1.TabIndex = 29;
+            this.sideBar1.Visible = false;
+            this.sideBar1.Load += new System.EventHandler(this.sideBar1_Load);
+            // 
             // frm_controleSenhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.sideBar1);
             this.Controls.Add(this.atualizarListaAutomatico);
             this.Controls.Add(this.senhaChamada);
             this.Controls.Add(this.lbl_senhas_chamadas);
@@ -307,5 +336,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn datageracaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.CheckBox atualizarListaAutomatico;
         private System.Windows.Forms.Timer timerAtualizar;
+        private System.Windows.Forms.Button btn_menu;
+        private sideBar sideBar1;
     }
 }

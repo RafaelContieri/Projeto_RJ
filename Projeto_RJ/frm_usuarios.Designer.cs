@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_name_header = new System.Windows.Forms.Label();
             this.lbl_pesquisa_nome = new System.Windows.Forms.Label();
@@ -51,6 +51,8 @@
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projeto_rjDataSet5 = new Projeto_RJ.projeto_rjDataSet5();
             this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet5TableAdapters.usuariosTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.sideBar1 = new Projeto_RJ.sideBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
@@ -61,6 +63,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.lbl_name_header);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -216,11 +219,11 @@
             // 
             // btn_excluir
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_excluir.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_excluir.DefaultCellStyle = dataGridViewCellStyle3;
             this.btn_excluir.HeaderText = "";
             this.btn_excluir.Image = ((System.Drawing.Image)(resources.GetObject("btn_excluir.Image")));
             this.btn_excluir.MinimumWidth = 40;
@@ -252,11 +255,37 @@
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1835, 24);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 32);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "   9";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // sideBar1
+            // 
+            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
+            this.sideBar1.Name = "sideBar1";
+            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
+            this.sideBar1.TabIndex = 17;
+            this.sideBar1.Visible = false;
+            this.sideBar1.Load += new System.EventHandler(this.sideBar1_Load);
+            // 
             // frm_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.sideBar1);
             this.Controls.Add(this.btn_cadastrar_usuario);
             this.Controls.Add(this.tbl_usuarios);
             this.Controls.Add(this.btn_pesquisar);
@@ -302,5 +331,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn base64;
         private System.Windows.Forms.DataGridViewImageColumn btn_excluir;
         private System.Windows.Forms.DataGridViewImageColumn btn_editar;
+        private System.Windows.Forms.Button button2;
+        private sideBar sideBar1;
     }
 }

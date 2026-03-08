@@ -330,5 +330,21 @@ namespace Projeto_RJ
             
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+            sideBar1.Visible = true;
+            sideBar1.Focus();
+        }
+
+        private void sideBar1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

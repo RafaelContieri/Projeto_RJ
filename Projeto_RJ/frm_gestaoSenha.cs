@@ -21,7 +21,7 @@ namespace Projeto_RJ
 
         private void frm_gestaoSenha_Load(object sender, EventArgs e)
         {
-
+            this.MouseLeave += new EventHandler(sideBar1.container_pai_Leave);
         }
 
         //---------------------------------------------------------------------ATENDIMENTO TOTAL --------------------------------------------------------------------//
@@ -176,13 +176,9 @@ namespace Projeto_RJ
 
         private void btn_perfil_Click(object sender, EventArgs e)
         {
-
-        }
-        public void botaoChamarMenu()
-        {
             sideBar1.Visible = true;
-
         }
+        
 
         private void sideBar1_Load(object sender, EventArgs e)
         {

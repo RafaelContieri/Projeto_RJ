@@ -38,8 +38,8 @@
             this.btn_controleSenha = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_config = new System.Windows.Forms.Button();
-            this.sideBar1 = new Projeto_RJ.sideBar();
             this.button2 = new System.Windows.Forms.Button();
+            this.sideBar1 = new Projeto_RJ.sideBar();
             this.panel1.SuspendLayout();
             this.painel_botoes.SuspendLayout();
             this.SuspendLayout();
@@ -80,9 +80,9 @@
             this.lbl_name_header.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_name_header.Location = new System.Drawing.Point(28, 27);
             this.lbl_name_header.Name = "lbl_name_header";
-            this.lbl_name_header.Size = new System.Drawing.Size(450, 29);
+            this.lbl_name_header.Size = new System.Drawing.Size(172, 29);
             this.lbl_name_header.TabIndex = 7;
-            this.lbl_name_header.Text = "PAINEL INICIAL > CONFIGURAÇÕES";
+            this.lbl_name_header.Text = "TELA INICIAL";
             this.lbl_name_header.Click += new System.EventHandler(this.lbl_name_header_Click);
             // 
             // painel_botoes
@@ -172,14 +172,6 @@
             this.btn_config.UseVisualStyleBackColor = false;
             this.btn_config.Click += new System.EventHandler(this.btn_config_Click_1);
             // 
-            // sideBar1
-            // 
-            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
-            this.sideBar1.Name = "sideBar1";
-            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
-            this.sideBar1.TabIndex = 22;
-            // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -187,13 +179,22 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1116, 239);
+            this.button2.Location = new System.Drawing.Point(799, 108);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 32);
             this.button2.TabIndex = 23;
             this.button2.Text = "   9";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // sideBar1
+            // 
+            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
+            this.sideBar1.Name = "sideBar1";
+            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
+            this.sideBar1.TabIndex = 22;
+            this.sideBar1.Load += new System.EventHandler(this.sideBar1_Load_2);
             // 
             // frm_ADM
             // 
@@ -212,6 +213,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_ADM_FormClosed);
             this.Load += new System.EventHandler(this.frm_ADM_Load);
+            this.Leave += new System.EventHandler(this.frm_ADM_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.painel_botoes.ResumeLayout(false);
