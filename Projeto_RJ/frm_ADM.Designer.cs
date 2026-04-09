@@ -49,11 +49,12 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btn_perfil);
             this.panel1.Controls.Add(this.lbl_name_header);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1902, 85);
+            this.panel1.Size = new System.Drawing.Size(2922, 85);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -64,7 +65,7 @@
             this.btn_perfil.BackColor = System.Drawing.Color.White;
             this.btn_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_perfil.Image = ((System.Drawing.Image)(resources.GetObject("btn_perfil.Image")));
-            this.btn_perfil.Location = new System.Drawing.Point(1821, 24);
+            this.btn_perfil.Location = new System.Drawing.Point(2331, 24);
             this.btn_perfil.Name = "btn_perfil";
             this.btn_perfil.Size = new System.Drawing.Size(32, 32);
             this.btn_perfil.TabIndex = 8;
@@ -96,7 +97,7 @@
             this.painel_botoes.Controls.Add(this.btn_config);
             this.painel_botoes.Location = new System.Drawing.Point(12, 108);
             this.painel_botoes.Name = "painel_botoes";
-            this.painel_botoes.Size = new System.Drawing.Size(760, 350);
+            this.painel_botoes.Size = new System.Drawing.Size(808, 350);
             this.painel_botoes.TabIndex = 21;
             this.painel_botoes.Paint += new System.Windows.Forms.PaintEventHandler(this.painel_botoes_Paint);
             // 
@@ -174,12 +175,12 @@
             // 
             // button2
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(799, 108);
+            this.button2.Location = new System.Drawing.Point(1832, 24);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 32);
             this.button2.TabIndex = 23;
@@ -201,7 +202,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.sideBar1);
             this.Controls.Add(this.painel_botoes);
             this.Controls.Add(this.panel1);

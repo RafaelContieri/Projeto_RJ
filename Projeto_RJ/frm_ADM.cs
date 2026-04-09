@@ -89,24 +89,75 @@ namespace Projeto_RJ
         private void btn_controleSenha_Click_1(object sender, EventArgs e)
         {
 
-            frm_controleSenhas frm_ControleSenhas = new frm_controleSenhas();
-            frm_ControleSenhas.Show();
+
+            Form frm = Application.OpenForms["frm_controleSenhas"];
+
+            if (frm != null)
+            {
+                // Se ela existir, trazemos ela para a frente (foco)
+                frm.BringToFront();
+
+
+                if (frm.WindowState == FormWindowState.Minimized)
+                    frm.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+
+                frm_controleSenhas frm_ControleSenhas = new frm_controleSenhas();
+                frm_ControleSenhas.Show();
+            }
         }
+
+            
 
         private void btn_config_Click_1(object sender, EventArgs e)
         {
 
-            frm_config configUSER = new frm_config();
-            configUSER.Show();
+            Form frm = Application.OpenForms["frm_config"];
+
+            if (frm != null)
+            {
+                // Se ela existir, trazemos ela para a frente (foco)
+                frm.BringToFront();
+
+
+                if (frm.WindowState == FormWindowState.Minimized)
+                    frm.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+
+                frm_config configUSER = new frm_config();
+                configUSER.Show();
+            }
+
+            
 
            
         }
 
         private void btn_gestaoSenhas_Click_1(object sender, EventArgs e)
         {
+            Form frm = Application.OpenForms["frm_gestaoSenha"];
 
-            frm_gestaoSenha telaabrir = new frm_gestaoSenha();
-            telaabrir.Show();
+            if (frm != null)
+            {
+                // Se ela existir, trazemos ela para a frente (foco)
+                frm.BringToFront();
+
+
+                if (frm.WindowState == FormWindowState.Minimized)
+                    frm.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+
+                frm_gestaoSenha telaabrir = new frm_gestaoSenha();
+                telaabrir.Show();
+            }
+
+            
         }
 
         private void sideBar1_Load(object sender, EventArgs e)

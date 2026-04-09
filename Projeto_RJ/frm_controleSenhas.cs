@@ -102,8 +102,8 @@ namespace Projeto_RJ
                 {
                     con.Open();
 
-                    string servico = "Recepção"; //Passar o tipo de serviço que deseja buscar a última senha. Exemplo: "Recepção", "Protocolo", etc.
-                    string tipo = "Normal"; //Passar o tipo de atendimento que deseja buscar a última senha. Exemplo: "Normal", "Prioritário", etc.
+                    string servico = ""; //Passar o tipo de serviço que deseja buscar a última senha. Exemplo: "Recepção", "Protocolo", etc.
+                    string tipo = ""; //Passar o tipo de atendimento que deseja buscar a última senha. Exemplo: "Normal", "Prioritário", etc.
                     
 
 
@@ -134,13 +134,10 @@ namespace Projeto_RJ
                                 frm_telaSenhas.Instancia.ReceberNovaSenha(senhaTelao, guicheTelao);
                             }
 
-
-
-
                         }
                         else
                         {
-                            MessageBox.Show("Nenhuma senha encontrada para o tipo e serviço especificados.");
+                            MessageBox.Show("Nenhuma senha encontrada para o tipo e serviço especificados." + tipo + servico);
                         }
                     }
                 }

@@ -58,7 +58,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.btn_perfil);
             this.panel1.Controls.Add(this.lbl_name_header);
@@ -69,7 +70,7 @@
             // 
             // btn_perfil
             // 
-            this.btn_perfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_perfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_perfil.AutoSize = true;
             this.btn_perfil.BackColor = System.Drawing.Color.White;
             this.btn_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
