@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Projeto_RJ
@@ -21,11 +18,6 @@ namespace Projeto_RJ
         public string guicheTelao { get; private set; }
 
         public string statusSENHA { get; private set; }
-
-
-
-        
-
 
         // Variável global para manter o link com o telão aberto
         public frm_telaSenhas telaoAberto;
@@ -69,7 +61,7 @@ namespace Projeto_RJ
                             string localVal = readerHist["tipo_atendimento"].ToString();
                             string statusSENHA = readerHist["status_atendimento"].ToString();
 
-                            // LOG ===> MessageBox.Show($"Senha: {senhaVal}, Local: {localVal}, Status: {statusSENHA}"); // Debug para verificar os valores
+                             //MessageBox.Show($"Senha: {senhaVal}, Local: {localVal}, Status: {statusSENHA}"); // Debug para verificar os valores
 
                             card.Configurar(senhaVal, localVal, statusSENHA);
                             container_Senhas.Controls.Add(card);
@@ -102,9 +94,8 @@ namespace Projeto_RJ
                 {
                     con.Open();
 
-                    string servico = ""; //Passar o tipo de serviço que deseja buscar a última senha. Exemplo: "Recepção", "Protocolo", etc.
-                    string tipo = ""; //Passar o tipo de atendimento que deseja buscar a última senha. Exemplo: "Normal", "Prioritário", etc.
-                    
+                    string servico = funcaoMesa.Servico; //Passar o tipo de serviço que deseja buscar a última senha. Exemplo: "Recepção", "Protocolo", etc. "PASSAR APENAS O SERVIÇO DA MESA"
+                    string tipo = funcaoMesa.TipoAtendimento; //Passar o tipo de atendimento que deseja buscar a última senha. Exemplo: "Normal", "Prioritário", etc.
 
 
                     string sqlSelect = @"SELECT TOP 1 id, senha, tipo_atendimento, servico
@@ -137,7 +128,7 @@ namespace Projeto_RJ
                         }
                         else
                         {
-                            MessageBox.Show("Nenhuma senha encontrada para o tipo e serviço especificados." + tipo + servico);
+                            MessageBox.Show("Nenhuma senha encontrada para o tipo e serviço especificados.");
                         }
                     }
                 }
@@ -281,14 +272,14 @@ namespace Projeto_RJ
         }
 
        
-        private void carregarDADOSGRID()
+        private void carregarDADOSGRID() // Método para carregar as senhas chamadas no DataGridView, filtrando por tipo de atendimento "Normal" e serviço "Recepção"
         {
             try
             {
                 this.pR_BuscarSenhasChamadasTableAdapter.Fill(
                     this.projeto_rjDataSet12.PR_BuscarSenhasChamadas,
-                    "Normal",
-                    "Recepção"
+                    funcaoMesa.TipoAtendimento, // Passar o tipo de atendimento que deseja filtrar através do método funcaoMesa
+                    funcaoMesa.Servico // Passar o tipo de atendimento que deseja filtrar através do método funcaoMesa
                 );
             }
             catch (Exception ex)
@@ -322,6 +313,7 @@ namespace Projeto_RJ
         private void timerAtualizar_Tick(object sender, EventArgs e)
         {
             timerAtualizar.Start();
+            timerAtualizar.Interval = 3000; // Define o intervalo para 3 segundos (3000 milissegundos)
             carregarDADOSGRID();
 
             

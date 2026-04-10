@@ -64,7 +64,7 @@ namespace Projeto_RJ
 
         public void btn_login_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT id, nome, usuario, senha, email, acesso, imgbase64, usuarioLogado FROM usuarios WHERE usuario = @user";
+            string sql = "SELECT id, nome, usuario, senha, email, id_acesso, id_servico, id_tipoAtendimento, imgbase64, usuarioLogado FROM usuarios WHERE usuario = @user";
             string sqlUpdate = "UPDATE usuarios SET usuarioLogado = 'S' WHERE id = @id";
             
 
@@ -90,7 +90,9 @@ namespace Projeto_RJ
                                 SessaoUsuario.Nome = reader["nome"].ToString();
                                 SessaoUsuario.Login = reader["usuario"].ToString();
                                 SessaoUsuario.Email = reader["email"].ToString();
-                                SessaoUsuario.NivelAcesso = reader["acesso"].ToString();
+                                SessaoUsuario.NivelAcesso = reader["id_acesso"].ToString();
+                                SessaoUsuario.NivelAcesso = reader["id_servico"].ToString();
+                                SessaoUsuario.tipoAtendimento = reader["id_tipoAtendimento"].ToString();
                                 SessaoUsuario.FotoBase64 = reader["imgbase64"].ToString();
                                 
 

@@ -49,22 +49,40 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.picture_imagemUsuario = new System.Windows.Forms.PictureBox();
             this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
+            this.acessosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet16 = new Projeto_RJ.projeto_rjDataSet16();
             this.acessosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projeto_rjDataSet7 = new Projeto_RJ.projeto_rjDataSet7();
             this.projetorjDataSet61BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet7TableAdapters.acessosTableAdapter();
             this.btn_upload_picture = new System.Windows.Forms.Button();
             this.btn_excluir_foto = new System.Windows.Forms.Button();
-            this.projeto_rjDataSet16 = new Projeto_RJ.projeto_rjDataSet16();
-            this.acessosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.acessosTableAdapter1 = new Projeto_RJ.projeto_rjDataSet16TableAdapters.acessosTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_servico = new System.Windows.Forms.ComboBox();
+            this.lbl_servico = new System.Windows.Forms.Label();
+            this.projeto_rjSENHAS = new Projeto_RJ.projeto_rjSENHAS();
+            this.projetorjSENHASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet17 = new Projeto_RJ.projeto_rjDataSet17();
+            this.tipoAtendimentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoAtendimentoTableAdapter = new Projeto_RJ.projeto_rjDataSet17TableAdapters.tipoAtendimentoTableAdapter();
+            this.servico_usuario = new Projeto_RJ.servico_usuario();
+            this.servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.servicoTableAdapter = new Projeto_RJ.servico_usuarioTableAdapters.servicoTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjSENHAS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projetorjSENHASBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoAtendimentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servico_usuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_login
@@ -230,7 +248,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(666, 472);
+            this.btnCancelar.Location = new System.Drawing.Point(666, 525);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(5);
@@ -248,7 +266,7 @@
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(457, 472);
+            this.btnSalvar.Location = new System.Drawing.Point(457, 525);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(5);
@@ -284,6 +302,16 @@
             this.cmb_Grupo_usuario.Size = new System.Drawing.Size(248, 24);
             this.cmb_Grupo_usuario.TabIndex = 37;
             this.cmb_Grupo_usuario.ValueMember = "ID";
+            // 
+            // acessosBindingSource1
+            // 
+            this.acessosBindingSource1.DataMember = "acessos";
+            this.acessosBindingSource1.DataSource = this.projeto_rjDataSet16;
+            // 
+            // projeto_rjDataSet16
+            // 
+            this.projeto_rjDataSet16.DataSetName = "projeto_rjDataSet16";
+            this.projeto_rjDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // acessosBindingSource
             // 
@@ -325,25 +353,109 @@
             this.btn_excluir_foto.UseVisualStyleBackColor = true;
             this.btn_excluir_foto.Click += new System.EventHandler(this.btn_excluir_foto_Click);
             // 
-            // projeto_rjDataSet16
-            // 
-            this.projeto_rjDataSet16.DataSetName = "projeto_rjDataSet16";
-            this.projeto_rjDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // acessosBindingSource1
-            // 
-            this.acessosBindingSource1.DataMember = "acessos";
-            this.acessosBindingSource1.DataSource = this.projeto_rjDataSet16;
-            // 
             // acessosTableAdapter1
             // 
             this.acessosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.tipoAtendimentoBindingSource;
+            this.comboBox1.DisplayMember = "tipo_atendimento";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(54, 463);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(248, 24);
+            this.comboBox1.TabIndex = 41;
+            this.comboBox1.ValueMember = "id";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 431);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 16);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Tipo de Atendimento";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // cmb_servico
+            // 
+            this.cmb_servico.DataSource = this.servicoBindingSource;
+            this.cmb_servico.DisplayMember = "servico";
+            this.cmb_servico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_servico.FormattingEnabled = true;
+            this.cmb_servico.Location = new System.Drawing.Point(590, 463);
+            this.cmb_servico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmb_servico.Name = "cmb_servico";
+            this.cmb_servico.Size = new System.Drawing.Size(248, 24);
+            this.cmb_servico.TabIndex = 43;
+            this.cmb_servico.ValueMember = "ID";
+            this.cmb_servico.SelectedIndexChanged += new System.EventHandler(this.cmb_servico_SelectedIndexChanged);
+            // 
+            // lbl_servico
+            // 
+            this.lbl_servico.AutoSize = true;
+            this.lbl_servico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_servico.Location = new System.Drawing.Point(587, 431);
+            this.lbl_servico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_servico.Name = "lbl_servico";
+            this.lbl_servico.Size = new System.Drawing.Size(60, 16);
+            this.lbl_servico.TabIndex = 42;
+            this.lbl_servico.Text = "Serviço";
+            this.lbl_servico.Click += new System.EventHandler(this.lbl_servico_Click);
+            // 
+            // projeto_rjSENHAS
+            // 
+            this.projeto_rjSENHAS.DataSetName = "projeto_rjSENHAS";
+            this.projeto_rjSENHAS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // projetorjSENHASBindingSource
+            // 
+            this.projetorjSENHASBindingSource.DataSource = this.projeto_rjSENHAS;
+            this.projetorjSENHASBindingSource.Position = 0;
+            // 
+            // projeto_rjDataSet17
+            // 
+            this.projeto_rjDataSet17.DataSetName = "projeto_rjDataSet17";
+            this.projeto_rjDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoAtendimentoBindingSource
+            // 
+            this.tipoAtendimentoBindingSource.DataMember = "tipoAtendimento";
+            this.tipoAtendimentoBindingSource.DataSource = this.projeto_rjDataSet17;
+            // 
+            // tipoAtendimentoTableAdapter
+            // 
+            this.tipoAtendimentoTableAdapter.ClearBeforeFill = true;
+            // 
+            // servico_usuario
+            // 
+            this.servico_usuario.DataSetName = "servico_usuario";
+            this.servico_usuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // servicoBindingSource
+            // 
+            this.servicoBindingSource.DataMember = "servico";
+            this.servicoBindingSource.DataSource = this.servico_usuario;
+            // 
+            // servicoTableAdapter
+            // 
+            this.servicoTableAdapter.ClearBeforeFill = true;
             // 
             // frm_modalCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 641);
+            this.Controls.Add(this.cmb_servico);
+            this.Controls.Add(this.lbl_servico);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_upload_picture);
             this.Controls.Add(this.btn_excluir_foto);
             this.Controls.Add(this.cmb_Grupo_usuario);
@@ -375,11 +487,17 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjSENHAS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projetorjSENHASBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoAtendimentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servico_usuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,5 +533,17 @@
         private projeto_rjDataSet16 projeto_rjDataSet16;
         private System.Windows.Forms.BindingSource acessosBindingSource1;
         private projeto_rjDataSet16TableAdapters.acessosTableAdapter acessosTableAdapter1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cmb_servico;
+        private System.Windows.Forms.Label lbl_servico;
+        private projeto_rjSENHAS projeto_rjSENHAS;
+        private System.Windows.Forms.BindingSource projetorjSENHASBindingSource;
+        private projeto_rjDataSet17 projeto_rjDataSet17;
+        private System.Windows.Forms.BindingSource tipoAtendimentoBindingSource;
+        private projeto_rjDataSet17TableAdapters.tipoAtendimentoTableAdapter tipoAtendimentoTableAdapter;
+        private servico_usuario servico_usuario;
+        private System.Windows.Forms.BindingSource servicoBindingSource;
+        private servico_usuarioTableAdapters.servicoTableAdapter servicoTableAdapter;
     }
 }

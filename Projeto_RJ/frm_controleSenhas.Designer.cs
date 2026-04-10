@@ -101,7 +101,7 @@
             // 
             // btn_refreshSenha
             // 
-            this.btn_refreshSenha.BackColor = System.Drawing.Color.Indigo;
+            this.btn_refreshSenha.BackColor = System.Drawing.Color.DarkGray;
             this.btn_refreshSenha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_refreshSenha.BackgroundImage")));
             this.btn_refreshSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_refreshSenha.Location = new System.Drawing.Point(456, 140);

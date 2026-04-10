@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Projeto_RJ
 {
@@ -16,11 +17,15 @@ namespace Projeto_RJ
         string stringConexao = @"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
 
         // CONSTRUTOR: Arrumei a ordem dos parâmetros para bater com a tela anterior
-        public frm_editarCadastro(int idSelecionado, string nomeSelecionado, string emailSelecionado, string usuarioSelecionado, string siglaSelecionado, string senhaSelecionada, string acessoSelecionado, string fotoSelecionada)
+        public frm_editarCadastro(int idSelecionado, string nomeSelecionado, 
+            string emailSelecionado, string usuarioSelecionado,
+            string siglaSelecionado, string senhaSelecionada, 
+            string acessoSelecionado, string servico,
+            string tipoAtendimento, string fotoSelecionada)
         {
             InitializeComponent();
 
-            
+            // puxa as informações para os campos da tela de edição (a ordem dos parâmetros deve ser a mesma da chamada na tela anterior)
             this.idUsuarioEdicao = idSelecionado;
             this.fotoBase64 = fotoSelecionada;
             cmb_Grupo_usuario.Text = acessoSelecionado;
@@ -29,8 +34,13 @@ namespace Projeto_RJ
             txtLogin_editar.Text = usuarioSelecionado;
             txtSigla_editar.Text = siglaSelecionado;
             txtSenha_editar.Text = senhaSelecionada;
+            comboBox1.Text = tipoAtendimento;
+            cmb_servico.Text = servico;
 
-          
+
+
+
+
             CarregarFotoNaTela(fotoSelecionada);
         }
 
@@ -92,7 +102,9 @@ namespace Projeto_RJ
                        sigla = @sigla, 
                        usuario = @usuario, 
                        senha = @senha, 
-                       acesso = @acesso 
+                       acesso = @id_acesso
+                       servico = @id_servico,
+                       tipoAtendimento = @id_tipoAtendimento
                    WHERE id = @id";
 
             using (SqlConnection con = new SqlConnection(stringConexao))
@@ -107,8 +119,10 @@ namespace Projeto_RJ
                         cmd.Parameters.AddWithValue("@email", txtEmail_editar.Text.Trim());
                         cmd.Parameters.AddWithValue("@sigla", txtSigla_editar.Text.Trim());
                         cmd.Parameters.AddWithValue("@usuario", txtLogin_editar.Text.Trim());
-                        cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
+                        cmd.Parameters.AddWithValue("@id_acesso", cmb_Grupo_usuario.Text);
                         cmd.Parameters.AddWithValue("@id", idUsuarioEdicao);
+                        cmd.Parameters.AddWithValue("@id_servico", cmb_servico.Text);
+                        cmd.Parameters.AddWithValue("@id_tipoAtendimento", comboBox1.Text);
 
                         // Aqui é onde morava o erro da variável escalar:
                         cmd.Parameters.AddWithValue("@senha", senhaParaSalvar);
@@ -238,6 +252,26 @@ namespace Projeto_RJ
         private void foto_usuario_edicao_Click(object sender, EventArgs e) { }
 
         private void cmb_Grupo_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_servico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_servico_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

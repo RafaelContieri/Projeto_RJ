@@ -57,6 +57,10 @@ namespace Projeto_RJ
             this.acessosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projeto_rjDataSet6 = new Projeto_RJ.projeto_rjDataSet6();
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet6TableAdapters.acessosTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_servico = new System.Windows.Forms.ComboBox();
+            this.lbl_servico = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
@@ -92,7 +96,7 @@ namespace Projeto_RJ
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(635, 468);
+            this.btnCancelar.Location = new System.Drawing.Point(635, 567);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(5);
             this.btnCancelar.Size = new System.Drawing.Size(118, 53);
@@ -109,7 +113,7 @@ namespace Projeto_RJ
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(442, 468);
+            this.btnSalvar.Location = new System.Drawing.Point(442, 567);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(5);
             this.btnSalvar.Size = new System.Drawing.Size(118, 53);
@@ -301,11 +305,65 @@ namespace Projeto_RJ
             // 
             this.acessosTableAdapter.ClearBeforeFill = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "tipo_atendimento";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(49, 474);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(248, 24);
+            this.comboBox1.TabIndex = 43;
+            this.comboBox1.ValueMember = "id";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 442);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 16);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Tipo de Atendimento";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cmb_servico
+            // 
+            this.cmb_servico.DisplayMember = "servico";
+            this.cmb_servico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_servico.FormattingEnabled = true;
+            this.cmb_servico.Location = new System.Drawing.Point(564, 474);
+            this.cmb_servico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmb_servico.Name = "cmb_servico";
+            this.cmb_servico.Size = new System.Drawing.Size(248, 24);
+            this.cmb_servico.TabIndex = 45;
+            this.cmb_servico.ValueMember = "ID";
+            this.cmb_servico.SelectedIndexChanged += new System.EventHandler(this.cmb_servico_SelectedIndexChanged);
+            // 
+            // lbl_servico
+            // 
+            this.lbl_servico.AutoSize = true;
+            this.lbl_servico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_servico.Location = new System.Drawing.Point(561, 442);
+            this.lbl_servico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_servico.Name = "lbl_servico";
+            this.lbl_servico.Size = new System.Drawing.Size(60, 16);
+            this.lbl_servico.TabIndex = 44;
+            this.lbl_servico.Text = "Serviço";
+            this.lbl_servico.Click += new System.EventHandler(this.lbl_servico_Click);
+            // 
             // frm_editarCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 641);
+            this.Controls.Add(this.cmb_servico);
+            this.Controls.Add(this.lbl_servico);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmb_Grupo_usuario);
             this.Controls.Add(this.btn_upload_picture);
             this.Controls.Add(this.btn_excluir_foto);
@@ -384,5 +442,9 @@ namespace Projeto_RJ
         private projeto_rjDataSet6 projeto_rjDataSet6;
         private BindingSource acessosBindingSource;
         private projeto_rjDataSet6TableAdapters.acessosTableAdapter acessosTableAdapter;
+        public ComboBox comboBox1;
+        private Label label1;
+        public ComboBox cmb_servico;
+        private Label lbl_servico;
     }
 }

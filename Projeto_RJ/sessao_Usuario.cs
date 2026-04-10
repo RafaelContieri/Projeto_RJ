@@ -13,6 +13,8 @@ namespace Projeto_RJ
         public static string NivelAcesso { get; set; }
         public static string FotoBase64 { get; set; }
         public static char logado { get; set; }
+        public static string tipoAtendimento { get; set; } // define qual o tipo de atendimento do usuário, se é normal ou prioritário {exporta para o "funcaoMesa" utilizar}
+        public static string servico { get; set; } // define qual o serviço do usuário, se é recepção, atendimento ou administrativo {exporta para o "funcaoMesa" utilizar}
 
         public static void LimparSessao()
         {

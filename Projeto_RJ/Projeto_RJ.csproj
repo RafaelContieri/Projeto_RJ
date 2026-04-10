@@ -107,6 +107,7 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="funcaoMesa.cs" />
     <Compile Include="modalFecharSistema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +149,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>projeto_rjDataSet16.xsd</DependentUpon>
     </Compile>
+    <Compile Include="projeto_rjDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projeto_rjDataSet17.xsd</DependentUpon>
+    </Compile>
     <Compile Include="projeto_rjDataSet8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,12 +164,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>projeto_rjDataSet9.xsd</DependentUpon>
     </Compile>
+    <Compile Include="servico_usuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>servico_usuario.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sessao_Usuario.cs" />
     <Compile Include="sideBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="sideBar.Designer.cs">
       <DependentUpon>sideBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tabela_usuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tabela_usuario.xsd</DependentUpon>
     </Compile>
     <Compile Include="tela_login.cs">
       <SubType>Form</SubType>
@@ -477,6 +493,17 @@
     <None Include="projeto_rjDataSet16.xss">
       <DependentUpon>projeto_rjDataSet16.xsd</DependentUpon>
     </None>
+    <None Include="projeto_rjDataSet17.xsc">
+      <DependentUpon>projeto_rjDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="projeto_rjDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projeto_rjDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projeto_rjDataSet17.xss">
+      <DependentUpon>projeto_rjDataSet17.xsd</DependentUpon>
+    </None>
     <None Include="projeto_rjDataSet2.xsc">
       <DependentUpon>projeto_rjDataSet2.xsd</DependentUpon>
     </None>
@@ -585,6 +612,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="servico_usuario.xsc">
+      <DependentUpon>servico_usuario.xsd</DependentUpon>
+    </None>
+    <None Include="servico_usuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>servico_usuario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="servico_usuario.xss">
+      <DependentUpon>servico_usuario.xsd</DependentUpon>
+    </None>
+    <None Include="tabela_usuario.xsc">
+      <DependentUpon>tabela_usuario.xsd</DependentUpon>
+    </None>
+    <None Include="tabela_usuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tabela_usuario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tabela_usuario.xss">
+      <DependentUpon>tabela_usuario.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

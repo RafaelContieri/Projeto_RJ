@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -112,10 +113,13 @@ namespace Projeto_RJ
             string usuarioSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["usuario"].Value.ToString();
             string siglaSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["sigla"].Value.ToString();
             string senhaSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
-            string acessoSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["acesso"].Value.ToString();
+            string acessoSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["id_acesso"].Value.ToString();
             string fotoSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["base64"].Value.ToString();
-
+            string servico = tbl_usuarios.Rows[e.RowIndex].Cells["id_servico"].Value.ToString();
+            string tipoAtendimento = tbl_usuarios.Rows[e.RowIndex].Cells["id_tipoAtendimento"].Value.ToString();
             
+
+
 
             //MessageBox.Show("acesso: " + acessoSelecionado);
 
@@ -141,7 +145,7 @@ namespace Projeto_RJ
             {
 
                 
-                frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, emailSelecionado, usuarioSelecionado, siglaSelecionado, senhaSelecionada, acessoSelecionado, fotoSelecionada); //seleciona o id
+                frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, emailSelecionado, usuarioSelecionado, siglaSelecionado, senhaSelecionada, acessoSelecionado, fotoSelecionada, servico, tipoAtendimento ); //seleciona o id
                 telaEdit.ShowDialog();
                // MessageBox.Show("Id: " + idSelecionado + " " + nomeSelecionado + "" + emailSelecionado + "" + usuarioSelecionado + siglaSelecionado + "" + senhaSelecionado + "" + acessoSelecionado);
                 CarregarDadosGrid(); // Para atualizar os dados após fechar a edição
@@ -161,6 +165,8 @@ namespace Projeto_RJ
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'tabela_usuario.usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter1.Fill(this.tabela_usuario.usuarios);
             // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet5.usuarios'. Você pode movê-la ou removê-la conforme necessário.
             this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios);
             // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet4.usuarios'. Você pode movê-la ou removê-la conforme necessário.

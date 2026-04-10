@@ -21,6 +21,10 @@ namespace Projeto_RJ
 
         private void frm_modalCadastro_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'servico_usuario.servico'. Você pode movê-la ou removê-la conforme necessário.
+            this.servicoTableAdapter.Fill(this.servico_usuario.servico);
+            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet17.tipoAtendimento'. Você pode movê-la ou removê-la conforme necessário.
+            this.tipoAtendimentoTableAdapter.Fill(this.projeto_rjDataSet17.tipoAtendimento);
             // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet16.acessos'. Você pode movê-la ou removê-la conforme necessário.
             this.acessosTableAdapter1.Fill(this.projeto_rjDataSet16.acessos);
             // Carrega os grupos de acesso no ComboBox
@@ -221,6 +225,26 @@ namespace Projeto_RJ
         }
 
         private void lbl_grupo_usuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.FormattingEnabled = false; // Evita que o ComboBox tente formatar o texto, mostrando exatamente o que está no banco
+        }
+
+        private void lbl_servico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_servico_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
