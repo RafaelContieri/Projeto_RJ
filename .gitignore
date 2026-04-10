@@ -362,11 +362,3 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Projeto_RJ/appsettings.json
-<<<<<<< HEAD
-/Projeto_RJ/modal_Aviso.cs
-/Projeto_RJ/modal_Aviso.Designer.cs
-/Projeto_RJ/modal_Aviso.resx
-=======
-
-appsettings.json
->>>>>>> 633b6202a1754ef4fbc83616e431b600163c3250
