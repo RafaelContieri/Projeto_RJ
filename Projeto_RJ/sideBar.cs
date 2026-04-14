@@ -292,7 +292,7 @@ namespace Projeto_RJ
 
             // Tratamento visual para exibir Administrador se for Adm no banco
             string nivel = SessaoUsuario.NivelAcesso;
-            lbl_AcessoMenu.Text = (nivel == "Adm") ? "Administrador" : nivel;
+            lbl_AcessoMenu.Text = (nivel == "1") ? "Administrador" : nivel; //mudou para 1 ou 2 ou 3 e não mais ADM, USUÁRIO, TOTEM
 
             if (!string.IsNullOrEmpty(SessaoUsuario.FotoBase64))
             {

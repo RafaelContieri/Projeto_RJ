@@ -103,8 +103,8 @@ namespace Projeto_RJ
             string senhaComHash = BCrypt.Net.BCrypt.HashPassword(senhaOriginal);
 
             // 2. SQL de Inserção
-            string sql = @"INSERT INTO usuarios (nome, sigla, email, usuario, senha, acesso, imgbase64) 
-                   VALUES (@nome, @sigla, @email, @usuario, @senha, @acesso, @img)";
+            string sql = @"INSERT INTO usuarios (nome, sigla, email, usuario, senha, id_acesso, imgbase64) 
+                   VALUES (@nome, @sigla, @email, @usuario, @senha, @id_acesso, @img)";
 
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
@@ -121,7 +121,7 @@ namespace Projeto_RJ
                         // --- AJUSTE: Enviamos a senha com Hash para o banco ---
                         cmd.Parameters.AddWithValue("@senha", senhaComHash);
 
-                        cmd.Parameters.AddWithValue("@acesso", cmb_Grupo_usuario.Text);
+                        cmd.Parameters.AddWithValue("@id_acesso", cmb_Grupo_usuario.Text);
 
                         // Trata a imagem
                         if (string.IsNullOrEmpty(fotoBase64))
@@ -146,17 +146,7 @@ namespace Projeto_RJ
 
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
-        private void LimparCampos()
-        {
-            txtNome.Clear();
-            txtEmail.Clear();
-            txtLogin.Clear();
-            txtSenha.Clear();
-            txtSigla.Clear();
-            cmb_Grupo_usuario.SelectedIndex = -1;
-            picture_imagemUsuario.Image = null;
-            fotoBase64 = "";
-        }
+        
 
         // --- FUNÇÃO AUXILIAR DE IMAGEM ---
         public Image EnquadrarPerfil(Image img, int larguraAlvo, int alturaAlvo)

@@ -45,7 +45,6 @@ namespace Projeto_RJ
             this.foto_usuario_edicao = new System.Windows.Forms.PictureBox();
             this.lbl_foto = new System.Windows.Forms.Label();
             this.lbl_senha = new System.Windows.Forms.Label();
-            this.lbl_grupo_usuario = new System.Windows.Forms.Label();
             this.lbl_nome_usuario = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_sigla = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@ namespace Projeto_RJ
             this.btn_excluir_foto = new System.Windows.Forms.Button();
             this.btn_upload_picture = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
             this.acessosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projeto_rjDataSet6 = new Projeto_RJ.projeto_rjDataSet6();
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet6TableAdapters.acessosTableAdapter();
@@ -61,10 +59,19 @@ namespace Projeto_RJ
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_servico = new System.Windows.Forms.ComboBox();
             this.lbl_servico = new System.Windows.Forms.Label();
+            this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
+            this.lbl_grupo_usuario = new System.Windows.Forms.Label();
+            this.datasetUSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarios = new Projeto_RJ.usuarios();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter = new Projeto_RJ.usuariosTableAdapters.usuariosTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -201,16 +208,6 @@ namespace Projeto_RJ
             this.lbl_senha.TabIndex = 29;
             this.lbl_senha.Text = "Senha";
             // 
-            // lbl_grupo_usuario
-            // 
-            this.lbl_grupo_usuario.AutoSize = true;
-            this.lbl_grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_grupo_usuario.Location = new System.Drawing.Point(561, 226);
-            this.lbl_grupo_usuario.Name = "lbl_grupo_usuario";
-            this.lbl_grupo_usuario.Size = new System.Drawing.Size(126, 16);
-            this.lbl_grupo_usuario.TabIndex = 28;
-            this.lbl_grupo_usuario.Text = "Grupo de usuário";
-            // 
             // lbl_nome_usuario
             // 
             this.lbl_nome_usuario.AutoSize = true;
@@ -279,18 +276,6 @@ namespace Projeto_RJ
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // cmb_Grupo_usuario
-            // 
-            this.cmb_Grupo_usuario.DataSource = this.acessosBindingSource;
-            this.cmb_Grupo_usuario.DisplayMember = "NomeMenu";
-            this.cmb_Grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Grupo_usuario.FormattingEnabled = true;
-            this.cmb_Grupo_usuario.Location = new System.Drawing.Point(564, 260);
-            this.cmb_Grupo_usuario.Name = "cmb_Grupo_usuario";
-            this.cmb_Grupo_usuario.Size = new System.Drawing.Size(248, 24);
-            this.cmb_Grupo_usuario.TabIndex = 36;
-            this.cmb_Grupo_usuario.SelectedIndexChanged += new System.EventHandler(this.cmb_Grupo_usuario_SelectedIndexChanged);
-            // 
             // acessosBindingSource
             // 
             this.acessosBindingSource.DataMember = "acessos";
@@ -307,7 +292,8 @@ namespace Projeto_RJ
             // 
             // comboBox1
             // 
-            this.comboBox1.DisplayMember = "tipo_atendimento";
+            this.comboBox1.DataSource = this.usuariosBindingSource;
+            this.comboBox1.DisplayMember = "id_tipoAtendimento";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(49, 474);
@@ -315,7 +301,7 @@ namespace Projeto_RJ
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(248, 24);
             this.comboBox1.TabIndex = 43;
-            this.comboBox1.ValueMember = "id";
+            this.comboBox1.ValueMember = "id_tipoAtendimento";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
@@ -332,7 +318,8 @@ namespace Projeto_RJ
             // 
             // cmb_servico
             // 
-            this.cmb_servico.DisplayMember = "servico";
+            this.cmb_servico.DataSource = this.usuariosBindingSource;
+            this.cmb_servico.DisplayMember = "id_servico";
             this.cmb_servico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_servico.FormattingEnabled = true;
             this.cmb_servico.Location = new System.Drawing.Point(564, 474);
@@ -340,7 +327,7 @@ namespace Projeto_RJ
             this.cmb_servico.Name = "cmb_servico";
             this.cmb_servico.Size = new System.Drawing.Size(248, 24);
             this.cmb_servico.TabIndex = 45;
-            this.cmb_servico.ValueMember = "ID";
+            this.cmb_servico.ValueMember = "id_acesso";
             this.cmb_servico.SelectedIndexChanged += new System.EventHandler(this.cmb_servico_SelectedIndexChanged);
             // 
             // lbl_servico
@@ -354,6 +341,41 @@ namespace Projeto_RJ
             this.lbl_servico.TabIndex = 44;
             this.lbl_servico.Text = "Serviço";
             this.lbl_servico.Click += new System.EventHandler(this.lbl_servico_Click);
+            // 
+            // cmb_Grupo_usuario
+            // 
+            this.cmb_Grupo_usuario.DataSource = this.acessosBindingSource;
+            this.cmb_Grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Grupo_usuario.FormattingEnabled = true;
+            this.cmb_Grupo_usuario.Location = new System.Drawing.Point(564, 260);
+            this.cmb_Grupo_usuario.Name = "cmb_Grupo_usuario";
+            this.cmb_Grupo_usuario.Size = new System.Drawing.Size(248, 24);
+            this.cmb_Grupo_usuario.TabIndex = 36;
+            this.cmb_Grupo_usuario.SelectedIndexChanged += new System.EventHandler(this.cmb_Grupo_usuario_SelectedIndexChanged);
+            // 
+            // lbl_grupo_usuario
+            // 
+            this.lbl_grupo_usuario.AutoSize = true;
+            this.lbl_grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_grupo_usuario.Location = new System.Drawing.Point(561, 226);
+            this.lbl_grupo_usuario.Name = "lbl_grupo_usuario";
+            this.lbl_grupo_usuario.Size = new System.Drawing.Size(126, 16);
+            this.lbl_grupo_usuario.TabIndex = 28;
+            this.lbl_grupo_usuario.Text = "Grupo de usuário";
+            // 
+            // usuarios
+            // 
+            this.usuarios.DataSetName = "usuarios";
+            this.usuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.usuarios;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // frm_editarCadastro
             // 
@@ -393,6 +415,9 @@ namespace Projeto_RJ
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,7 +437,6 @@ namespace Projeto_RJ
         private System.Windows.Forms.PictureBox foto_usuario_edicao;
         private System.Windows.Forms.Label lbl_foto;
         private System.Windows.Forms.Label lbl_senha;
-        private System.Windows.Forms.Label lbl_grupo_usuario;
         private System.Windows.Forms.Label lbl_nome_usuario;
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Label lbl_sigla;
@@ -424,8 +448,7 @@ namespace Projeto_RJ
         {
             try
             {
-                // Esta linha é a "chave" para resolver o erro de ConstraintException
-                // Ela diz ao DataSet para não travar se encontrar dados nulos ou grandes demais
+                
                 this.acessosTableAdapter.Fill(this.projeto_rjDataSet6.acessos);
 
                 // O Visual Studio costuma colocar a linha de Fill aqui embaixo:
@@ -437,8 +460,6 @@ namespace Projeto_RJ
                 MessageBox.Show("Aviso ao carregar dados: " + ex.Message);
             }
         }
-
-        public ComboBox cmb_Grupo_usuario;
         private projeto_rjDataSet6 projeto_rjDataSet6;
         private BindingSource acessosBindingSource;
         private projeto_rjDataSet6TableAdapters.acessosTableAdapter acessosTableAdapter;
@@ -446,5 +467,11 @@ namespace Projeto_RJ
         private Label label1;
         public ComboBox cmb_servico;
         private Label lbl_servico;
+        private BindingSource datasetUSUARIOSBindingSource;
+        public ComboBox cmb_Grupo_usuario;
+        private Label lbl_grupo_usuario;
+        private usuarios usuarios;
+        private BindingSource usuariosBindingSource;
+        private usuariosTableAdapters.usuariosTableAdapter usuariosTableAdapter;
     }
 }

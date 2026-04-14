@@ -101,6 +101,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="datasetUSUARIOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetUSUARIOS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +330,11 @@
     <Compile Include="controle_historico.Designer.cs">
       <DependentUpon>controle_historico.cs</DependentUpon>
     </Compile>
+    <Compile Include="usuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>usuarios.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="controle_historico.resx">
       <DependentUpon>controle_historico.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +403,17 @@
       <DependentUpon>TOTEM.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="appsettings.json" />
+    <None Include="datasetUSUARIOS.xsc">
+      <DependentUpon>datasetUSUARIOS.xsd</DependentUpon>
+    </None>
+    <None Include="datasetUSUARIOS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetUSUARIOS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetUSUARIOS.xss">
+      <DependentUpon>datasetUSUARIOS.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="projeto_rjDataSet.xsc">
       <DependentUpon>projeto_rjDataSet.xsd</DependentUpon>
@@ -633,6 +654,17 @@
     </None>
     <None Include="tabela_usuario.xss">
       <DependentUpon>tabela_usuario.xsd</DependentUpon>
+    </None>
+    <None Include="usuarios.xsc">
+      <DependentUpon>usuarios.xsd</DependentUpon>
+    </None>
+    <None Include="usuarios.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>usuarios.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="usuarios.xss">
+      <DependentUpon>usuarios.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

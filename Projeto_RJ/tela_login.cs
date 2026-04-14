@@ -66,7 +66,6 @@ namespace Projeto_RJ
         {
             string sql = "SELECT id, nome, usuario, senha, email, id_acesso, id_servico, id_tipoAtendimento, imgbase64, usuarioLogado FROM usuarios WHERE usuario = @user";
             string sqlUpdate = "UPDATE usuarios SET usuarioLogado = 'S' WHERE id = @id";
-            
 
             using (SqlConnection con = new SqlConnection(@"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);"))
             {
@@ -85,33 +84,30 @@ namespace Projeto_RJ
 
                             if (BCrypt.Net.BCrypt.Verify(senhaDigitada, hashBanco))
                             {
-                                // 1. Alimenta a sessão global
+                                // Alimentação da sessão com tratamento de nulos
                                 SessaoUsuario.Id = Convert.ToInt32(reader["id"]);
-                                SessaoUsuario.Nome = reader["nome"].ToString();
-                                SessaoUsuario.Login = reader["usuario"].ToString();
-                                SessaoUsuario.Email = reader["email"].ToString();
-                                SessaoUsuario.NivelAcesso = reader["id_acesso"].ToString();
-                                SessaoUsuario.NivelAcesso = reader["id_servico"].ToString();
-                                SessaoUsuario.tipoAtendimento = reader["id_tipoAtendimento"].ToString();
-                                SessaoUsuario.FotoBase64 = reader["imgbase64"].ToString();
-                                
+                                SessaoUsuario.Nome = reader["nome"]?.ToString() ?? "";
+                                SessaoUsuario.Login = reader["usuario"]?.ToString() ?? "";
+                                SessaoUsuario.Email = reader["email"]?.ToString() ?? "";
+                                SessaoUsuario.NivelAcesso = reader["id_acesso"] == DBNull.Value ? "0" : reader["id_acesso"].ToString();
+                                SessaoUsuario.servico = reader["id_servico"] == DBNull.Value ? "0" : reader["id_servico"].ToString();
+                                SessaoUsuario.tipoAtendimento = reader["id_tipoAtendimento"] == DBNull.Value ? "0" : reader["id_tipoAtendimento"].ToString();
+                                SessaoUsuario.FotoBase64 = reader["imgbase64"]?.ToString() ?? "";
 
-                                // IMPORTANTE: Fechamos o reader para poder fazer o UPDATE na mesma conexão
                                 reader.Close();
 
-                                // 2. Agora sim, fazemos o UPDATE para 'S'
+                                // Atualiza status para 'S' (Logado)
                                 using (SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, con))
                                 {
-                                    cmdUpdate.Parameters.AddWithValue("@id", SessaoUsuario.Id); // Usamos o ID numérico da sessão
-                                    cmdUpdate.ExecuteNonQuery(); // ExecuteNonQuery é para UPDATE/INSERT/DELETE
+                                    cmdUpdate.Parameters.AddWithValue("@id", SessaoUsuario.Id);
+                                    cmdUpdate.ExecuteNonQuery();
                                 }
 
-                                // 3. Abre a tela principal
                                 this.Hide();
                                 using (frm_ADM principal = new frm_ADM())
                                 {
                                     principal.ShowDialog();
-                                    // MessageBox.Show("Logado?: " + SessaoUsuario.logado); ATIVEI PARA TESTE, MOSTRA SE A SESSÃO ESTÁ MARCADA COMO LOGADA
+                                    
                                 }
                                 this.Close();
                             }
@@ -128,9 +124,23 @@ namespace Projeto_RJ
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro técnico: " + ex.Message, "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    // --- LOG DETALHADO NO CONSOLE ---
+                    Console.WriteLine("\n[LOG DE ERRO CRÍTICO - " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]");
+                    Console.WriteLine("Local: btn_login_Click");
+                    Console.WriteLine("Mensagem: " + ex.Message);
+                    Console.WriteLine("Rastro do Erro: " + ex.StackTrace);
+                    Console.WriteLine("--------------------------------------------------\n");
+
+                    // --- AVISO AO USUÁRIO ---
+                    MessageBox.Show(
+                        "Erro técnico: " + ex.Message + Environment.NewLine + Environment.NewLine +
+                        "ID ACESSO: " + SessaoUsuario.NivelAcesso,
+                        "Erro Crítico",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Stop
+                    );
                 }
-            } // Aqui a conexão fecha automaticamente pelo 'using'
+            }
         }
 
         public void DeslogarUsuario()

@@ -15,6 +15,7 @@ namespace Projeto_RJ
         public static char logado { get; set; }
         public static string tipoAtendimento { get; set; } // define qual o tipo de atendimento do usuário, se é normal ou prioritário {exporta para o "funcaoMesa" utilizar}
         public static string servico { get; set; } // define qual o serviço do usuário, se é recepção, atendimento ou administrativo {exporta para o "funcaoMesa" utilizar}
+       // public static int id_acesso { get; set; } // define o id_acesso do usuário, para verificar se é admin ou não {exporta para o "funcaoMesa" utilizar}
 
         public static void LimparSessao()
         {

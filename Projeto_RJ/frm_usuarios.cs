@@ -37,7 +37,7 @@ namespace Projeto_RJ
                 // Esta linha faz o TableAdapter buscar os dados novos no SQL Server e atualizar o Grid
 
 
-                this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios); // AO ALTERAR O NOME DO DATASET, ATUALIZE AQUI TAMBÉM
+                this.usuariosTableAdapter2.Fill(this.datasetUSUARIOS.usuarios); // AO ALTERAR O NOME DO DATASET, ATUALIZE AQUI TAMBÉM
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace Projeto_RJ
             {
                 try
                 {
-                    string query = "DELETE FROM usuarios WHERE id = @id"; //realizo a query diretamente aqui
+                    string query = "DELETE FROM usuarios WHERE id = @id";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@id", id);
 
@@ -87,7 +87,7 @@ namespace Projeto_RJ
 
                     MessageBox.Show("Usuário removido com sucesso!");
 
-                    // Chame aqui o seu método que preenche o DataGridView para atualizar a lista
+                    
                     CarregarDadosGrid();
                 }
                 catch (Exception ex)
@@ -117,7 +117,9 @@ namespace Projeto_RJ
             string fotoSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["base64"].Value.ToString();
             string servico = tbl_usuarios.Rows[e.RowIndex].Cells["id_servico"].Value.ToString();
             string tipoAtendimento = tbl_usuarios.Rows[e.RowIndex].Cells["id_tipoAtendimento"].Value.ToString();
+
             
+
 
 
 
@@ -130,6 +132,7 @@ namespace Projeto_RJ
             // Lógica para o botão EXCLUIR
             if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btn_excluir")
             {
+                
                 var confirmacao = MessageBox.Show($"Tem certeza que deseja excluir o usuário {nomeUsuario}?",
                     "Confirmar Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -144,7 +147,7 @@ namespace Projeto_RJ
             if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btn_editar")
             {
 
-                
+                MessageBox.Show("id: " + idSelecionado);
                 frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, emailSelecionado, usuarioSelecionado, siglaSelecionado, senhaSelecionada, acessoSelecionado, fotoSelecionada, servico, tipoAtendimento ); //seleciona o id
                 telaEdit.ShowDialog();
                // MessageBox.Show("Id: " + idSelecionado + " " + nomeSelecionado + "" + emailSelecionado + "" + usuarioSelecionado + siglaSelecionado + "" + senhaSelecionado + "" + acessoSelecionado);
@@ -165,21 +168,9 @@ namespace Projeto_RJ
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'tabela_usuario.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuariosTableAdapter1.Fill(this.tabela_usuario.usuarios);
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet5.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios);
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet4.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios);
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjSENHAS.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-
-
-
-            this.usuariosTableAdapter.Fill(this.projeto_rjDataSet5.usuarios); // AO ALTERAR O NOME DO DATASET, ATUALIZE AQUI TAMBÉM
-
-
-
-
+            // TODO: esta linha de código carrega dados na tabela 'datasetUSUARIOS.usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter2.Fill(this.datasetUSUARIOS.usuarios);
+            
         }
 
         private void btn_pesquisar_KeyDown(object sender, KeyEventArgs e)

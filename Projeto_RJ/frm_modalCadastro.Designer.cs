@@ -59,17 +59,17 @@
             this.btn_excluir_foto = new System.Windows.Forms.Button();
             this.acessosTableAdapter1 = new Projeto_RJ.projeto_rjDataSet16TableAdapters.acessosTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tipoAtendimentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_servico = new System.Windows.Forms.ComboBox();
+            this.servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.servico_usuario = new Projeto_RJ.servico_usuario();
             this.lbl_servico = new System.Windows.Forms.Label();
             this.projeto_rjSENHAS = new Projeto_RJ.projeto_rjSENHAS();
             this.projetorjSENHASBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projeto_rjDataSet17 = new Projeto_RJ.projeto_rjDataSet17();
-            this.tipoAtendimentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoAtendimentoTableAdapter = new Projeto_RJ.projeto_rjDataSet17TableAdapters.tipoAtendimentoTableAdapter();
-            this.servico_usuario = new Projeto_RJ.servico_usuario();
-            this.servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicoTableAdapter = new Projeto_RJ.servico_usuarioTableAdapters.servicoTableAdapter();
+            this.projeto_rjDataSet17 = new Projeto_RJ.projeto_rjDataSet17();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_imagemUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource1)).BeginInit();
@@ -77,12 +77,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoAtendimentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servico_usuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjSENHAS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjSENHASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoAtendimentoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servico_usuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_login
@@ -371,6 +371,10 @@
             this.comboBox1.ValueMember = "id";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // tipoAtendimentoBindingSource
+            // 
+            this.tipoAtendimentoBindingSource.DataMember = "tipoAtendimento";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -397,6 +401,16 @@
             this.cmb_servico.ValueMember = "ID";
             this.cmb_servico.SelectedIndexChanged += new System.EventHandler(this.cmb_servico_SelectedIndexChanged);
             // 
+            // servicoBindingSource
+            // 
+            this.servicoBindingSource.DataMember = "servico";
+            this.servicoBindingSource.DataSource = this.servico_usuario;
+            // 
+            // servico_usuario
+            // 
+            this.servico_usuario.DataSetName = "servico_usuario";
+            this.servico_usuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lbl_servico
             // 
             this.lbl_servico.AutoSize = true;
@@ -419,33 +433,18 @@
             this.projetorjSENHASBindingSource.DataSource = this.projeto_rjSENHAS;
             this.projetorjSENHASBindingSource.Position = 0;
             // 
-            // projeto_rjDataSet17
-            // 
-            this.projeto_rjDataSet17.DataSetName = "projeto_rjDataSet17";
-            this.projeto_rjDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tipoAtendimentoBindingSource
-            // 
-            this.tipoAtendimentoBindingSource.DataMember = "tipoAtendimento";
-            this.tipoAtendimentoBindingSource.DataSource = this.projeto_rjDataSet17;
-            // 
             // tipoAtendimentoTableAdapter
             // 
             this.tipoAtendimentoTableAdapter.ClearBeforeFill = true;
             // 
-            // servico_usuario
-            // 
-            this.servico_usuario.DataSetName = "servico_usuario";
-            this.servico_usuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // servicoBindingSource
-            // 
-            this.servicoBindingSource.DataMember = "servico";
-            this.servicoBindingSource.DataSource = this.servico_usuario;
-            // 
             // servicoTableAdapter
             // 
             this.servicoTableAdapter.ClearBeforeFill = true;
+            // 
+            // projeto_rjDataSet17
+            // 
+            this.projeto_rjDataSet17.DataSetName = "projeto_rjDataSet17";
+            this.projeto_rjDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frm_modalCadastro
             // 
@@ -492,12 +491,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjDataSet61BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoAtendimentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servico_usuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjSENHAS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetorjSENHASBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoAtendimentoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servico_usuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,11 +538,11 @@
         private System.Windows.Forms.Label lbl_servico;
         private projeto_rjSENHAS projeto_rjSENHAS;
         private System.Windows.Forms.BindingSource projetorjSENHASBindingSource;
-        private projeto_rjDataSet17 projeto_rjDataSet17;
         private System.Windows.Forms.BindingSource tipoAtendimentoBindingSource;
         private projeto_rjDataSet17TableAdapters.tipoAtendimentoTableAdapter tipoAtendimentoTableAdapter;
         private servico_usuario servico_usuario;
         private System.Windows.Forms.BindingSource servicoBindingSource;
         private servico_usuarioTableAdapters.servicoTableAdapter servicoTableAdapter;
+        private projeto_rjDataSet17 projeto_rjDataSet17;
     }
 }
