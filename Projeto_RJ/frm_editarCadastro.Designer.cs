@@ -56,22 +56,22 @@ namespace Projeto_RJ
             this.projeto_rjDataSet6 = new Projeto_RJ.projeto_rjDataSet6();
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet6TableAdapters.acessosTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarios = new Projeto_RJ.usuarios();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_servico = new System.Windows.Forms.ComboBox();
             this.lbl_servico = new System.Windows.Forms.Label();
             this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
             this.lbl_grupo_usuario = new System.Windows.Forms.Label();
             this.datasetUSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarios = new Projeto_RJ.usuarios();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosTableAdapter = new Projeto_RJ.usuariosTableAdapters.usuariosTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,8 +80,9 @@ namespace Projeto_RJ
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.lbl_name_header);
             this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1262, 85);
+            this.panel1.Size = new System.Drawing.Size(1683, 105);
             this.panel1.TabIndex = 10;
             // 
             // lbl_name_header
@@ -90,9 +91,10 @@ namespace Projeto_RJ
             this.lbl_name_header.AutoSize = true;
             this.lbl_name_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name_header.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_name_header.Location = new System.Drawing.Point(9, 29);
+            this.lbl_name_header.Location = new System.Drawing.Point(12, 36);
+            this.lbl_name_header.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_name_header.Name = "lbl_name_header";
-            this.lbl_name_header.Size = new System.Drawing.Size(227, 29);
+            this.lbl_name_header.Size = new System.Drawing.Size(284, 36);
             this.lbl_name_header.TabIndex = 5;
             this.lbl_name_header.Text = "EDITAR USUÁRIO";
             // 
@@ -103,10 +105,11 @@ namespace Projeto_RJ
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(635, 567);
+            this.btnCancelar.Location = new System.Drawing.Point(847, 698);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Padding = new System.Windows.Forms.Padding(5);
-            this.btnCancelar.Size = new System.Drawing.Size(118, 53);
+            this.btnCancelar.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnCancelar.Size = new System.Drawing.Size(157, 65);
             this.btnCancelar.TabIndex = 35;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,10 +123,11 @@ namespace Projeto_RJ
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(442, 567);
+            this.btnSalvar.Location = new System.Drawing.Point(589, 698);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5);
-            this.btnSalvar.Size = new System.Drawing.Size(118, 53);
+            this.btnSalvar.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnSalvar.Size = new System.Drawing.Size(157, 65);
             this.btnSalvar.TabIndex = 34;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,19 +137,21 @@ namespace Projeto_RJ
             // txtNome_editar
             // 
             this.txtNome_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome_editar.Location = new System.Drawing.Point(48, 161);
+            this.txtNome_editar.Location = new System.Drawing.Point(64, 198);
+            this.txtNome_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNome_editar.Name = "txtNome_editar";
-            this.txtNome_editar.Size = new System.Drawing.Size(424, 22);
+            this.txtNome_editar.Size = new System.Drawing.Size(564, 26);
             this.txtNome_editar.TabIndex = 21;
             this.txtNome_editar.TextChanged += new System.EventHandler(this.txtNome_editar_TextChanged);
             // 
             // txtSenha_editar
             // 
             this.txtSenha_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha_editar.Location = new System.Drawing.Point(564, 367);
+            this.txtSenha_editar.Location = new System.Drawing.Point(752, 452);
+            this.txtSenha_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSenha_editar.MaxLength = 100;
             this.txtSenha_editar.Name = "txtSenha_editar";
-            this.txtSenha_editar.Size = new System.Drawing.Size(256, 22);
+            this.txtSenha_editar.Size = new System.Drawing.Size(340, 26);
             this.txtSenha_editar.TabIndex = 31;
             this.txtSenha_editar.UseSystemPasswordChar = true;
             this.txtSenha_editar.TextChanged += new System.EventHandler(this.txtSenha_editar_TextChanged);
@@ -153,27 +159,30 @@ namespace Projeto_RJ
             // txtEmail_editar
             // 
             this.txtEmail_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail_editar.Location = new System.Drawing.Point(48, 260);
+            this.txtEmail_editar.Location = new System.Drawing.Point(64, 320);
+            this.txtEmail_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail_editar.Name = "txtEmail_editar";
-            this.txtEmail_editar.Size = new System.Drawing.Size(424, 22);
+            this.txtEmail_editar.Size = new System.Drawing.Size(564, 26);
             this.txtEmail_editar.TabIndex = 24;
             this.txtEmail_editar.TextChanged += new System.EventHandler(this.txtEmail_editar_TextChanged);
             // 
             // txtSigla_editar
             // 
             this.txtSigla_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSigla_editar.Location = new System.Drawing.Point(564, 161);
+            this.txtSigla_editar.Location = new System.Drawing.Point(752, 198);
+            this.txtSigla_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSigla_editar.Name = "txtSigla_editar";
-            this.txtSigla_editar.Size = new System.Drawing.Size(248, 22);
+            this.txtSigla_editar.Size = new System.Drawing.Size(329, 26);
             this.txtSigla_editar.TabIndex = 27;
             this.txtSigla_editar.TextChanged += new System.EventHandler(this.txtSigla_editar_TextChanged);
             // 
             // txtLogin_editar
             // 
             this.txtLogin_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin_editar.Location = new System.Drawing.Point(49, 367);
+            this.txtLogin_editar.Location = new System.Drawing.Point(65, 452);
+            this.txtLogin_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLogin_editar.Name = "txtLogin_editar";
-            this.txtLogin_editar.Size = new System.Drawing.Size(424, 22);
+            this.txtLogin_editar.Size = new System.Drawing.Size(564, 26);
             this.txtLogin_editar.TabIndex = 26;
             this.txtLogin_editar.TextChanged += new System.EventHandler(this.txtLogin_editar_TextChanged);
             // 
@@ -181,9 +190,10 @@ namespace Projeto_RJ
             // 
             this.foto_usuario_edicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.foto_usuario_edicao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.foto_usuario_edicao.Location = new System.Drawing.Point(901, 129);
+            this.foto_usuario_edicao.Location = new System.Drawing.Point(1201, 159);
+            this.foto_usuario_edicao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.foto_usuario_edicao.Name = "foto_usuario_edicao";
-            this.foto_usuario_edicao.Size = new System.Drawing.Size(200, 200);
+            this.foto_usuario_edicao.Size = new System.Drawing.Size(266, 246);
             this.foto_usuario_edicao.TabIndex = 33;
             this.foto_usuario_edicao.TabStop = false;
             this.foto_usuario_edicao.Click += new System.EventHandler(this.foto_usuario_edicao_Click);
@@ -192,9 +202,10 @@ namespace Projeto_RJ
             // 
             this.lbl_foto.AutoSize = true;
             this.lbl_foto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_foto.Location = new System.Drawing.Point(979, 110);
+            this.lbl_foto.Location = new System.Drawing.Point(1305, 135);
+            this.lbl_foto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_foto.Name = "lbl_foto";
-            this.lbl_foto.Size = new System.Drawing.Size(38, 16);
+            this.lbl_foto.Size = new System.Drawing.Size(46, 20);
             this.lbl_foto.TabIndex = 32;
             this.lbl_foto.Text = "Foto";
             // 
@@ -202,9 +213,10 @@ namespace Projeto_RJ
             // 
             this.lbl_senha.AutoSize = true;
             this.lbl_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_senha.Location = new System.Drawing.Point(561, 335);
+            this.lbl_senha.Location = new System.Drawing.Point(748, 412);
+            this.lbl_senha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_senha.Name = "lbl_senha";
-            this.lbl_senha.Size = new System.Drawing.Size(51, 16);
+            this.lbl_senha.Size = new System.Drawing.Size(61, 20);
             this.lbl_senha.TabIndex = 29;
             this.lbl_senha.Text = "Senha";
             // 
@@ -212,9 +224,10 @@ namespace Projeto_RJ
             // 
             this.lbl_nome_usuario.AutoSize = true;
             this.lbl_nome_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome_usuario.Location = new System.Drawing.Point(46, 129);
+            this.lbl_nome_usuario.Location = new System.Drawing.Point(61, 159);
+            this.lbl_nome_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nome_usuario.Name = "lbl_nome_usuario";
-            this.lbl_nome_usuario.Size = new System.Drawing.Size(48, 16);
+            this.lbl_nome_usuario.Size = new System.Drawing.Size(57, 20);
             this.lbl_nome_usuario.TabIndex = 25;
             this.lbl_nome_usuario.Text = "Nome";
             // 
@@ -222,9 +235,10 @@ namespace Projeto_RJ
             // 
             this.lbl_email.AutoSize = true;
             this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(45, 226);
+            this.lbl_email.Location = new System.Drawing.Point(60, 278);
+            this.lbl_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(46, 16);
+            this.lbl_email.Size = new System.Drawing.Size(56, 20);
             this.lbl_email.TabIndex = 23;
             this.lbl_email.Text = "Email";
             // 
@@ -232,9 +246,10 @@ namespace Projeto_RJ
             // 
             this.lbl_sigla.AutoSize = true;
             this.lbl_sigla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sigla.Location = new System.Drawing.Point(561, 129);
+            this.lbl_sigla.Location = new System.Drawing.Point(748, 159);
+            this.lbl_sigla.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_sigla.Name = "lbl_sigla";
-            this.lbl_sigla.Size = new System.Drawing.Size(43, 16);
+            this.lbl_sigla.Size = new System.Drawing.Size(51, 20);
             this.lbl_sigla.TabIndex = 22;
             this.lbl_sigla.Text = "Sigla";
             // 
@@ -242,9 +257,10 @@ namespace Projeto_RJ
             // 
             this.lbl_login.AutoSize = true;
             this.lbl_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_login.Location = new System.Drawing.Point(46, 335);
+            this.lbl_login.Location = new System.Drawing.Point(61, 412);
+            this.lbl_login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_login.Name = "lbl_login";
-            this.lbl_login.Size = new System.Drawing.Size(45, 16);
+            this.lbl_login.Size = new System.Drawing.Size(55, 20);
             this.lbl_login.TabIndex = 20;
             this.lbl_login.Text = "Login";
             // 
@@ -253,9 +269,10 @@ namespace Projeto_RJ
             this.btn_excluir_foto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_excluir_foto.BackgroundImage")));
             this.btn_excluir_foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_excluir_foto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_excluir_foto.Location = new System.Drawing.Point(1014, 335);
+            this.btn_excluir_foto.Location = new System.Drawing.Point(1352, 412);
+            this.btn_excluir_foto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_excluir_foto.Name = "btn_excluir_foto";
-            this.btn_excluir_foto.Size = new System.Drawing.Size(29, 32);
+            this.btn_excluir_foto.Size = new System.Drawing.Size(39, 39);
             this.btn_excluir_foto.TabIndex = 9;
             this.btn_excluir_foto.UseVisualStyleBackColor = true;
             this.btn_excluir_foto.Click += new System.EventHandler(this.btn_excluir_foto_Click);
@@ -265,9 +282,10 @@ namespace Projeto_RJ
             this.btn_upload_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_upload_picture.BackgroundImage")));
             this.btn_upload_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_upload_picture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_upload_picture.Location = new System.Drawing.Point(951, 335);
+            this.btn_upload_picture.Location = new System.Drawing.Point(1268, 412);
+            this.btn_upload_picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_upload_picture.Name = "btn_upload_picture";
-            this.btn_upload_picture.Size = new System.Drawing.Size(30, 32);
+            this.btn_upload_picture.Size = new System.Drawing.Size(40, 39);
             this.btn_upload_picture.TabIndex = 7;
             this.btn_upload_picture.UseVisualStyleBackColor = true;
             this.btn_upload_picture.Click += new System.EventHandler(this.btn_upload_picture_Click);
@@ -292,26 +310,37 @@ namespace Projeto_RJ
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.usuariosBindingSource;
-            this.comboBox1.DisplayMember = "id_tipoAtendimento";
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.usuarios, "usuarios.id_tipoAtendimento", true));
+            this.comboBox1.DataSource = this.usuarios;
+            this.comboBox1.DisplayMember = "usuarios.id_tipoAtendimento";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(49, 474);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBox1.Location = new System.Drawing.Point(65, 583);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 24);
+            this.comboBox1.Size = new System.Drawing.Size(329, 28);
             this.comboBox1.TabIndex = 43;
-            this.comboBox1.ValueMember = "id_tipoAtendimento";
+            this.comboBox1.ValueMember = "usuarios.id_tipoAtendimento";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.usuarios;
+            // 
+            // usuarios
+            // 
+            this.usuarios.DataSetName = "usuarios";
+            this.usuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 442);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(61, 544);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 16);
+            this.label1.Size = new System.Drawing.Size(181, 20);
             this.label1.TabIndex = 42;
             this.label1.Text = "Tipo de Atendimento";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -322,10 +351,10 @@ namespace Projeto_RJ
             this.cmb_servico.DisplayMember = "id_servico";
             this.cmb_servico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_servico.FormattingEnabled = true;
-            this.cmb_servico.Location = new System.Drawing.Point(564, 474);
-            this.cmb_servico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmb_servico.Location = new System.Drawing.Point(752, 583);
+            this.cmb_servico.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmb_servico.Name = "cmb_servico";
-            this.cmb_servico.Size = new System.Drawing.Size(248, 24);
+            this.cmb_servico.Size = new System.Drawing.Size(329, 28);
             this.cmb_servico.TabIndex = 45;
             this.cmb_servico.ValueMember = "id_acesso";
             this.cmb_servico.SelectedIndexChanged += new System.EventHandler(this.cmb_servico_SelectedIndexChanged);
@@ -334,10 +363,10 @@ namespace Projeto_RJ
             // 
             this.lbl_servico.AutoSize = true;
             this.lbl_servico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_servico.Location = new System.Drawing.Point(561, 442);
-            this.lbl_servico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_servico.Location = new System.Drawing.Point(748, 544);
+            this.lbl_servico.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbl_servico.Name = "lbl_servico";
-            this.lbl_servico.Size = new System.Drawing.Size(60, 16);
+            this.lbl_servico.Size = new System.Drawing.Size(72, 20);
             this.lbl_servico.TabIndex = 44;
             this.lbl_servico.Text = "Serviço";
             this.lbl_servico.Click += new System.EventHandler(this.lbl_servico_Click);
@@ -347,9 +376,10 @@ namespace Projeto_RJ
             this.cmb_Grupo_usuario.DataSource = this.acessosBindingSource;
             this.cmb_Grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Grupo_usuario.FormattingEnabled = true;
-            this.cmb_Grupo_usuario.Location = new System.Drawing.Point(564, 260);
+            this.cmb_Grupo_usuario.Location = new System.Drawing.Point(752, 320);
+            this.cmb_Grupo_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_Grupo_usuario.Name = "cmb_Grupo_usuario";
-            this.cmb_Grupo_usuario.Size = new System.Drawing.Size(248, 24);
+            this.cmb_Grupo_usuario.Size = new System.Drawing.Size(329, 28);
             this.cmb_Grupo_usuario.TabIndex = 36;
             this.cmb_Grupo_usuario.SelectedIndexChanged += new System.EventHandler(this.cmb_Grupo_usuario_SelectedIndexChanged);
             // 
@@ -357,21 +387,12 @@ namespace Projeto_RJ
             // 
             this.lbl_grupo_usuario.AutoSize = true;
             this.lbl_grupo_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_grupo_usuario.Location = new System.Drawing.Point(561, 226);
+            this.lbl_grupo_usuario.Location = new System.Drawing.Point(748, 278);
+            this.lbl_grupo_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_grupo_usuario.Name = "lbl_grupo_usuario";
-            this.lbl_grupo_usuario.Size = new System.Drawing.Size(126, 16);
+            this.lbl_grupo_usuario.Size = new System.Drawing.Size(154, 20);
             this.lbl_grupo_usuario.TabIndex = 28;
             this.lbl_grupo_usuario.Text = "Grupo de usuário";
-            // 
-            // usuarios
-            // 
-            this.usuarios.DataSetName = "usuarios";
-            this.usuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.usuarios;
             // 
             // usuariosTableAdapter
             // 
@@ -379,9 +400,9 @@ namespace Projeto_RJ
             // 
             // frm_editarCadastro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 641);
+            this.ClientSize = new System.Drawing.Size(1685, 789);
             this.Controls.Add(this.cmb_servico);
             this.Controls.Add(this.lbl_servico);
             this.Controls.Add(this.comboBox1);
@@ -406,6 +427,7 @@ namespace Projeto_RJ
             this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_editarCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clínica Exames";
@@ -415,9 +437,9 @@ namespace Projeto_RJ
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
