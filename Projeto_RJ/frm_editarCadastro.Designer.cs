@@ -56,22 +56,27 @@ namespace Projeto_RJ
             this.projeto_rjDataSet6 = new Projeto_RJ.projeto_rjDataSet6();
             this.acessosTableAdapter = new Projeto_RJ.projeto_rjDataSet6TableAdapters.acessosTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarios = new Projeto_RJ.usuarios();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_servico = new System.Windows.Forms.ComboBox();
             this.lbl_servico = new System.Windows.Forms.Label();
             this.cmb_Grupo_usuario = new System.Windows.Forms.ComboBox();
             this.lbl_grupo_usuario = new System.Windows.Forms.Label();
             this.datasetUSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarios = new Projeto_RJ.usuarios();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosTableAdapter = new Projeto_RJ.usuariosTableAdapters.usuariosTableAdapter();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.id_tipoAtendimentoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.id_tipoAtendimentoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,7 +84,7 @@ namespace Projeto_RJ
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.lbl_name_header);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(10, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1262, 85);
             this.panel1.TabIndex = 10;
@@ -304,6 +309,16 @@ namespace Projeto_RJ
             this.comboBox1.ValueMember = "id_tipoAtendimento";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.usuarios;
+            // 
+            // usuarios
+            // 
+            this.usuarios.DataSetName = "usuarios";
+            this.usuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -363,25 +378,47 @@ namespace Projeto_RJ
             this.lbl_grupo_usuario.TabIndex = 28;
             this.lbl_grupo_usuario.Text = "Grupo de usuário";
             // 
-            // usuarios
-            // 
-            this.usuarios.DataSetName = "usuarios";
-            this.usuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.usuarios;
-            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.id_tipoAtendimentoToolStripLabel,
+            this.id_tipoAtendimentoToolStripTextBox,
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1283, 25);
+            this.fillByToolStrip.TabIndex = 46;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // id_tipoAtendimentoToolStripLabel
+            // 
+            this.id_tipoAtendimentoToolStripLabel.Name = "id_tipoAtendimentoToolStripLabel";
+            this.id_tipoAtendimentoToolStripLabel.Size = new System.Drawing.Size(116, 15);
+            this.id_tipoAtendimentoToolStripLabel.Text = "id_tipoAtendimento:";
+            // 
+            // id_tipoAtendimentoToolStripTextBox
+            // 
+            this.id_tipoAtendimentoToolStripTextBox.Name = "id_tipoAtendimentoToolStripTextBox";
+            this.id_tipoAtendimentoToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 19);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // frm_editarCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 641);
+            this.ClientSize = new System.Drawing.Size(1283, 641);
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.cmb_servico);
             this.Controls.Add(this.lbl_servico);
             this.Controls.Add(this.comboBox1);
@@ -415,9 +452,11 @@ namespace Projeto_RJ
             ((System.ComponentModel.ISupportInitialize)(this.foto_usuario_edicao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acessosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeto_rjDataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetUSUARIOSBindingSource)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,5 +512,9 @@ namespace Projeto_RJ
         private usuarios usuarios;
         private BindingSource usuariosBindingSource;
         private usuariosTableAdapters.usuariosTableAdapter usuariosTableAdapter;
+        private ToolStrip fillByToolStrip;
+        private ToolStripLabel id_tipoAtendimentoToolStripLabel;
+        private ToolStripTextBox id_tipoAtendimentoToolStripTextBox;
+        private ToolStripButton fillByToolStripButton;
     }
 }

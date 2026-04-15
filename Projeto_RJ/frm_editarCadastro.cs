@@ -275,5 +275,18 @@ namespace Projeto_RJ
         {
 
         }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.usuariosTableAdapter.FillBy(this.usuarios._usuarios, new System.Nullable<int>(((int)(System.Convert.ChangeType(id_tipoAtendimentoToolStripTextBox.Text, typeof(int))))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

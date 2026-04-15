@@ -1137,12 +1137,19 @@ SELECT id, nome, sigla, email, usuario, senha, imgbase64, usuarioLogado, id_aces
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, nome, sigla, email, usuario, senha, imgbase64, usuarioLogado, id_acess" +
                 "o, id_servico, id_tipoAtendimento FROM dbo.usuarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT id, nome, sigla, email, usuario, senha, imgbase64, usuarioLogado, id_acess" +
+                "o, id_servico, id_tipoAtendimento \r\nFROM usuarios \r\nWHERE id_tipoAtendimento = @" +
+                "id_tipoAtendimento";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_tipoAtendimento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_tipoAtendimento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1167,6 +1174,25 @@ SELECT id, nome, sigla, email, usuario, senha, imgbase64, usuarioLogado, id_aces
             usuarios.usuariosDataTable dataTable = new usuarios.usuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(usuarios.usuariosDataTable dataTable, global::System.Nullable<int> id_tipoAtendimento) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id_tipoAtendimento.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_tipoAtendimento.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
