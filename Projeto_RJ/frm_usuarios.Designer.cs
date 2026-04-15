@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_name_header = new System.Windows.Forms.Label();
@@ -39,18 +39,6 @@
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.btn_cadastrar_usuario = new System.Windows.Forms.Button();
             this.tbl_usuarios = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.datasetUSUARIOS = new Projeto_RJ.datasetUSUARIOS();
-            this.usuariosTableAdapter2 = new Projeto_RJ.datasetUSUARIOSTableAdapters.usuariosTableAdapter();
-            this.projetorjDataSet5BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosTableAdapter1 = new Projeto_RJ.tabela_usuarioTableAdapters.usuariosTableAdapter();
-            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tabela_usuario = new Projeto_RJ.tabela_usuario();
-            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet5TableAdapters.usuariosTableAdapter();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projetorjDataSet9BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projeto_rjDataSet9 = new Projeto_RJ.projeto_rjDataSet9();
-            this.sideBar1 = new Projeto_RJ.sideBar();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_acesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +51,17 @@
             this.id_tipoAtendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.usuariosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetUSUARIOS = new Projeto_RJ.datasetUSUARIOS();
+            this.usuariosTableAdapter2 = new Projeto_RJ.datasetUSUARIOSTableAdapters.usuariosTableAdapter();
+            this.projetorjDataSet5BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter1 = new Projeto_RJ.tabela_usuarioTableAdapters.usuariosTableAdapter();
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tabela_usuario = new Projeto_RJ.tabela_usuario();
+            this.usuariosTableAdapter = new Projeto_RJ.projeto_rjDataSet5TableAdapters.usuariosTableAdapter();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projetorjDataSet9BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projeto_rjDataSet9 = new Projeto_RJ.projeto_rjDataSet9();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).BeginInit();
@@ -81,10 +80,9 @@
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.lbl_name_header);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(-164, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2536, 105);
+            this.panel1.Size = new System.Drawing.Size(1902, 85);
             this.panel1.TabIndex = 10;
             // 
             // button2
@@ -94,10 +92,9 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(2447, 30);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(1835, 24);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 39);
+            this.button2.Size = new System.Drawing.Size(33, 32);
             this.button2.TabIndex = 24;
             this.button2.Text = "   9";
             this.button2.UseVisualStyleBackColor = false;
@@ -109,10 +106,9 @@
             this.lbl_name_header.AutoSize = true;
             this.lbl_name_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name_header.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_name_header.Location = new System.Drawing.Point(37, 33);
-            this.lbl_name_header.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_name_header.Location = new System.Drawing.Point(171, 27);
             this.lbl_name_header.Name = "lbl_name_header";
-            this.lbl_name_header.Size = new System.Drawing.Size(762, 36);
+            this.lbl_name_header.Size = new System.Drawing.Size(610, 29);
             this.lbl_name_header.TabIndex = 7;
             this.lbl_name_header.Text = "PAINEL INICIAL > CONFIGURAÇÕES > USUÁRIOS";
             this.lbl_name_header.Click += new System.EventHandler(this.lbl_name_header_Click);
@@ -121,10 +117,9 @@
             // 
             this.lbl_pesquisa_nome.AutoSize = true;
             this.lbl_pesquisa_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pesquisa_nome.Location = new System.Drawing.Point(16, 151);
-            this.lbl_pesquisa_nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_pesquisa_nome.Location = new System.Drawing.Point(12, 101);
             this.lbl_pesquisa_nome.Name = "lbl_pesquisa_nome";
-            this.lbl_pesquisa_nome.Size = new System.Drawing.Size(136, 20);
+            this.lbl_pesquisa_nome.Size = new System.Drawing.Size(110, 16);
             this.lbl_pesquisa_nome.TabIndex = 11;
             this.lbl_pesquisa_nome.Text = "Nome do usuário";
             this.lbl_pesquisa_nome.Click += new System.EventHandler(this.lbl_pesquisa_nome_Click);
@@ -132,10 +127,9 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(16, 176);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(12, 121);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(2445, 26);
+            this.textBox1.Size = new System.Drawing.Size(1386, 22);
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -145,10 +139,9 @@
             this.btn_pesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pesquisar.BackgroundImage")));
             this.btn_pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pesquisar.Location = new System.Drawing.Point(2471, 166);
-            this.btn_pesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_pesquisar.Location = new System.Drawing.Point(1853, 135);
             this.btn_pesquisar.Name = "btn_pesquisar";
-            this.btn_pesquisar.Size = new System.Drawing.Size(52, 42);
+            this.btn_pesquisar.Size = new System.Drawing.Size(39, 34);
             this.btn_pesquisar.TabIndex = 14;
             this.btn_pesquisar.UseVisualStyleBackColor = false;
             this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
@@ -159,10 +152,9 @@
             this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_cadastrar_usuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cadastrar_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(2203, 215);
-            this.btn_cadastrar_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(1203, 158);
             this.btn_cadastrar_usuario.Name = "btn_cadastrar_usuario";
-            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(260, 46);
+            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(195, 37);
             this.btn_cadastrar_usuario.TabIndex = 16;
             this.btn_cadastrar_usuario.Text = "CADASTRAR";
             this.btn_cadastrar_usuario.UseVisualStyleBackColor = false;
@@ -188,65 +180,12 @@
             this.btn_excluir,
             this.btn_editar});
             this.tbl_usuarios.DataSource = this.usuariosBindingSource2;
-            this.tbl_usuarios.Location = new System.Drawing.Point(-622, 240);
-            this.tbl_usuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbl_usuarios.Location = new System.Drawing.Point(15, 201);
             this.tbl_usuarios.Name = "tbl_usuarios";
             this.tbl_usuarios.RowHeadersWidth = 51;
-            this.tbl_usuarios.Size = new System.Drawing.Size(2533, 1017);
+            this.tbl_usuarios.Size = new System.Drawing.Size(1383, 620);
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
-            // 
-            // usuariosBindingSource2
-            // 
-            this.usuariosBindingSource2.DataMember = "usuarios";
-            this.usuariosBindingSource2.DataSource = this.datasetUSUARIOS;
-            // 
-            // datasetUSUARIOS
-            // 
-            this.datasetUSUARIOS.DataSetName = "datasetUSUARIOS";
-            this.datasetUSUARIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter2
-            // 
-            this.usuariosTableAdapter2.ClearBeforeFill = true;
-            // 
-            // usuariosTableAdapter1
-            // 
-            this.usuariosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataMember = "usuarios";
-            // 
-            // tabela_usuario
-            // 
-            this.tabela_usuario.DataSetName = "tabela_usuario";
-            this.tabela_usuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // projetorjDataSet9BindingSource
-            // 
-            this.projetorjDataSet9BindingSource.DataSource = this.projeto_rjDataSet9;
-            this.projetorjDataSet9BindingSource.Position = 0;
-            // 
-            // projeto_rjDataSet9
-            // 
-            this.projeto_rjDataSet9.DataSetName = "projeto_rjDataSet9";
-            this.projeto_rjDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sideBar1
-            // 
-            this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sideBar1.Location = new System.Drawing.Point(1336, 0);
-            this.sideBar1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.sideBar1.Name = "sideBar1";
-            this.sideBar1.Size = new System.Drawing.Size(588, 1055);
-            this.sideBar1.TabIndex = 17;
-            this.sideBar1.Visible = false;
-            this.sideBar1.Load += new System.EventHandler(this.sideBar1_Load);
             // 
             // id
             // 
@@ -331,11 +270,11 @@
             // 
             // btn_excluir
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_excluir.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_excluir.DefaultCellStyle = dataGridViewCellStyle2;
             this.btn_excluir.HeaderText = "";
             this.btn_excluir.Image = ((System.Drawing.Image)(resources.GetObject("btn_excluir.Image")));
             this.btn_excluir.MinimumWidth = 40;
@@ -353,12 +292,52 @@
             this.btn_editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btn_editar.Width = 40;
             // 
+            // usuariosBindingSource2
+            // 
+            this.usuariosBindingSource2.DataMember = "usuarios";
+            this.usuariosBindingSource2.DataSource = this.datasetUSUARIOS;
+            // 
+            // datasetUSUARIOS
+            // 
+            this.datasetUSUARIOS.DataSetName = "datasetUSUARIOS";
+            this.datasetUSUARIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter2
+            // 
+            this.usuariosTableAdapter2.ClearBeforeFill = true;
+            // 
+            // usuariosTableAdapter1
+            // 
+            this.usuariosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataMember = "usuarios";
+            // 
+            // tabela_usuario
+            // 
+            this.tabela_usuario.DataSetName = "tabela_usuario";
+            this.tabela_usuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // projetorjDataSet9BindingSource
+            // 
+            this.projetorjDataSet9BindingSource.DataSource = this.projeto_rjDataSet9;
+            this.projetorjDataSet9BindingSource.Position = 0;
+            // 
+            // projeto_rjDataSet9
+            // 
+            this.projeto_rjDataSet9.DataSetName = "projeto_rjDataSet9";
+            this.projeto_rjDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frm_usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.sideBar1);
+            this.ClientSize = new System.Drawing.Size(1405, 857);
             this.Controls.Add(this.btn_cadastrar_usuario);
             this.Controls.Add(this.tbl_usuarios);
             this.Controls.Add(this.btn_pesquisar);
@@ -366,7 +345,6 @@
             this.Controls.Add(this.lbl_pesquisa_nome);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "frm_usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
