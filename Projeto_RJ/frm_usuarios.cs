@@ -107,8 +107,8 @@ namespace Projeto_RJ
             
 
 
-            int idSelecionado = Convert.ToInt32(tbl_usuarios.Rows[e.RowIndex].Cells["id"].Value);
-            string nomeSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            int idSelecionado = Convert.ToInt32(tbl_usuarios.Rows[e.RowIndex].Cells["id"].Value); 
+            string nomeSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["nome"].Value.ToString(); 
             string emailSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
             string usuarioSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["usuario"].Value.ToString();
             string siglaSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["sigla"].Value.ToString();
@@ -150,7 +150,7 @@ namespace Projeto_RJ
                 MessageBox.Show("id: " + idSelecionado);
                 frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, emailSelecionado, usuarioSelecionado, siglaSelecionado, senhaSelecionada, acessoSelecionado, fotoSelecionada, servico, tipoAtendimento ); //seleciona o id
                 telaEdit.ShowDialog();
-               // MessageBox.Show("Id: " + idSelecionado + " " + nomeSelecionado + "" + emailSelecionado + "" + usuarioSelecionado + siglaSelecionado + "" + senhaSelecionado + "" + acessoSelecionado);
+                MessageBox.Show("Id: " + idSelecionado + " " + nomeSelecionado + "" + emailSelecionado + "" + usuarioSelecionado + siglaSelecionado + "" + senhaSelecionada + "" + acessoSelecionado);
                 CarregarDadosGrid(); // Para atualizar os dados após fechar a edição
             }
         }

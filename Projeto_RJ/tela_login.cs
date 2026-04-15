@@ -241,5 +241,10 @@ namespace Projeto_RJ
         {
 
         }
+
+        private void panel_container_login_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -51,18 +51,16 @@
             this.projetorjDataSet9BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projeto_rjDataSet9 = new Projeto_RJ.projeto_rjDataSet9();
             this.sideBar1 = new Projeto_RJ.sideBar();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_acesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siglaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imgbase64DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioLogadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idacessoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idservicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idtipoAtendimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.base64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_tipoAtendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
@@ -84,8 +82,9 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.lbl_name_header);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1902, 85);
+            this.panel1.Size = new System.Drawing.Size(2536, 105);
             this.panel1.TabIndex = 10;
             // 
             // button2
@@ -95,9 +94,10 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1835, 24);
+            this.button2.Location = new System.Drawing.Point(2447, 30);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 32);
+            this.button2.Size = new System.Drawing.Size(44, 39);
             this.button2.TabIndex = 24;
             this.button2.Text = "   9";
             this.button2.UseVisualStyleBackColor = false;
@@ -109,9 +109,10 @@
             this.lbl_name_header.AutoSize = true;
             this.lbl_name_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name_header.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_name_header.Location = new System.Drawing.Point(28, 27);
+            this.lbl_name_header.Location = new System.Drawing.Point(37, 33);
+            this.lbl_name_header.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_name_header.Name = "lbl_name_header";
-            this.lbl_name_header.Size = new System.Drawing.Size(610, 29);
+            this.lbl_name_header.Size = new System.Drawing.Size(762, 36);
             this.lbl_name_header.TabIndex = 7;
             this.lbl_name_header.Text = "PAINEL INICIAL > CONFIGURAÇÕES > USUÁRIOS";
             this.lbl_name_header.Click += new System.EventHandler(this.lbl_name_header_Click);
@@ -120,9 +121,10 @@
             // 
             this.lbl_pesquisa_nome.AutoSize = true;
             this.lbl_pesquisa_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pesquisa_nome.Location = new System.Drawing.Point(12, 123);
+            this.lbl_pesquisa_nome.Location = new System.Drawing.Point(16, 151);
+            this.lbl_pesquisa_nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pesquisa_nome.Name = "lbl_pesquisa_nome";
-            this.lbl_pesquisa_nome.Size = new System.Drawing.Size(110, 16);
+            this.lbl_pesquisa_nome.Size = new System.Drawing.Size(136, 20);
             this.lbl_pesquisa_nome.TabIndex = 11;
             this.lbl_pesquisa_nome.Text = "Nome do usuário";
             this.lbl_pesquisa_nome.Click += new System.EventHandler(this.lbl_pesquisa_nome_Click);
@@ -130,9 +132,10 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 143);
+            this.textBox1.Location = new System.Drawing.Point(16, 176);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1835, 22);
+            this.textBox1.Size = new System.Drawing.Size(2445, 26);
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -142,9 +145,10 @@
             this.btn_pesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pesquisar.BackgroundImage")));
             this.btn_pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pesquisar.Location = new System.Drawing.Point(1853, 135);
+            this.btn_pesquisar.Location = new System.Drawing.Point(2471, 166);
+            this.btn_pesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_pesquisar.Name = "btn_pesquisar";
-            this.btn_pesquisar.Size = new System.Drawing.Size(39, 34);
+            this.btn_pesquisar.Size = new System.Drawing.Size(52, 42);
             this.btn_pesquisar.TabIndex = 14;
             this.btn_pesquisar.UseVisualStyleBackColor = false;
             this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
@@ -155,9 +159,10 @@
             this.btn_cadastrar_usuario.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_cadastrar_usuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cadastrar_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(1652, 175);
+            this.btn_cadastrar_usuario.Location = new System.Drawing.Point(2203, 215);
+            this.btn_cadastrar_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_cadastrar_usuario.Name = "btn_cadastrar_usuario";
-            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(195, 37);
+            this.btn_cadastrar_usuario.Size = new System.Drawing.Size(260, 46);
             this.btn_cadastrar_usuario.TabIndex = 16;
             this.btn_cadastrar_usuario.Text = "CADASTRAR";
             this.btn_cadastrar_usuario.UseVisualStyleBackColor = false;
@@ -170,24 +175,24 @@
             this.tbl_usuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.tbl_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbl_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
+            this.id,
             this.id_acesso,
-            this.nomeDataGridViewTextBoxColumn,
-            this.siglaDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.usuarioDataGridViewTextBoxColumn,
-            this.senhaDataGridViewTextBoxColumn,
-            this.imgbase64DataGridViewTextBoxColumn,
-            this.usuarioLogadoDataGridViewTextBoxColumn,
-            this.idacessoDataGridViewTextBoxColumn,
-            this.idservicoDataGridViewTextBoxColumn,
-            this.idtipoAtendimentoDataGridViewTextBoxColumn,
+            this.nome,
+            this.sigla,
+            this.email,
+            this.usuario,
+            this.senha,
+            this.base64,
+            this.id_servico,
+            this.id_tipoAtendimento,
             this.btn_excluir,
             this.btn_editar});
             this.tbl_usuarios.DataSource = this.usuariosBindingSource2;
-            this.tbl_usuarios.Location = new System.Drawing.Point(2, 218);
+            this.tbl_usuarios.Location = new System.Drawing.Point(-622, 240);
+            this.tbl_usuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbl_usuarios.Name = "tbl_usuarios";
-            this.tbl_usuarios.Size = new System.Drawing.Size(1900, 826);
+            this.tbl_usuarios.RowHeadersWidth = 51;
+            this.tbl_usuarios.Size = new System.Drawing.Size(2533, 1017);
             this.tbl_usuarios.TabIndex = 15;
             this.tbl_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_usuarios_CellContentClick);
             // 
@@ -235,85 +240,94 @@
             // sideBar1
             // 
             this.sideBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sideBar1.Location = new System.Drawing.Point(1463, 0);
+            this.sideBar1.Location = new System.Drawing.Point(1336, 0);
+            this.sideBar1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.sideBar1.Name = "sideBar1";
-            this.sideBar1.Size = new System.Drawing.Size(441, 1041);
+            this.sideBar1.Size = new System.Drawing.Size(588, 1055);
             this.sideBar1.TabIndex = 17;
             this.sideBar1.Visible = false;
             this.sideBar1.Load += new System.EventHandler(this.sideBar1_Load);
             // 
-            // idDataGridViewTextBoxColumn
+            // id
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 125;
             // 
             // id_acesso
             // 
             this.id_acesso.DataPropertyName = "id_acesso";
             this.id_acesso.HeaderText = "id_acesso";
+            this.id_acesso.MinimumWidth = 6;
             this.id_acesso.Name = "id_acesso";
+            this.id_acesso.Width = 125;
             // 
-            // nomeDataGridViewTextBoxColumn
+            // nome
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "nome";
+            this.nome.MinimumWidth = 6;
+            this.nome.Name = "nome";
+            this.nome.Width = 125;
             // 
-            // siglaDataGridViewTextBoxColumn
+            // sigla
             // 
-            this.siglaDataGridViewTextBoxColumn.DataPropertyName = "sigla";
-            this.siglaDataGridViewTextBoxColumn.HeaderText = "sigla";
-            this.siglaDataGridViewTextBoxColumn.Name = "siglaDataGridViewTextBoxColumn";
+            this.sigla.DataPropertyName = "sigla";
+            this.sigla.HeaderText = "sigla";
+            this.sigla.MinimumWidth = 6;
+            this.sigla.Name = "sigla";
+            this.sigla.Width = 125;
             // 
-            // emailDataGridViewTextBoxColumn
+            // email
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 125;
             // 
-            // usuarioDataGridViewTextBoxColumn
+            // usuario
             // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "usuario";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.Width = 125;
             // 
-            // senhaDataGridViewTextBoxColumn
+            // senha
             // 
-            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
-            this.senhaDataGridViewTextBoxColumn.HeaderText = "senha";
-            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
+            this.senha.DataPropertyName = "senha";
+            this.senha.HeaderText = "senha";
+            this.senha.MinimumWidth = 6;
+            this.senha.Name = "senha";
+            this.senha.Width = 125;
             // 
-            // imgbase64DataGridViewTextBoxColumn
+            // base64
             // 
-            this.imgbase64DataGridViewTextBoxColumn.DataPropertyName = "imgbase64";
-            this.imgbase64DataGridViewTextBoxColumn.HeaderText = "imgbase64";
-            this.imgbase64DataGridViewTextBoxColumn.Name = "imgbase64DataGridViewTextBoxColumn";
+            this.base64.DataPropertyName = "imgbase64";
+            this.base64.HeaderText = "imgbase64";
+            this.base64.MinimumWidth = 6;
+            this.base64.Name = "base64";
+            this.base64.Width = 125;
             // 
-            // usuarioLogadoDataGridViewTextBoxColumn
+            // id_servico
             // 
-            this.usuarioLogadoDataGridViewTextBoxColumn.DataPropertyName = "usuarioLogado";
-            this.usuarioLogadoDataGridViewTextBoxColumn.HeaderText = "usuarioLogado";
-            this.usuarioLogadoDataGridViewTextBoxColumn.Name = "usuarioLogadoDataGridViewTextBoxColumn";
+            this.id_servico.DataPropertyName = "id_servico";
+            this.id_servico.HeaderText = "id_servico";
+            this.id_servico.MinimumWidth = 6;
+            this.id_servico.Name = "id_servico";
+            this.id_servico.Width = 125;
             // 
-            // idacessoDataGridViewTextBoxColumn
+            // id_tipoAtendimento
             // 
-            this.idacessoDataGridViewTextBoxColumn.DataPropertyName = "id_acesso";
-            this.idacessoDataGridViewTextBoxColumn.HeaderText = "id_acesso";
-            this.idacessoDataGridViewTextBoxColumn.Name = "idacessoDataGridViewTextBoxColumn";
-            // 
-            // idservicoDataGridViewTextBoxColumn
-            // 
-            this.idservicoDataGridViewTextBoxColumn.DataPropertyName = "id_servico";
-            this.idservicoDataGridViewTextBoxColumn.HeaderText = "id_servico";
-            this.idservicoDataGridViewTextBoxColumn.Name = "idservicoDataGridViewTextBoxColumn";
-            // 
-            // idtipoAtendimentoDataGridViewTextBoxColumn
-            // 
-            this.idtipoAtendimentoDataGridViewTextBoxColumn.DataPropertyName = "id_tipoAtendimento";
-            this.idtipoAtendimentoDataGridViewTextBoxColumn.HeaderText = "id_tipoAtendimento";
-            this.idtipoAtendimentoDataGridViewTextBoxColumn.Name = "idtipoAtendimentoDataGridViewTextBoxColumn";
+            this.id_tipoAtendimento.DataPropertyName = "id_tipoAtendimento";
+            this.id_tipoAtendimento.HeaderText = "id_tipoAtendimento";
+            this.id_tipoAtendimento.MinimumWidth = 6;
+            this.id_tipoAtendimento.Name = "id_tipoAtendimento";
+            this.id_tipoAtendimento.Width = 125;
             // 
             // btn_excluir
             // 
@@ -341,9 +355,9 @@
             // 
             // frm_usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.sideBar1);
             this.Controls.Add(this.btn_cadastrar_usuario);
             this.Controls.Add(this.tbl_usuarios);
@@ -352,6 +366,7 @@
             this.Controls.Add(this.lbl_pesquisa_nome);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "frm_usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -396,18 +411,16 @@
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private System.Windows.Forms.BindingSource projetorjDataSet9BindingSource;
         private projeto_rjDataSet9 projeto_rjDataSet9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_acesso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn siglaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imgbase64DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioLogadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idacessoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idservicoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtipoAtendimentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sigla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn base64;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_servico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipoAtendimento;
         private System.Windows.Forms.DataGridViewImageColumn btn_excluir;
         private System.Windows.Forms.DataGridViewImageColumn btn_editar;
     }
