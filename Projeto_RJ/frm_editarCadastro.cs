@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Protobuf.Reflection;
+using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -12,11 +14,12 @@ namespace Projeto_RJ
         // Variáveis globais da tela
         private int? idUsuarioEdicao = null;
         public string fotoBase64 = "";
+       // private string acessoRecebido = "";
 
-        // String de conexão (Centralizada para não errar)
+        
         string stringConexao = @"Data Source=100.65.33.58,1414;Initial Catalog=projeto_rj;User ID=sa;Password=ap23@#$);";
 
-        // CONSTRUTOR: Arrumei a ordem dos parâmetros para bater com a tela anterior
+        
         public frm_editarCadastro(int idSelecionado, string nomeSelecionado, 
             string emailSelecionado, string usuarioSelecionado,
             string siglaSelecionado, string senhaSelecionada, 
@@ -36,6 +39,9 @@ namespace Projeto_RJ
             txtSenha_editar.Text = senhaSelecionada;
             comboBox1.Text = tipoAtendimento;
             cmb_servico.Text = servico;
+
+            MessageBox.Show("tipo de atendimento: " + tipoAtendimento + "serviço: " + servico);
+            
 
 
 
@@ -262,8 +268,9 @@ namespace Projeto_RJ
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        {
+            // combo de tipo de atendimento (presencial, remoto, ambos)
         }
 
         private void lbl_servico_Click(object sender, EventArgs e)

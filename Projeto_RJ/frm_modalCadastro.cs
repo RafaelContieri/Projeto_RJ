@@ -21,11 +21,8 @@ namespace Projeto_RJ
 
         private void frm_modalCadastro_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'servico_usuario.servico'. Você pode movê-la ou removê-la conforme necessário.
             this.servicoTableAdapter.Fill(this.servico_usuario.servico);
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet17.tipoAtendimento'. Você pode movê-la ou removê-la conforme necessário.
             this.tipoAtendimentoTableAdapter.Fill(this.projeto_rjDataSet17.tipoAtendimento);
-            // TODO: esta linha de código carrega dados na tabela 'projeto_rjDataSet16.acessos'. Você pode movê-la ou removê-la conforme necessário.
             this.acessosTableAdapter1.Fill(this.projeto_rjDataSet16.acessos);
             // Carrega os grupos de acesso no ComboBox
             this.acessosTableAdapter.Fill(this.projeto_rjDataSet7.acessos);
@@ -81,11 +78,11 @@ namespace Projeto_RJ
             // Opcional: btn_upload_picture.Enabled = !temFoto; (Se quiser travar após um upload)
         }
 
-        // --- SALVAMENTO NO BANCO ---
+        
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // 1. Validação de campos obrigatórios
+            
             if (string.IsNullOrWhiteSpace(txtNome.Text) ||
                 string.IsNullOrWhiteSpace(txtLogin.Text) ||
                 string.IsNullOrWhiteSpace(txtSenha.Text) ||
@@ -97,7 +94,7 @@ namespace Projeto_RJ
                 return;
             }
 
-            // --- NOVIDADE: GERANDO O HASH DA SENHA ---
+            
             // Pegamos o que está no TextBox e transformamos em uma assinatura segura
             string senhaOriginal = txtSenha.Text.Trim();
             string senhaComHash = BCrypt.Net.BCrypt.HashPassword(senhaOriginal);

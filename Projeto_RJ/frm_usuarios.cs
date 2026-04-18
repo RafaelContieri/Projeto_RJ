@@ -100,7 +100,7 @@ namespace Projeto_RJ
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
-        private void tbl_usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e) // EVENTO DOS BOTÕES DE EXCLUIR E EDITAR
+        public void tbl_usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e) // EVENTO DOS BOTÕES DE EXCLUIR E EDITAR
         {
             if (e.RowIndex < 0) return;
 
@@ -113,9 +113,9 @@ namespace Projeto_RJ
             string usuarioSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["usuario"].Value.ToString();
             string siglaSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["sigla"].Value.ToString();
             string senhaSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["senha"].Value.ToString();
-            string acessoSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["id_acesso"].Value.ToString();
+            string acessoSelecionado = tbl_usuarios.Rows[e.RowIndex].Cells["id_acesso"].Value.ToString(); // adm, usuario // totem
             string fotoSelecionada = tbl_usuarios.Rows[e.RowIndex].Cells["base64"].Value.ToString();
-            string servico = tbl_usuarios.Rows[e.RowIndex].Cells["id_servico"].Value.ToString();
+            string servico = tbl_usuarios.Rows[e.RowIndex].Cells["id_servico"].Value.ToString(); // ok, passando normalmente
             string tipoAtendimento = tbl_usuarios.Rows[e.RowIndex].Cells["id_tipoAtendimento"].Value.ToString();
 
             
@@ -147,10 +147,10 @@ namespace Projeto_RJ
             if (tbl_usuarios.Columns[e.ColumnIndex].Name == "btn_editar")
             {
 
-                MessageBox.Show("id: " + idSelecionado);
+               // MessageBox.Show("id: " + idSelecionado);
                 frm_editarCadastro telaEdit = new frm_editarCadastro(idSelecionado, nomeSelecionado, emailSelecionado, usuarioSelecionado, siglaSelecionado, senhaSelecionada, acessoSelecionado, fotoSelecionada, servico, tipoAtendimento ); //seleciona o id
                 telaEdit.ShowDialog();
-                MessageBox.Show("Id: " + idSelecionado + " " + nomeSelecionado + "" + emailSelecionado + "" + usuarioSelecionado + siglaSelecionado + "" + senhaSelecionada + "" + acessoSelecionado);
+               // MessageBox.Show("Id: " + idSelecionado + " " + nomeSelecionado + "" + emailSelecionado + "" + usuarioSelecionado + siglaSelecionado + "" + senhaSelecionada + "" + acessoSelecionado);
                 CarregarDadosGrid(); // Para atualizar os dados após fechar a edição
             }
         }
@@ -168,7 +168,7 @@ namespace Projeto_RJ
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'datasetUSUARIOS.usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            // TODO: esta linha de código carrega dados na tabela 'datasetUSUARIOS.usuarios'.
             this.usuariosTableAdapter2.Fill(this.datasetUSUARIOS.usuarios);
             
         }
